@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Splash
+    uniqueID: 3911214973
+    locked: 0
+  - name: Main
+    uniqueID: 234625485
+    locked: 0
+  - name: View
+    uniqueID: 1151763837
+    locked: 0
+  - name: Tips
+    uniqueID: 1524616451
+    locked: 0
+  - name: Loding
+    uniqueID: 195874493
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
