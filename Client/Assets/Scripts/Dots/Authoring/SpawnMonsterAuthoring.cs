@@ -12,7 +12,7 @@ namespace Dots
         public GameObject MonsterPrefab;
         
         public uint RandomSeed;
-        public float3 PosRange;
+        public float2 PosRange;
         public float2 SpawnInterval;
         public int TotalCount;
         

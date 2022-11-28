@@ -9,31 +9,32 @@ namespace Dots
     {
         public GameObject Prefab;
         public float AttackRange;
-        public float RiseSpeed;
         public float MoveSpeed;
+        public float AttackInterval;
         public float Damage;
         
         public class MonsterAuthoringBaker : Baker<MonsterAuthoring>
         {
             public override void Bake(MonsterAuthoring authoring)
             {
-                AddComponent<MonsterInitTag>();
+                AddComponent<MonsterState>();
                 AddComponent<MonsterTarget>();
                 
                 AddComponent(new MonsterDie
                 {
                     DelayTime = 1
                 });
-                
-                AddComponent(new MonsterBorn
-                {
-                    RiseSpeed =  authoring.RiseSpeed
-                });
-                
+        
                 AddComponent(new MonsterMove
                 {
                     AttackRange = authoring.AttackRange,
                     WalkSpeed = authoring.MoveSpeed,
+                });
+                
+                AddComponent(new MonsterAttack
+                {
+                    Damage = authoring.Damage,
+                    AttackInterval = authoring.AttackInterval
                 });
                 
                 //添加Prefab

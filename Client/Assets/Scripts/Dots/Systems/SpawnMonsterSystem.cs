@@ -76,8 +76,10 @@ namespace Dots
                     Value = transform
                 });
                 
-                //设置目标点
-                ECB.SetComponent(monster, new MonsterTarget { Value = TargetPos });
+                ECB.SetComponent(monster, new MonsterState
+                {
+                    Value = EState.Init
+                });
                 
                 aspect.CurCount++;
             }

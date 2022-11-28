@@ -7,7 +7,7 @@ namespace Dots
     public readonly partial struct DestinationAspect : IAspect
     {
         private readonly TransformAspect _transform;
-        private readonly RefRO<Destination> _spawnComponent;
+        private readonly RefRO<Destination> _destination;
 
         public float3 Position => _transform.Position;
     }

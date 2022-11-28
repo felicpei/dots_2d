@@ -2,19 +2,28 @@ using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 
+
 namespace Dots
 {
+    public enum EState
+    {
+        Init = 1,
+        Idle = 2,
+        Move = 3,
+        Attack = 4,
+        Die = 5,
+    }
+
+    public static class MonsterAnimatorParam
+    {
+        public static readonly int IsMove = Animator.StringToHash("IsMove");
+        public static readonly int Attack = Animator.StringToHash("Attack");
+    }
     
-    public struct MonsterInitTag : IComponentData
+    public struct MonsterState : IComponentData
     {
-    }
-
-    public struct MonsterStartMoveTag : IComponentData
-    {
-    }
-
-    public struct MonsterStartDieTag : IComponentData
-    {
+        public EState Value;
+        public EState PrevValue;
     }
     
     public struct MonsterTarget : IComponentData
@@ -22,11 +31,6 @@ namespace Dots
         public float3 Value;
     }
  
-    public struct MonsterBorn : IComponentData
-    {
-        public float RiseSpeed;
-    }
-    
     public struct MonsterMove : IComponentData, IEnableableComponent
     {
         public float WalkSpeed;
@@ -37,5 +41,16 @@ namespace Dots
     {
         public float DelayTime;
         public float CurTime;
+    }
+    
+    public struct MonsterAttack : IComponentData, IEnableableComponent
+    {
+        public float Damage;
+        public float AttackInterval;
+        public float TimerValue;
+    }
+
+    public struct MonsterAttackTag : IComponentData
+    {
     }
 }

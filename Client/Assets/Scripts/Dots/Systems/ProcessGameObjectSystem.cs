@@ -8,6 +8,7 @@ namespace Dots
     [UpdateInGroup(typeof(InitializationSystemGroup))]
     public partial struct ProcessGameObjectSystem : ISystem
     {
+  
         public void OnCreate(ref SystemState state)
         {
         }
@@ -18,7 +19,7 @@ namespace Dots
 
         public void OnUpdate(ref SystemState state)
         {
-            /*var ecbBOS = SystemAPI.GetSingleton<BeginSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
+            var ecbBOS = SystemAPI.GetSingleton<BeginSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
 
             //Init: 找到所有附带GameObjectInit的Component进行初始化, 添加transform和animator
             foreach(var (pgo, transform,entity) in SystemAPI.Query<GameObjectInitTag, TransformAspect>().WithEntityAccess())
@@ -41,21 +42,24 @@ namespace Dots
                 goTransform.Transform.position = trans.Position;
                 goTransform.Transform.rotation = trans.Rotation;
             }
+            
+            //Animator Update
+            foreach (var (animator, stateAspect) in SystemAPI.Query<GameObjectAnimator, MonsterAspect>())
+            {
+                //Move
+                if (stateAspect.PrevState != stateAspect.CurState)
+                {
+                    animator.Animator.SetBool(MonsterAnimatorParam.IsMove, stateAspect.CurState == EState.Move);
+                }    
+            }
+            
+            //attack
+            foreach (var (animator, _, entity) in SystemAPI.Query<GameObjectAnimator, MonsterAttackTag>().WithEntityAccess())
+            {
+                ecbBOS.RemoveComponent<MonsterAttackTag>(entity);
+                animator.Animator.SetTrigger(MonsterAnimatorParam.Attack);
+            }
 
-            //Animator Walk
-            foreach (var (animator, tag, entity) in SystemAPI.Query<GameObjectAnimator, MonsterStartMoveTag>().WithEntityAccess())
-            {
-                ecbBOS.RemoveComponent<MonsterStartMoveTag>(entity);
-                animator.Animator.Play("Walk");
-            }
-            
-            foreach (var (animator, tag, entity) in SystemAPI.Query<GameObjectAnimator, MonsterStartDieTag>().WithEntityAccess())
-            {
-                ecbBOS.RemoveComponent<MonsterStartDieTag>(entity);
-                animator.Animator.Play("Die");
-            }
-            
-            
             //destroy GameObjectTransform
             foreach (var (goTransform, entity) in SystemAPI.Query<GameObjectTransform>().WithNone<LocalToWorld>().WithEntityAccess()) 
             {
@@ -65,7 +69,7 @@ namespace Dots
                 }
                 ecbBOS.RemoveComponent<GameObjectAnimator>(entity);
                 ecbBOS.RemoveComponent<GameObjectTransform>(entity);
-            }*/
+            }
         }
     }
 }

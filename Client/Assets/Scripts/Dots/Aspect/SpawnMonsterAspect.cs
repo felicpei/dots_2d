@@ -23,7 +23,7 @@ namespace Dots
             return new UniformScaleTransform
             {
                 Position = pos,
-                Rotation = DotsHelper.HeadingToTarget(pos, targetPosition),
+                Rotation = quaternion.identity,
                 Scale = 1,
             };
         }
@@ -45,8 +45,11 @@ namespace Dots
         //随机出生坐标
         private float3 GetBornPosition()
         {
-            var pos = GetRandomFloat3(_transform.Position, _spawnComponent.ValueRO.PosRange);
-            return pos;
+            var range = new float3(_spawnComponent.ValueRO.PosRange.x, _spawnComponent.ValueRO.PosRange.y, 0);
+            var minCorner = _transform.Position - range / 2f;
+            var maxCorner = _transform.Position + range / 2f;
+            var randomPos = _randomComponent.ValueRW.RandomFloat2.NextFloat3(minCorner, maxCorner);
+            return randomPos;
         }
 
         //随机下次刷新时间
@@ -60,14 +63,6 @@ namespace Dots
         {
             var randomScale = _randomComponent.ValueRW.RandomFloat.NextFloat(min, max);
             return randomScale;
-        }
-
-        private float3 GetRandomFloat3(float3 pos, float3 range)
-        {
-            var minCorner = pos - range / 2f;
-            var maxCorner = pos + range / 2f;
-            var randomPos = _randomComponent.ValueRW.RandomFloat2.NextFloat3(minCorner, maxCorner);
-            return randomPos;
         }
     }
 }
