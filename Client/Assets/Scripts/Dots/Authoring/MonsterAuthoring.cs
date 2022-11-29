@@ -7,7 +7,7 @@ namespace Dots
 {
     public class MonsterAuthoring : MonoBehaviour
     {
-        public GameObject Prefab;
+        //public GameObject Prefab;
         public float AttackRange;
         public float MoveSpeed;
         public float AttackInterval;

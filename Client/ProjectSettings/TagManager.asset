@@ -38,20 +38,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Ground
     uniqueID: 993514287
     locked: 0
   - name: Obstacle
     uniqueID: 2947689625
     locked: 0
-  - name: Monster
-    uniqueID: 599373221
-    locked: 0
-  - name: Character
-    uniqueID: 2173829655
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: UI_Splash
     uniqueID: 3911214973
