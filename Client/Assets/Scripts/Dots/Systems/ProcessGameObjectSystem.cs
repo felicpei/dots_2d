@@ -59,6 +59,13 @@ namespace Dots
                 ecbBOS.RemoveComponent<MonsterAttackTag>(entity);
                 animator.Animator.SetTrigger(MonsterAnimatorParam.Attack);
             }
+            
+            //die
+            foreach (var (animator, _, entity) in SystemAPI.Query<GameObjectAnimator, MonsterDieTag>().WithEntityAccess())
+            {
+                ecbBOS.RemoveComponent<MonsterDieTag>(entity);
+                animator.Animator.SetTrigger(MonsterAnimatorParam.Die);
+            }
 
             //destroy GameObjectTransform
             foreach (var (goTransform, entity) in SystemAPI.Query<GameObjectTransform>().WithNone<LocalToWorld>().WithEntityAccess()) 

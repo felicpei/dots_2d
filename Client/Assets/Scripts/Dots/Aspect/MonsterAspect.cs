@@ -66,6 +66,18 @@ namespace Dots
             ecb.AddComponent<MonsterAttackTag>(sortKey, Entity);
             
             //todo attack damage
+            _attackComponent.ValueRW.AttackCount += 1;
+
+            if (_attackComponent.ValueRW.AttackCount == 2)
+            {
+                EnterDie(ecb, sortKey);
+            }
+        }
+
+        public void EnterDie(EntityCommandBuffer.ParallelWriter ecb, int sortKey)
+        {
+            EnterState(EState.Die);  
+            ecb.AddComponent<MonsterDieTag>(sortKey, Entity);
         }
         
         public bool CheckDestroy(float deltaTime)

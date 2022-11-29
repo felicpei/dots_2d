@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4616019280345742795
 MonoBehaviour:
@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
   AttackRange: 1
-  RiseSpeed: 0.2
-  MoveSpeed: 0.2
+  MoveSpeed: 0.6
+  AttackInterval: 0
   Damage: 0.1

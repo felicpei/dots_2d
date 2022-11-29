@@ -16,8 +16,9 @@ namespace Dots
 
     public static class MonsterAnimatorParam
     {
-        public static readonly int IsMove = Animator.StringToHash("IsMove");
+        public static readonly int IsMove = Animator.StringToHash("InMove");
         public static readonly int Attack = Animator.StringToHash("Attack");
+        public static readonly int Die = Animator.StringToHash("Die");
     }
     
     public struct MonsterState : IComponentData
@@ -48,9 +49,14 @@ namespace Dots
         public float Damage;
         public float AttackInterval;
         public float TimerValue;
+        public int AttackCount;
     }
 
     public struct MonsterAttackTag : IComponentData
+    {
+    }
+    
+    public struct MonsterDieTag : IComponentData
     {
     }
 }
