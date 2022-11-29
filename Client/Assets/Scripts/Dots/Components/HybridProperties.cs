@@ -1,4 +1,4 @@
-using Unity.Entities;
+/*using Unity.Entities;
 using UnityEngine;
 
 namespace Dots
@@ -17,4 +17,4 @@ namespace Dots
     {
         public Animator Animator;
     }
-}
+}*/

@@ -37,11 +37,11 @@ namespace Dots
                     AttackInterval = authoring.AttackInterval
                 });
                 
-                //添加Prefab
+                /*//添加Prefab
                 AddComponentObject(new HybridInitTag
                 {
                     Prefab = authoring.Prefab
-                });
+                });*/
             }
         }
     }

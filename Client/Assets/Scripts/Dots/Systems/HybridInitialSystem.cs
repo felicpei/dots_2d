@@ -1,4 +1,4 @@
-using Unity.Burst;
+/*using Unity.Burst;
 using Unity.Entities;
 using Unity.Transforms;
 using UnityEngine;
@@ -70,11 +70,11 @@ namespace Dots
            {
                ecbBOS.RemoveComponent<MonsterDieTag>(entity);
                animator.Animator.SetTrigger(MonsterAnimatorParam.Die);
-           }*/
+           }#1#
 
            
           
         }
     }
     
-}
+}*/

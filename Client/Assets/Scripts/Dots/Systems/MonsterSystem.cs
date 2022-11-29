@@ -8,7 +8,7 @@ namespace Dots
 {
     [BurstCompile]
     [RequireMatchingQueriesForUpdate]
-    [UpdateAfter(typeof(SpawnMonsterSystem))]
+    [UpdateInGroup(typeof(SimulationSystemGroup))]
     public partial struct MonsterSystem : ISystem
     {
         [BurstCompile]
