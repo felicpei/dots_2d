@@ -13,7 +13,7 @@ namespace Dots
             public override void Bake(PlayerAuthoring authoring)
             {
                 //添加Prefab
-                AddComponentObject(new GameObjectInitTag
+                AddComponentObject(new HybridInitTag
                 {
                     Prefab = authoring.Prefab
                 });

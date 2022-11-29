@@ -14,6 +14,9 @@ namespace Script
         private string m_memory;
         private string m_resolution;
 
+        public static int MonsterCount;
+        private string m_strMonsterCount;
+
         private void Awake()
         {
             
@@ -36,6 +39,7 @@ namespace Script
                 m_fpsStr = "Fps:" +  Mathf.Round(m_FPS);;
                 m_memory = "Memory:" + Mathf.RoundToInt(UnityEngine.Profiling.Profiler.GetTotalAllocatedMemoryLong() / 1000000f) + "M";
                 m_resolution = "当前分辨率:" + Screen.width + "*" + Screen.height;
+                m_strMonsterCount = "怪物数量:" + MonsterCount;
             }
         }
 
@@ -54,8 +58,10 @@ namespace Script
             GUIHelper.GUIString(m_memory, x, y, w, h, EGUIStyle.Red);
             y = y + split;
 
-
             GUIHelper.GUIString(m_resolution, x, y, w, h, EGUIStyle.Red);
+            y = y + split;
+            
+            GUIHelper.GUIString(m_strMonsterCount, x, y, w, h, EGUIStyle.Red);
             y = y + split;
             
         }

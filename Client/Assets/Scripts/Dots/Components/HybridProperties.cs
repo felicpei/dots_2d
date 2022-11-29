@@ -3,17 +3,17 @@ using UnityEngine;
 
 namespace Dots
 {
-    public class GameObjectInitTag : IComponentData
+    public class HybridInitTag : IComponentData
     {
         public GameObject Prefab;
     }
     
-    public class GameObjectTransform : ICleanupComponentData
+    public class HybridTransform : IComponentData
     {
         public Transform Transform;
     }
 
-    public class GameObjectAnimator : IComponentData
+    public class HybridAnimator : IComponentData
     {
         public Animator Animator;
     }

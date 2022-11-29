@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Dots
 {
-    public class EntityGameObjectAuthoring : MonoBehaviour
+    public class HybridAuthoring : MonoBehaviour
     {
         private Entity _entity;
         private World _world;

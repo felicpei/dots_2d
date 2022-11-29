@@ -71,9 +71,9 @@ namespace Dots
                 
                 //设置transform
                 var transform = aspect.GetSpawnPoint(TargetPos);
-                ECB.SetComponent(monster, new LocalToWorldTransform
+                ECB.SetComponent(monster, new Translation
                 {
-                    Value = transform
+                    Value = transform.Position
                 });
                 
                 ECB.SetComponent(monster, new MonsterState

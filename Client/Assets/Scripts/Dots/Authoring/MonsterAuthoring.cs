@@ -38,7 +38,7 @@ namespace Dots
                 });
                 
                 //添加Prefab
-                AddComponentObject(new GameObjectInitTag
+                AddComponentObject(new HybridInitTag
                 {
                     Prefab = authoring.Prefab
                 });
