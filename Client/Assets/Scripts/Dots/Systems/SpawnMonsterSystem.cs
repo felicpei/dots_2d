@@ -1,5 +1,6 @@
 using ecs;
 using Unity.Burst;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -13,12 +14,18 @@ namespace Dots
     [UpdateInGroup(typeof(InitializationSystemGroup))]
     public partial struct SpawnMonsterSystem : ISystem
     {
+        private EntityQuery _query;
+        
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
             //等待SpawnTimer
             state.RequireForUpdate<SpawnMonsterTimer>();
             state.RequireForUpdate<Destination>();
+            
+            var queryBuilder = new EntityQueryBuilder(Allocator.Temp);
+            queryBuilder.WithAll<MonsterState>();
+            _query = state.GetEntityQuery(queryBuilder);
         }
 
         [BurstCompile]
@@ -28,21 +35,25 @@ namespace Dots
         
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
-        {
-            //执行job
-            var deltaTime = SystemAPI.Time.DeltaTime;
-            var ecbSingleton = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
-
-            var destination = SystemAPI.GetSingletonEntity<Destination>();
-            var destinationAspect = SystemAPI.GetAspectRO<DestinationAspect>(destination);
-
-            var targetPos = destinationAspect.Position;
-            new MonsterSpawnJob
+        { 
+            //同屏最多2000个怪
+            if (_query.CalculateEntityCount() <= 2000)
             {
-                DeltaTime = deltaTime,
-                TargetPos = targetPos,
-                ECB = ecbSingleton
-            }.Run();
+                //执行job
+                var deltaTime = SystemAPI.Time.DeltaTime;
+                var ecbSingleton = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
+
+                var destination = SystemAPI.GetSingletonEntity<Destination>();
+                var destinationAspect = SystemAPI.GetAspectRO<DestinationAspect>(destination);
+
+                var targetPos = destinationAspect.Position;
+                new MonsterSpawnJob
+                {
+                    DeltaTime = deltaTime,
+                    TargetPos = targetPos,
+                    ECB = ecbSingleton,
+                }.Run();
+            }
         }
     }
     
@@ -74,6 +85,11 @@ namespace Dots
                 ECB.SetComponent(monster, new Translation
                 {
                     Value = transform.Position
+                });
+                
+                ECB.SetComponent(monster,new Rotation
+                {
+                    Value = transform.Rotation
                 });
                 
                 ECB.SetComponent(monster, new MonsterState
