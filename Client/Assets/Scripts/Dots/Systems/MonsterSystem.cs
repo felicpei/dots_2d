@@ -108,6 +108,8 @@ namespace Dots
                         {
                             aspect.AttackTimer = aspect.AttackInterval;
                             aspect.Attack(ECB, sortKey);
+                            
+                            
                         }
                         else
                         {

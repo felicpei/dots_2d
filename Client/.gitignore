@@ -4,13 +4,9 @@
 .vs
 .idea
 Library
-android
-Build
 Logs
 obj
 Temp
-build
-savedata
 
 Assets/StreamingAssets
 Assets/StreamingAssets.meta

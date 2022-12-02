@@ -13,13 +13,6 @@ namespace Dots
         Attack = 4,
         Die = 5,
     }
-
-    public static class MonsterAnimatorParam
-    {
-        public static readonly int IsMove = Animator.StringToHash("InMove");
-        public static readonly int Attack = Animator.StringToHash("Attack");
-        public static readonly int Die = Animator.StringToHash("Die");
-    }
     
     public struct MonsterState : IComponentData
     {
