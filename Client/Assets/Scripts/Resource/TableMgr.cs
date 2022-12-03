@@ -17,6 +17,7 @@ public static class TableMgr
     {
         _(typeof(SoundDeploy), "Sound");
         _(typeof(SceneDeploy), "Scene");
+        _(typeof(MonsterDeploy), "Monster");
     }
     
     private class RandomIdData

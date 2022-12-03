@@ -59,7 +59,7 @@ public class XResource : MonoBehaviour
         _inst.StartCoroutine(LoadObjectAsync(resource, callBack));
     }
 
-    private static IEnumerator LoadObjectAsync(string resource, Action<Object> callBack)
+    public static IEnumerator LoadObjectAsync(string resource, Action<Object> callBack)
     {
         var async = new AsyncResource();
         yield return XAssetBundle.LoadAssetBundleObject(resource, async);

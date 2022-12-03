@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -174,7 +175,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &81790317
 GameObject:
@@ -205,7 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -227,7 +229,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &89680639
 GameObject:
@@ -258,7 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -280,7 +283,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &117457852
 GameObject:
@@ -312,6 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -333,7 +337,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &212995662
 GameObject:
@@ -364,7 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -386,7 +391,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 67
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &217315017
 GameObject:
@@ -417,7 +422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -439,7 +445,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &228133067
 GameObject:
@@ -470,7 +476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -492,7 +499,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &252860100
 GameObject:
@@ -523,7 +530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -545,7 +553,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 58
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &263674678
 GameObject:
@@ -576,7 +584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -598,7 +607,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &336579123
 GameObject:
@@ -629,7 +638,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -651,7 +661,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &368569736
 GameObject:
@@ -682,7 +692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -704,7 +715,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &432907321
 GameObject:
@@ -736,6 +747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -757,7 +769,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &433964350
 GameObject:
@@ -788,7 +800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -810,7 +823,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &437787846
 GameObject:
@@ -841,7 +854,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -863,7 +877,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &449814407
 GameObject:
@@ -894,7 +908,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -916,7 +931,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &480894573
 GameObject:
@@ -947,7 +962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -969,7 +985,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 66
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508555791
 GameObject:
@@ -1000,7 +1016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1022,7 +1039,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &513327805
 GameObject:
@@ -1053,7 +1070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1075,7 +1093,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &516199477
 GameObject:
@@ -1106,7 +1124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1128,7 +1147,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522832380
 GameObject:
@@ -1159,7 +1178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1181,7 +1201,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 69
+  m_RootOrder: 70
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &595193391
 GameObject:
@@ -1212,7 +1232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1234,7 +1255,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 62
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608564014
 GameObject:
@@ -1265,7 +1286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1287,7 +1309,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &611161978
 GameObject:
@@ -1318,7 +1340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1340,7 +1363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 71
+  m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &635208186
 GameObject:
@@ -1372,6 +1395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1393,7 +1417,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638784603
 GameObject:
@@ -1424,7 +1448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1446,7 +1471,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &639592255
 GameObject:
@@ -1477,7 +1502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1499,7 +1525,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670504341
 GameObject:
@@ -1531,6 +1557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1552,7 +1579,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &674399217
 GameObject:
@@ -1584,6 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1605,7 +1633,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &751959319
 GameObject:
@@ -1636,7 +1664,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1658,7 +1687,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &766126312
 GameObject:
@@ -1690,6 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1711,7 +1741,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808580950
 GameObject:
@@ -1742,7 +1772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1764,7 +1795,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &862129364
 GameObject:
@@ -1795,7 +1826,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1817,7 +1849,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &862778742
 GameObject:
@@ -1848,7 +1880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1870,7 +1903,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &897011112
 GameObject:
@@ -1903,7 +1936,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &897011115
 MonoBehaviour:
@@ -1960,6 +1993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -1981,7 +2015,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &947426464
 GameObject:
@@ -2013,6 +2047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2034,7 +2069,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1071574963
 GameObject:
@@ -2065,7 +2100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2087,7 +2123,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 50
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1072232102
 GameObject:
@@ -2118,7 +2154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2140,7 +2177,51 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1113758244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113758246}
+  - component: {fileID: 1113758245}
+  m_Layer: 0
+  m_Name: GlobalCache
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1113758245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113758244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724b6ef53141464e9eb2d7d2c2dbaa90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1113758246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113758244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1132341787
 GameObject:
@@ -2171,7 +2252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2193,7 +2275,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1143769078
 GameObject:
@@ -2224,7 +2306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2246,7 +2329,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 68
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197246233
 GameObject:
@@ -2277,7 +2360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2299,7 +2383,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 47
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237505587
 GameObject:
@@ -2330,7 +2414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2352,7 +2437,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302233645
 GameObject:
@@ -2383,7 +2468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2405,7 +2491,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 65
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304265338
 GameObject:
@@ -2436,7 +2522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2458,7 +2545,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1368089705
 GameObject:
@@ -2490,6 +2577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2511,7 +2599,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1368928895
 GameObject:
@@ -2542,7 +2630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2564,7 +2653,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 70
+  m_RootOrder: 71
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1383096804
 GameObject:
@@ -2595,7 +2684,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2617,7 +2707,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 48
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399820205
 GameObject:
@@ -2649,6 +2739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2670,7 +2761,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1407175210
 GameObject:
@@ -2701,7 +2792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2723,7 +2815,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431186260
 GameObject:
@@ -2754,7 +2846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2776,7 +2869,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1470090453
 GameObject:
@@ -2808,6 +2901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2829,7 +2923,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1475994108
 GameObject:
@@ -2860,7 +2954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2882,7 +2977,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1498218689
 GameObject:
@@ -2914,6 +3009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2935,7 +3031,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1668727827
 GameObject:
@@ -2966,7 +3062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -2988,7 +3085,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 59
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1723681294
 GameObject:
@@ -3019,7 +3116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3041,7 +3139,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1725960439
 GameObject:
@@ -3072,7 +3170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3094,7 +3193,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1726317504
 GameObject:
@@ -3126,6 +3225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3147,7 +3247,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1734826882
 GameObject:
@@ -3178,7 +3278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3200,7 +3301,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747129407
 GameObject:
@@ -3232,7 +3333,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1747129409
 MonoBehaviour:
@@ -3246,7 +3347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3284,7 +3386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3306,7 +3409,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 57
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1812755117
 GameObject:
@@ -3337,7 +3440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3359,7 +3463,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831714655
 GameObject:
@@ -3390,7 +3494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3412,7 +3517,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 64
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1883599740
 GameObject:
@@ -3443,7 +3548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3465,7 +3571,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1890942086
 GameObject:
@@ -3496,7 +3602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3518,7 +3625,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1911622858
 GameObject:
@@ -3549,7 +3656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3571,7 +3679,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 63
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1987449626
 GameObject:
@@ -3602,7 +3710,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3624,7 +3733,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1988692651
 GameObject:
@@ -3655,7 +3764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3677,7 +3787,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2015507308
 GameObject:
@@ -3709,6 +3819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3730,7 +3841,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032233526
 GameObject:
@@ -3761,7 +3872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3783,7 +3895,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2077871769
 GameObject:
@@ -3814,7 +3926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1680648021268592672, guid: 4c136e1b1c3bdb247a81064ba577f98e, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 1
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3836,7 +3949,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086187737
 GameObject:
@@ -3867,7 +3980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 8443214913328374866, guid: cff6b5fa689bf364cb9796de4cb98002, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 3
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3889,7 +4003,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2101561038
 GameObject:
@@ -3921,6 +4035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 2
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3942,7 +4057,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2126952206
 GameObject:
@@ -3973,7 +4088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25295c07014cc383f9d03d628b1d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 1524940193621996214, guid: 911f6e6a343438843b0c234c39646530, type: 3}
+  MonsterPrefab: {fileID: 7930436996982351016, guid: 7de84f7a466246c47ae60c3316029092, type: 3}
+  MonsterId: 4
   RandomSeed: 123
   PosRange:
     x: 3
@@ -3995,5 +4111,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

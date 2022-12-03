@@ -14,18 +14,12 @@ namespace Dots
     [UpdateInGroup(typeof(InitializationSystemGroup))]
     public partial struct SpawnMonsterSystem : ISystem
     {
-        private EntityQuery _query;
-        
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
             //等待SpawnTimer
             state.RequireForUpdate<SpawnMonsterTimer>();
-            state.RequireForUpdate<Destination>();
-            
-            var queryBuilder = new EntityQueryBuilder(Allocator.Temp);
-            queryBuilder.WithAll<MonsterState>();
-            _query = state.GetEntityQuery(queryBuilder);
+            state.RequireForUpdate<DestinationProperties>();
         }
 
         [BurstCompile]
@@ -37,13 +31,14 @@ namespace Dots
         public void OnUpdate(ref SystemState state)
         { 
             //同屏最多2000个怪
-            if (_query.CalculateEntityCount() <= 2000)
+            var query = state.GetEntityQuery(ComponentType.ReadOnly<MonsterProperties>());
+            if (query.CalculateEntityCount() <= 2000)
             {
                 //执行job
                 var deltaTime = SystemAPI.Time.DeltaTime;
                 var ecbSingleton = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
 
-                var destination = SystemAPI.GetSingletonEntity<Destination>();
+                var destination = SystemAPI.GetSingletonEntity<DestinationProperties>();
                 var destinationAspect = SystemAPI.GetAspectRO<DestinationAspect>(destination);
 
                 var targetPos = destinationAspect.Position;
@@ -81,7 +76,7 @@ namespace Dots
                 var monster = ECB.Instantiate(aspect.MonsterPrefab);
                 
                 //设置transform
-                var transform = aspect.GetSpawnPoint(TargetPos);
+                var transform = aspect.GetSpawnPoint();
                 ECB.SetComponent(monster, new Translation
                 {
                     Value = transform.Position
@@ -91,11 +86,14 @@ namespace Dots
                 {
                     Value = transform.Rotation
                 });
-                
-                ECB.SetComponent(monster, new MonsterState
+   
+                //set monsterId
+                ECB.SetComponent(monster, new MonsterProperties
                 {
-                    Value = EState.Init
+                    MonsterId = aspect.MonsterId
                 });
+                
+                ECB.AddComponent<MonsterInitTag>(monster);
                 
                 aspect.CurCount++;
             }

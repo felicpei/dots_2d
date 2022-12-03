@@ -71,6 +71,9 @@ public class SceneLoader
 
     private static IEnumerator LoadImpl(SceneDeploy sceneDeploy, Action<SceneBase> finishAction)
     {
+        //加载场景前先预加载
+        yield return MissionCache.DoPreload(sceneDeploy);
+        
         var scenePath = sceneDeploy.path;
         if (string.IsNullOrEmpty(scenePath))
         {

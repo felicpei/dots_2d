@@ -6,6 +6,7 @@ namespace Dots
     public struct SpawnMonsterProperties : IComponentData
     {
         public Entity Prefab;
+        public int MonsterId;
         public float2 PosRange;
         public float2 Interval;
         public int TotalCount;

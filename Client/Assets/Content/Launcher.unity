@@ -1072,6 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImageDefault: {fileID: 2100000, guid: d78275359fe7dc244bc106802fd136c4, type: 2}
   ImageGray: {fileID: 2100000, guid: 53ba1bab2d092954896be0389146e82f, type: 2}
+  Quad: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2140662617
 GameObject:
   m_ObjectHideFlags: 0
