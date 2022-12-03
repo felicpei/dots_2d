@@ -37,6 +37,7 @@ namespace Dots
                     AttackRange = monsterDeploy.AttackRange,
                     WalkSpeed = monsterDeploy.MoveSpeed,
                     AttackInterval = monsterDeploy.AttackInterval,
+                    AttackContTime = monsterDeploy.AttackContTime,
                     Damage = monsterDeploy.Damage,
                     DelayDestroyTime = monsterDeploy.DelayDestroyTime
                 });

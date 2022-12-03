@@ -14,12 +14,15 @@ namespace Dots
     [UpdateInGroup(typeof(InitializationSystemGroup))]
     public partial struct SpawnMonsterSystem : ISystem
     {
+        private EntityQuery _query;
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
             //等待SpawnTimer
             state.RequireForUpdate<SpawnMonsterTimer>();
             state.RequireForUpdate<DestinationProperties>();
+            
+            _query = state.GetEntityQuery(ComponentType.ReadOnly<MonsterProperties>());
         }
 
         [BurstCompile]
@@ -31,8 +34,7 @@ namespace Dots
         public void OnUpdate(ref SystemState state)
         { 
             //同屏最多2000个怪
-            var query = state.GetEntityQuery(ComponentType.ReadOnly<MonsterProperties>());
-            if (query.CalculateEntityCount() <= 2000)
+            if (_query.CalculateEntityCount() <= 2000)
             {
                 //执行job
                 var deltaTime = SystemAPI.Time.DeltaTime;

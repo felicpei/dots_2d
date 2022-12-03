@@ -17,6 +17,7 @@ public class MonsterDeploy : BaseDeploy
 {
     public int id;
     public string name;
+    public float AttackContTime;
     public float AttackRange;
     public float AttackInterval;
     public float MoveSpeed;

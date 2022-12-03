@@ -98,15 +98,27 @@ namespace Dots
                         }
                         else
                         {
-                            //判断攻击时间
-                            if (aspect.AttackTimer <= 0)
+                            //判断攻击间隔
+                            if (aspect.AttackIntervalTimer <= 0)
                             {
-                                aspect.AttackTimer = aspect.AttackInterval;
+                                aspect.AttackIntervalTimer = aspect.AttackInterval;
+                                aspect.AttackActionTimer = aspect.AttackContTime;
                                 aspect.Attack(ECB, sortKey);
                             }
                             else
                             {
-                                aspect.AttackTimer -= DeltaTime;
+                                aspect.AttackIntervalTimer -= DeltaTime;
+                                
+                                //这里要判断攻击动作时间，动作到时间，切换会idle动作
+                                if (aspect.AttackActionTimer > 0)
+                                {
+                                    aspect.AttackActionTimer -= DeltaTime;
+                                }
+                                else
+                                {
+                                    aspect.AttackActionTimer = 10000000;
+                                    ECB.AddComponent<MonsterIdleTag>(sortKey, aspect.Entity);
+                                }
                             }
                         }
 

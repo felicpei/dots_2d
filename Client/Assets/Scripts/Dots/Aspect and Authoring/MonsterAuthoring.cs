@@ -42,14 +42,21 @@ namespace Dots
         public float AttackRange => _properties.ValueRO.AttackRange;
         public float3 Target => _targetComponent.ValueRO.Value;
         
-        public float AttackTimer
+        public float AttackIntervalTimer
         {
-            set => _attackComponent.ValueRW.TimerValue = value;
-            get => _attackComponent.ValueRO.TimerValue;
+            set => _attackComponent.ValueRW.IntervalTimer = value;
+            get => _attackComponent.ValueRO.IntervalTimer;
+        }
+        
+        public float AttackActionTimer
+        {
+            set => _attackComponent.ValueRW.ActionTimer = value;
+            get => _attackComponent.ValueRO.ActionTimer;
         }
 
+
         public float AttackInterval => _properties.ValueRO.AttackInterval;
-        
+        public float AttackContTime => _properties.ValueRO.AttackContTime;
         
         public void SetTarget(float3 target)
         {
@@ -78,17 +85,16 @@ namespace Dots
             _state.ValueRW.PrevValue = _state.ValueRW.Value;
             _state.ValueRW.Value = state;
 
-            if (CurState == EState.Idle)
-            {
-                ecb.AddComponent<MonsterIdleTag>(sortKey, Entity);
-            }
-            else if(CurState == EState.Move)
+            if(CurState == EState.Move)
             {
                 ecb.AddComponent<MonsterMoveTag>(sortKey, Entity);
             }
-            /*ecb.SetComponentEnabled<MonsterMove>(sortKey, Entity, state == EState.Move);
+            
+            /*
+            ecb.SetComponentEnabled<MonsterMove>(sortKey, Entity, state == EState.Move);
             ecb.SetComponentEnabled<MonsterAttack>(sortKey, Entity, state == EState.Attack);
-            ecb.SetComponentEnabled<MonsterDie>(sortKey, Entity, state == EState.Die);*/
+            ecb.SetComponentEnabled<MonsterDie>(sortKey, Entity, state == EState.Die);
+            */
         }
 
         public void Attack(EntityCommandBuffer.ParallelWriter ecb, int sortKey)
@@ -98,7 +104,7 @@ namespace Dots
             //todo attack damage
             _attackComponent.ValueRW.AttackCount += 1;
 
-            if (_attackComponent.ValueRW.AttackCount == 2)
+            if (_attackComponent.ValueRW.AttackCount == 3)
             {
                 EnterDie(ecb, sortKey);
             }

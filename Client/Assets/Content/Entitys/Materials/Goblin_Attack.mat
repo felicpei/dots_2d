@@ -67,7 +67,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Fps: 30
+    - _Fps: 15
     - _Height: 1
     - _QueueControl: 0
     - _QueueOffset: 0

@@ -26,6 +26,7 @@ namespace Dots
         public float AttackRange;
         public float DelayDestroyTime;
         public float Damage;
+        public float AttackContTime;
         public float AttackInterval;
     }
     
@@ -53,7 +54,8 @@ namespace Dots
     
     public struct MonsterAttack : IComponentData, IEnableableComponent
     {
-        public float TimerValue;
+        public float ActionTimer;
+        public float IntervalTimer;
         public int AttackCount;
     }
 
