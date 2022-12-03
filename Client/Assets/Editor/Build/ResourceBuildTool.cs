@@ -70,6 +70,7 @@ public static class ResourceBuildTool
         
         //强制打包的文件夹
         RetainPaths.Clear();
+        RetainPaths.Add("Entities");
         
         //场景文件夹
         ScenePaths.Clear();

@@ -1,7 +1,7 @@
 #monster			(1/fps*动画帧数）				(1/fps*动画帧数）	#材质				
 #			攻击动作时间									
 id	name	AttackRange	AttackContTime	AttackInterval	MoveSpeed	Damage	DelayDestroyTime	Ani_Idle	Ani_Move	Ani_Attack	Ani_Die	Ani_Hit
-1	Flying eye	2	0.533	0.2	0.7	2	0.4	Entitys/Materials/FlyingEye_Idle.mat	Entitys/Materials/FlyingEye_Run.mat	Entitys/Materials/FlyingEye_Attack.mat	Entitys/Materials/FlyingEye_Die.mat	Entitys/Materials/FlyingEye_Hit.mat
-2	Goblin	1.5	0.533	0.3	0.5	2	0.4	Entitys/Materials/Goblin_Idle.mat	Entitys/Materials/Goblin_Run.mat	Entitys/Materials/Goblin_Attack.mat	Entitys/Materials/Goblin_Die.mat	Entitys/Materials/Goblin_Hit.mat
-3	Mushroom	1.8	0.533	0.2	0.9	2	0.4	Entitys/Materials/Mushroom_Idle.mat	Entitys/Materials/Mushroom_Run.mat	Entitys/Materials/Mushroom_Attack.mat	Entitys/Materials/Mushroom_Die.mat	Entitys/Materials/Mushroom_Hit.mat
-4	Skeleton	2	0.533	0.3	0.6	2	0.4	Entitys/Materials/Skeleton_Idle.mat	Entitys/Materials/Skeleton_Run.mat	Entitys/Materials/Skeleton_Attack.mat	Entitys/Materials/Skeleton_Die.mat	Entitys/Materials/Skeleton_Hit.mat
+1	Flying eye	2	0.533	1	0.7	2	0.4	Entities/Materials/FlyingEye_Idle.mat	Entities/Materials/FlyingEye_Run.mat	Entities/Materials/FlyingEye_Attack.mat	Entities/Materials/FlyingEye_Die.mat	Entities/Materials/FlyingEye_Hit.mat
+2	Goblin	1.5	0.533	0.75	0.5	2	0.4	Entities/Materials/Goblin_Idle.mat	Entities/Materials/Goblin_Run.mat	Entities/Materials/Goblin_Attack.mat	Entities/Materials/Goblin_Die.mat	Entities/Materials/Goblin_Hit.mat
+3	Mushroom	1.8	0.533	0.8	0.9	2	0.4	Entities/Materials/Mushroom_Idle.mat	Entities/Materials/Mushroom_Run.mat	Entities/Materials/Mushroom_Attack.mat	Entities/Materials/Mushroom_Die.mat	Entities/Materials/Mushroom_Hit.mat
+4	Skeleton	2	0.533	1	0.6	2	0.4	Entities/Materials/Skeleton_Idle.mat	Entities/Materials/Skeleton_Run.mat	Entities/Materials/Skeleton_Attack.mat	Entities/Materials/Skeleton_Die.mat	Entities/Materials/Skeleton_Hit.mat
