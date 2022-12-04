@@ -5,6 +5,22 @@ using UnityEngine;
 
 namespace Dots
 {
+    public class VFXAuthoring : MonoBehaviour
+    {
+        public GameObject Prefab;
+
+        public class VFXAuthoringBaker : Baker<VFXAuthoring>
+        {
+            public override void Bake(VFXAuthoring authroing)
+            {
+               AddComponentObject(new HybridInitTag
+               {
+                   Prefab = authroing.Prefab
+               });
+            }
+        }
+    }
+    
     public readonly partial struct VFXAspect : IAspect
     {
         public readonly Entity Entity;

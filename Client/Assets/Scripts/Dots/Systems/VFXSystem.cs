@@ -27,7 +27,6 @@ namespace Dots
         public void OnUpdate(ref SystemState state)
         {
             var ecbSingleton = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
-            
             var vfxList = SystemAPI.GetSingletonBuffer<VFXData>();
             
             //Play ParticleSystem

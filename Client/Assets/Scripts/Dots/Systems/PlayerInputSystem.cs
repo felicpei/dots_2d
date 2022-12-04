@@ -27,11 +27,10 @@ namespace Dots
             var inputEntity = SystemAPI.GetSingletonEntity<InputProperties>();
             var inputAspect = SystemAPI.GetAspectRW<InputAspect>(inputEntity);
             
-#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
-            if (Input.touchCount > 0)
+#if (UNITY_ANDROID || UNITY_IOS)&& !UNITY_EDITOR
+            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended)
             {
-                var useTouch = Input.touches[0];
-                var touchPos = useTouch.position;
+                var touchPos = Input.touches[0].position;
 #else
             //鼠标点击以后，为每个cube附加一个MoveComponent，里面附带终点坐标
             if (Input.GetMouseButtonDown(MouseButton.Left))

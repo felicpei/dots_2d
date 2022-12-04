@@ -4865,6 +4865,7 @@ GameObject:
   - component: {fileID: 198591319186534902}
   - component: {fileID: 199362430287266510}
   - component: {fileID: 114199158117713174}
+  - component: {fileID: 3998197657770366964}
   m_Layer: 0
   m_Name: CFXM_Enemy_Explosion
   m_TagString: FxTemporaire
@@ -9596,6 +9597,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &3998197657770366964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577302119073800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc22e3a7e57c4a3cae3ffa1497822d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1577302119073800}
 --- !u!1 &1740291751772896
 GameObject:
   m_ObjectHideFlags: 0
