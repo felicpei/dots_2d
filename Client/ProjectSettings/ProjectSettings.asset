@@ -744,8 +744,14 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
-  additionalCompilerArguments: {}
+  scriptingDefineSymbols:
+    Android: HYBRID_ENTITIES_CAMERA_CONVERSION
+    Standalone: HYBRID_ENTITIES_CAMERA_CONVERSION
+    WebGL: HYBRID_ENTITIES_CAMERA_CONVERSION
+    iPhone: 
+  additionalCompilerArguments:
+    Android: []
+    WebGL: []
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
@@ -759,7 +765,7 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 1
   useDeterministicCompilation: 1
-  selectedPlatform: 2
+  selectedPlatform: 4
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1

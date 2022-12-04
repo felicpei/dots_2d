@@ -3076,8 +3076,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Effects:
-  - {fileID: 6074916938089902614, guid: 2f66898fe94365a478ea94c6f7725e93, type: 3}
-  - {fileID: 6074916938089902614, guid: d8a8ca7396220f349920ac5a94ce9d99, type: 3}
+  - {fileID: 100010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+  - {fileID: 1778400382004266, guid: 35739ea6b60c29848a057ac8c7774830, type: 3}
 --- !u!4 &1635283824
 Transform:
   m_ObjectHideFlags: 0

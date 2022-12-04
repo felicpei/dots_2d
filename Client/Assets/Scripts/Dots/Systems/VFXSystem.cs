@@ -48,7 +48,7 @@ namespace Dots
                     DestroyTime = 1f, //1秒后destroy
                 });
             }
-
+      
             var deltaTime = SystemAPI.Time.DeltaTime;
             //check destroy
             new VFXDestroyJob
