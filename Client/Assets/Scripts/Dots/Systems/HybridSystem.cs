@@ -21,17 +21,25 @@ namespace Dots
             var ecbBOS = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
 
             //Init: 找到所有附带GameObjectInit的Component进行初始化, 添加transform和animator
-            foreach(var (pgo, transform, entity) in SystemAPI.Query<HybridInitTag, TransformAspect>().WithEntityAccess())
+            var count = 0;
+            foreach(var (tag, transform, entity) in SystemAPI.Query<HybridInitTag, TransformAspect>().WithEntityAccess())
             {
                 ecbBOS.RemoveComponent<HybridInitTag>(entity);
                 
-                var go = UnityEngine.Object.Instantiate(pgo.Prefab);
+                var go = UnityEngine.Object.Instantiate(tag.Prefab);
                 go.AddComponent<HybridAuthoring>().AssignEntity(entity, state.World);
 
+                
                 var goTransform = new HybridTransform { Transform = go.transform };
                 goTransform.Transform.position = transform.Position;
-                goTransform.Transform.rotation = transform.Rotation;
+                //goTransform.Transform.rotation = transform.Rotation;
                 ecbBOS.AddComponent(entity, goTransform);
+
+                count++;
+                if (count >= 5)
+                {
+                    break;
+                }
             }
         
             //暂时只有特效用，不用update更新

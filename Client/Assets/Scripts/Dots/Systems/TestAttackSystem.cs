@@ -89,7 +89,7 @@ namespace Dots.Components
             [BurstCompile]
             private void Execute(MonsterAspect aspect)
             {
-                var force = math.normalize( aspect.Position - Pos) * 200f;
+                var force = math.normalize( aspect.Position - Pos) * 150f;
                 aspect.AddForce(force);
             }
         }
