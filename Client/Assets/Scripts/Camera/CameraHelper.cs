@@ -30,11 +30,11 @@ public static class CameraHelper
         
     }
 
-    public static Vector3 GetMouseWorldPos(float addDistance, Vector3 touchPos)
+    public static Vector3 GetMouseWorldPos(Vector3 touchPos)
     {
         var transform = Camera.transform;
         var targetPos = transform.position;
-        targetPos += transform.forward * addDistance;
+        targetPos += transform.forward * Camera.orthographicSize;
         
         var screenPoint = Camera.WorldToScreenPoint(targetPos);
         var mousePos = touchPos;

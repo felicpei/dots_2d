@@ -3,32 +3,35 @@ using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Rendering;
+using UnityEngine;
 
 namespace Dots
 {
     [RequireMatchingQueriesForUpdate]
     [UpdateInGroup(typeof(InitializationSystemGroup))]
-    public  partial struct MonsterInitialSystem : ISystem
+    public partial struct MonsterInitialSystem : ISystem
     {
         public void OnCreate(ref SystemState state)
         {
+            //必须是mission
+            state.RequireForUpdate<MissionProperties>();
             state.RequireForUpdate<MonsterMaterialsCache>();
         }
 
         public void OnDestroy(ref SystemState state)
         {
-        } 
+        }
 
         public void OnUpdate(ref SystemState state)
         {
             var globalCache = SystemAPI.GetSingletonEntity<MonsterMaterialsCache>();
             var globalAspect = SystemAPI.GetAspectRW<GlobalCacheAspect>(globalCache);
-            
+
             var ecb = new EntityCommandBuffer(Allocator.Temp);
             foreach (var monster in SystemAPI.Query<MonsterAspect>().WithAll<MonsterInitTag>())
             {
                 ecb.RemoveComponent<MonsterInitTag>(monster.Entity);
-                
+
                 //set monster properties
                 var monsterDeploy = TableMgr.GetDeploy<MonsterDeploy>(monster.MonsterId);
                 ecb.SetComponent(monster.Entity, new MonsterProperties
@@ -42,12 +45,13 @@ namespace Dots
                     DelayDestroyTime = monsterDeploy.DelayDestroyTime
                 });
 
+
                 //进 idle state
                 ecb.SetComponent(monster.Entity, new MonsterState
                 {
                     Value = EState.Idle
                 });
-                
+
                 //set to idle animation
                 ecb.SetComponent(monster.Entity, new MaterialMeshInfo
                 {

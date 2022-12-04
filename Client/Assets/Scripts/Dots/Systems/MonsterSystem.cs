@@ -16,7 +16,8 @@ namespace Dots
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
-            state.RequireForUpdate<DestinationProperties>();
+            //必须是mission
+            state.RequireForUpdate<MissionProperties>();
         }
 
         [BurstCompile] 
@@ -28,7 +29,7 @@ namespace Dots
         public void OnUpdate(ref SystemState state)
         {
             var deltaTime = SystemAPI.Time.DeltaTime;
-            var ecbSingleton = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>();
+            var ecbSingleton = SystemAPI.GetSingleton<BeginSimulationEntityCommandBufferSystem.Singleton>();
 
             //Update Target
             var destination = SystemAPI.GetSingletonEntity<DestinationProperties>();

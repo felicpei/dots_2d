@@ -8,15 +8,14 @@ using UnityEngine.Rendering;
 
 namespace Dots
 {
+    [RequireMatchingQueriesForUpdate]
     [UpdateInGroup(typeof(InitializationSystemGroup))]
     public partial struct GlobalCacheSystem : ISystem
     {
-        private EntityQuery _query;
         public void OnCreate(ref SystemState state)
         {
-            var queryBuilder = new EntityQueryBuilder(Allocator.Temp);
-            queryBuilder.WithAll<GlobalInitTag>();
-            _query = state.GetEntityQuery(queryBuilder);
+            //必须是mission
+            state.RequireForUpdate<MissionProperties>();
         }
 
         public void OnDestroy(ref SystemState state)
@@ -25,9 +24,9 @@ namespace Dots
 
         public void OnUpdate(ref SystemState state)
         {
-            if (!_query.IsEmpty)
+            if (!SystemAPI.HasSingleton<MonsterMaterialsCache>())
             {
-                var globalEntity = SystemAPI.GetSingletonEntity<GlobalInitTag>();
+                var cacheEntity = state.EntityManager.CreateSingleton<MonsterMaterialsCache>();
                 
                 var hybridRenderer = state.World.GetExistingSystemManaged<EntitiesGraphicsSystem>();
                 var ecb = new EntityCommandBuffer(Allocator.Temp);
@@ -60,10 +59,7 @@ namespace Dots
                 }
 
                 //set component data
-                ecb.AddComponent(globalEntity, monsterMaterialCache);
-                
-                //remove tag 保证 init 一次
-                ecb.RemoveComponent<GlobalInitTag>(globalEntity);
+                ecb.SetComponent(cacheEntity, monsterMaterialCache);
                 ecb.Playback(state.EntityManager);
             }
         }

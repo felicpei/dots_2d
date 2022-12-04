@@ -14,6 +14,8 @@ namespace Dots
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
+            //必须是mission
+            state.RequireForUpdate<MissionProperties>();
             state.RequireForUpdate<MonsterMaterialsCache>();
         }
 

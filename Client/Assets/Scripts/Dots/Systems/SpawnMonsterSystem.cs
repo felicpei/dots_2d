@@ -18,6 +18,9 @@ namespace Dots
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
+            //必须是mission
+            state.RequireForUpdate<MissionProperties>();
+            
             //等待SpawnTimer
             state.RequireForUpdate<SpawnMonsterTimer>();
             state.RequireForUpdate<DestinationProperties>();
@@ -34,7 +37,7 @@ namespace Dots
         public void OnUpdate(ref SystemState state)
         { 
             //同屏最多2000个怪
-            if (_query.CalculateEntityCount() <= 2000)
+            if (_query.CalculateEntityCount() <= 1200)
             {
                 //执行job
                 var deltaTime = SystemAPI.Time.DeltaTime;

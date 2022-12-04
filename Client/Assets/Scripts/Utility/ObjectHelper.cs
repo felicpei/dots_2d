@@ -27,11 +27,6 @@ public static class ObjectHelper
         return component;
     }
     
-    public static Object Instantiate(this Object source)
-    {
-        return Object.Instantiate(source);
-    }
-    
     public static GameObject InstantiateGo(this Object source)
     {
         var result = Object.Instantiate(source) as GameObject;

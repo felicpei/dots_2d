@@ -22,7 +22,6 @@ public class FirstStart : MonoBehaviour
 	
 	private void Start()
 	{
-		CanvasScaler.referenceResolution = ScreenScaleHelper.GetCanvasSize();
 		StartCoroutine(Init());
 	}
 

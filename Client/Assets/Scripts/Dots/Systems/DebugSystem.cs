@@ -10,6 +10,7 @@ using UnityEngine;
 
 namespace Dots
 {
+    [RequireMatchingQueriesForUpdate]
     [UpdateInGroup(typeof(LateSimulationSystemGroup))]
     public partial struct DebugSystem : ISystem
     {
@@ -17,6 +18,9 @@ namespace Dots
         
         public void OnCreate(ref SystemState state)
         {
+            //必须是mission
+            state.RequireForUpdate<MissionProperties>();
+            
             var queryBuilder = new EntityQueryBuilder(Allocator.Temp);
             queryBuilder.WithAll<MonsterState>();
             _query = state.GetEntityQuery(queryBuilder);

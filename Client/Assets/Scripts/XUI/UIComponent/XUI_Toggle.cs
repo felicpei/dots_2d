@@ -129,37 +129,4 @@ public class XUI_Toggle : Toggle
         onValueChanged.RemoveListener(OnToggleValueChanged);
         base.OnDestroy();
     }
-
-    public bool CanClick()
-    {
-        var pos = XUI_Manager.UICamera.WorldToScreenPoint(transform.position);
-        var results = XUI_Manager.GetRayCastResult(new Vector2(pos.x, pos.y));
-        if (results.Count > 0 && (results[0].gameObject == gameObject || results[0].gameObject.transform.IsChildOf(transform)))
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    public bool IsInScreen()
-    {
-        var pos = XUI_Manager.UICamera.WorldToScreenPoint(transform.position);
-        if (pos.x < Screen.width && pos.x > 0 && pos.y > 0 && pos.y < Screen.height)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    public UnityEvent GetOnClick()
-    {
-        return _onClickEvent;
-    }
-
-    public GameObject GetGameObject()
-    {
-        return gameObject;
-    }
 }

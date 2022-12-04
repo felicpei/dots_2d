@@ -21,18 +21,6 @@ public static class XUI_Utility
         group.ignoreParentGroups = false;
         return group;
     }
-    
-    /// <summary>
-    /// 屏幕坐标转local坐标
-    /// </summary>
-    /// <param name="rectTransform"></param>
-    /// <param name="screenPoint"></param>
-    /// <returns></returns>
-    public static Vector2 ScreenPointToLocalPoint(RectTransform rectTransform, Vector2 screenPoint)
-    {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, screenPoint, XUI_Manager.UICamera, out var result);
-        return result;
-    }
 
     public static void SetSprite(this XUI_Image image, EAtlas path, string spriteName, bool nativeSize = false)
     {

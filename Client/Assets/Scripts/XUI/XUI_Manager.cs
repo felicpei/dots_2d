@@ -12,7 +12,6 @@ public static class XUI_Manager
     private static XUI_Bind _bind;
     
     private static readonly Dictionary<XUI_MissionLayer, Transform> MissionCanvasList = new();
-    public static Camera UICamera => _bind == null ? null : _bind.Camera3D;
 
     private static PointerEventData _pointerEventData;
     private static List<RaycastResult> _raycastResult;
@@ -87,35 +86,11 @@ public static class XUI_Manager
     public static void RefreshCanvasSize(float widthRadio, float heightRadio, float startXPercent, float startYPercent)
     {
       
-        SetDeltaInfo(CanvasList[XUI_Layer.Main],  widthRadio, heightRadio, startXPercent, startYPercent);
+        /*SetDeltaInfo(CanvasList[XUI_Layer.Main],  widthRadio, heightRadio, startXPercent, startYPercent);
         SetDeltaInfo(CanvasList[XUI_Layer.View3D],  widthRadio, heightRadio, startXPercent, startYPercent);
         SetDeltaInfo(CanvasList[XUI_Layer.Tips],  widthRadio, heightRadio, startXPercent, startYPercent);
         SetDeltaInfo(CanvasList[XUI_Layer.Loding],  1, 1, 0, 0);
-        SetDeltaInfo(CanvasList[XUI_Layer.Splash],  1, 1, 0, 0);
-    }
-    
-    private static void SetDeltaInfo(Canvas canvas, float widthRadio, float heightRadio, float startXPercent, float startYPercent)
-    {
-        var rect = canvas.GetComponent(typeof(RectTransform)) as RectTransform;
-        if (rect == null)
-        {
-            return;
-        }
-
-        var size = OriginCanvasSize;
-        var originWidth = size.x;
-        var originHeight = size.y;
-        
-        size.x *= widthRadio;
-        size.y *= heightRadio;
-        rect.sizeDelta = size;
-
-        var addY = originHeight * startYPercent;
-        var addX = originWidth * startXPercent;
-        var pos = rect.anchoredPosition;
-        pos.x += addX;
-        pos.y -= addY;
-        rect.anchoredPosition = pos;
+        SetDeltaInfo(CanvasList[XUI_Layer.Splash],  1, 1, 0, 0);*/
     }
     
     
