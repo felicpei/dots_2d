@@ -37,7 +37,7 @@ namespace Dots
         public void OnUpdate(ref SystemState state)
         { 
             //同屏最多2000个怪
-            if (_query.CalculateEntityCount() <= 1200)
+            if (_query.CalculateEntityCount() <= 1500)
             {
                 //执行job
                 var deltaTime = SystemAPI.Time.DeltaTime;

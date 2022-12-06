@@ -84,14 +84,14 @@ public class XGameSetting
         switch (xResolution)
         {
             case EnumResolution.Low:
-                return 240;
+                return 480;
             case EnumResolution.Mid:
                 return 640;
             case EnumResolution.High:
                 return 1080;
         }
 
-        return 720;
+        return 640;
     }
 
 

@@ -39,7 +39,7 @@ namespace Dots.Components
                 inputAspect.InTouch = false;
 
                 var pos = inputAspect.TouchPos;
-                var ecbSingleton = SystemAPI.GetSingleton<BeginSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
+                var ecbSingleton = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
             
                 ecbSingleton.AddComponent(mission, new VFXCreateTag
                 {

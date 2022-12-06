@@ -1008,7 +1008,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 240P
+  m_Text: 480P
   needLocalization: 1
   m_underLine: 0
 --- !u!114 &8618062549127887218

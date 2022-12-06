@@ -27,7 +27,7 @@ namespace Dots
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            var ecbBOS = SystemAPI.GetSingleton<BeginSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
+            var ecbBOS = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
             var globalCache = SystemAPI.GetSingletonEntity<MonsterMaterialsCache>();
             var globalAspect = SystemAPI.GetAspectRW<GlobalCacheAspect>(globalCache);
 
