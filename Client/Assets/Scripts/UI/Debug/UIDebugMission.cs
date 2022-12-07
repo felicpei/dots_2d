@@ -8,7 +8,9 @@ public class UIDebugMission : MonoBehaviour
         
     private void Start()
     {
-        _mainView = GetComponent<UIPanel>().ui;
+        var uiInfo = GetComponent<DisplayObjectInfo>();
+        _mainView = GRoot.inst.DisplayObjectToGObject(uiInfo.displayObject).asCom;
+        
         var exitBtn = _mainView.GetChild("btnExit");
         
         exitBtn.onClick.Add(() =>

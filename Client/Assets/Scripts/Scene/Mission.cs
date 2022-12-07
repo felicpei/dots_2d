@@ -8,10 +8,8 @@ public class Mission : SceneBase
     {
         yield return base.Init();
         
-        XResource.LoadGameObject("UI/Prefabs/UIDebugMission.prefab", gameObj =>
-        {
-            
-        });
+        FUIHelper.ShowFUI<UIDebugMission>("Debug", "DebugBattle");
+        
         CameraHelper.OnEnterMission();
         //CameraHelper.SetCameraPosition(new Vector3(-50, 100, -300));
     }

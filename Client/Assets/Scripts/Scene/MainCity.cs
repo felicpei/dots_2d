@@ -6,9 +6,6 @@ public class MainCity : SceneBase
     {
         yield return base.Init();
         
-        XResource.LoadGameObject("UI/Prefabs/UIDebugEntrance.prefab", gameObj =>
-        {
-            
-        });
+        FUIHelper.ShowFUI<UIDebugMain>("Debug", "DebugMain");
     }
 }

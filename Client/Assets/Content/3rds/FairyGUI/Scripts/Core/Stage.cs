@@ -864,6 +864,7 @@ namespace FairyGUI
                 UIContentScaler scaler = this.gameObject.GetComponent<UIContentScaler>();
                 scaler.ApplyChange();
                 GRoot.inst.ApplyContentScaleFactor();
+                FUIHelper.ApplyContentScaleFactor();
             }
         }
 

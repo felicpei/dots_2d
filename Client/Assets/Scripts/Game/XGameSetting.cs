@@ -86,12 +86,12 @@ public class XGameSetting
             case EnumResolution.Low:
                 return 480;
             case EnumResolution.Mid:
-                return 640;
+                return 720;
             case EnumResolution.High:
                 return 1080;
         }
 
-        return 640;
+        return 720;
     }
 
 
@@ -107,9 +107,9 @@ public class XGameSetting
         }
 
         var origin = GetXResolution(xResolution);
-        var designWidth = origin;
-        var designHeight = (int)(designWidth / (Screen.currentResolution.width / (float)Screen.currentResolution.height));
-
+        var designHeight = origin; 
+        var designWidth = (int)(designHeight * (Screen.currentResolution.width / (float)Screen.currentResolution.height));
+        
         if (Screen.currentResolution.width == designWidth && Screen.currentResolution.height == designHeight)
         {
             return;

@@ -13,6 +13,10 @@ public static class XPath
     public const string TextZipName = "textzip";
     public const string TablesPath = "Tables/";
     public const string TableExtension=  ".tab";
+
+    public const string FUI_ROOT = "Assets/Content/UI/";
+    public const string FUI_ATLAS_SUFFIX = "_atlas";
+    public const string FUI_UI_SUFFIX = "_ui";
     
     public static readonly string AssetsPath;
     public static readonly string ContentPath;
@@ -73,52 +77,36 @@ public static class XPath
 
     public const string FAIRY_BUNDLE_NAME = "ui_fairy";
     private static readonly Dictionary<string, string> _assetbundlePath = new();
-    private static readonly List<string> _singleFilePath = new();
     public static void InitAssetBundlePath()
     {
-        _singleFilePath.Clear();
         _assetbundlePath.Clear();
 
         _assetbundlePath["3rds"] = "3rds";
+        _assetbundlePath["CartoonFX"] = "cartoon_fx";
         _assetbundlePath["CubeScene"] = "scenes_cube";
         _assetbundlePath["Common"] = "common";
         _assetbundlePath["Shaders"] = "shaders";
-        _assetbundlePath["UI/Fairy"] = FAIRY_BUNDLE_NAME;
-        _assetbundlePath["UI/Prefabs"] = "ui_prefabs";
     }
     
     
     public static string GetAbName(string path)
     {
-        var extension = ".ab";
-        
-        //path = resouercex 下的path，例如：Shaders/DefaultResourcesExtra/Prrticle Add.shader
         path = path.FormatPath();
         var type = XResourcesUtility.GetResourceTypeByPath(path);
-        
+
         //检查是否是按文件夹自定义的assetbundleName
-        if (type is ResourceType.scene or  ResourceType.video)
+        if (type is ResourceType.scene or ResourceType.video)
         {
             var strAbName = path.GetUniquePath();
-            return strAbName.ToLowerInvariant() + extension;
+            return strAbName;
         }
-        
-        //is single file
-        for (var i = 0; i < _singleFilePath.Count; i++)
-        {
-            if (path.IndexOf(_singleFilePath[i], StringComparison.Ordinal) == 0)
-            {
-                var strAbName = path.GetUniquePath();
-                return strAbName + extension;
-            }
-        }
-        
+
         //看是否配置了路径
         foreach (var kv in _assetbundlePath)
         {
             if (path.IndexOf(kv.Key, StringComparison.Ordinal) == 0)
             {
-                return kv.Value.ToLower() + extension;
+                return kv.Value;
             }
         }
         
@@ -141,7 +129,7 @@ public static class XPath
         }
         
         path = path.GetUniquePath();
-        return path + extension;
+        return path ;
     }
     
     public static string GetUniquePath(this string path)

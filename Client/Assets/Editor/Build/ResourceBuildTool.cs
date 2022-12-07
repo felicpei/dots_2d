@@ -69,10 +69,11 @@ public static class ResourceBuildTool
         IgnorePaths.Clear();
         
         //强制打包的文件夹(里面要是子文件夹)
-        RetainPaths.Clear(); 
+        RetainPaths.Clear();
+        RetainPaths.Add("3rds/FairyGUI");
         RetainPaths.Add("Entities");
         RetainPaths.Add("UI");
-        
+         
         //场景文件夹
         ScenePaths.Clear();
 

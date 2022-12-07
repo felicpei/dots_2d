@@ -8,7 +8,8 @@ public class UIDebugMain : MonoBehaviour
  
     private void Start()
     {
-        _mainView = GetComponent<UIPanel>().ui;
+        var uiInfo = GetComponent<DisplayObjectInfo>();
+        _mainView = GRoot.inst.DisplayObjectToGObject(uiInfo.displayObject).asCom;
             
         _mainView.GetChild("btnFight").onClick.Add(OnClickFight);
         _mainView.GetChild("btnResolution1").onClick.Add(()=>

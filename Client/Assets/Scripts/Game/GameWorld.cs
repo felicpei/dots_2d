@@ -27,6 +27,7 @@ public static class GameWorld
         PauseHelper.Revert();
         TimeScaleHelper.ResetTimeScale();
         Sound.ClearAll();
+        FUIHelper.ClearAll();
     }
     
     public static void LateUpdate()
