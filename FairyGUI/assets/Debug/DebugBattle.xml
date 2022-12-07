@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720">
+  <displayList>
+    <component id="n2_qo71" name="btnExit" src="gvu517" fileName="BtnExit.xml" xy="1207,10" pivot="0.5,0.5"/>
+  </displayList>
+</component>

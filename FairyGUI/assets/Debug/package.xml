@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="2w1qzqwz">
+  <resources>
+    <component id="jx9y0" name="DebugMain.xml" path="/" exported="true"/>
+    <component id="gmv52v" name="BtnFight.xml" path="/"/>
+    <component id="gmv52w" name="BtnResolution1.xml" path="/"/>
+    <component id="gmv52x" name="BtnResolution2.xml" path="/"/>
+    <component id="gmv52y" name="BtnResolution3.xml" path="/"/>
+    <image id="gmv512" name="btn_important.png" path="/"/>
+    <image id="gmv5k" name="btn_normal.png" path="/"/>
+    <image id="gmv5z" name="btn_close.png" path="/"/>
+    <component id="nt090" name="DebugBattle.xml" path="/" exported="true"/>
+    <component id="gvu517" name="BtnExit.xml" path="/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

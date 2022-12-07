@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
-using System.Collections.Generic;
-using DG.Tweening;
-using UI;
-using Unity.Entities;
-using Random = UnityEngine.Random;
+
 
 public class Mission : SceneBase
 {
     public override IEnumerator Init()
     {
         yield return base.Init();
-        UIDebugMission.Show();
+        
+        XResource.LoadGameObject("UI/Prefabs/UIDebugMission.prefab", gameObj =>
+        {
+            
+        });
         CameraHelper.OnEnterMission();
         //CameraHelper.SetCameraPosition(new Vector3(-50, 100, -300));
     }

@@ -55,7 +55,7 @@ public class FirstStart : MonoBehaviour
 				yield return XAssetBundle.LoadAssetBundle("atlas.ab", SetLoadingProgress);
 			*/
 		}
-		
+
 		//loadScene
 		if (!bFromLauncher)
 		{

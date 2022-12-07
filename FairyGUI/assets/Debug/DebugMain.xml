@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720">
+  <displayList>
+    <text id="n0_kfm2" name="title" xy="422,100" size="435,109" font="msyhbd" fontSize="40" align="center" vAlign="middle" autoSize="none" text="FairyTest"/>
+    <component id="n12_gmv5" name="btnFight" src="gmv52v" fileName="BtnFight.xml" xy="540,287"/>
+    <component id="n13_gmv5" name="btnResolution1" src="gmv52w" fileName="BtnResolution1.xml" xy="291,499"/>
+    <component id="n14_gmv5" name="btnResolution2" src="gmv52x" fileName="BtnResolution2.xml" xy="541,498" size="200,80"/>
+    <component id="n15_gmv5" name="btnResolution3" src="gmv52y" fileName="BtnResolution3.xml" xy="791,498" size="200,80"/>
+  </displayList>
+</component>

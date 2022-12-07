@@ -18,19 +18,6 @@ public static class Layers
     public const int IgnoreRaycast = 2;
     public const int Water = 4;
     public const int UI = 5;
-  
-    public static SoringLayer GetSortingLayer(XUI_Layer uiLayer)
-    {
-        return uiLayer switch
-        {
-            XUI_Layer.Splash => SoringLayer.Splash,
-            XUI_Layer.Main => SoringLayer.Main,
-            XUI_Layer.View3D => SoringLayer.View,
-            XUI_Layer.Tips => SoringLayer.Tips,
-            XUI_Layer.Loding => SoringLayer.Loading,
-            _ => SoringLayer.Default
-        };
-    }
 }
 
 public static class LayersMask

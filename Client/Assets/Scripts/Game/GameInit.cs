@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using FairyGUI;
 using Script;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -25,13 +26,13 @@ public class GameInit : MonoBehaviour
         
         //初始化全局协程
         GameWorld.StartCoroutine = StartCoroutine;
+        FairyGUIHelper.OnGameStart();
         
         //camera
         CameraHelper.Init(MainCamera);
         
         //一些必要的初始化过程
         XGameSetting.Init();
-        XUI_Manager.Init();
         Sound.Init();
         Random.InitState(DateTime.Now.Second);
         

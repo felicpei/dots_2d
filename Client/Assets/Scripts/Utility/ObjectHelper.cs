@@ -177,14 +177,4 @@ public static class ObjectHelper
     {
         return c.alpha > 0;
     }
-
-    public static bool GetActiveState(this XUI_GameObject c)
-    {
-        return c.CanvasGroup.alpha > 0;
-    }
-
-    public static bool GetActiveState(this XUI_Image c)
-    {
-        return c.CanvasGroup.alpha > 0;
-    }
 }

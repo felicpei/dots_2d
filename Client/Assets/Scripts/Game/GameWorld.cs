@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UI;
 using UnityEngine;
 
 public static class GameWorld
@@ -27,7 +26,6 @@ public static class GameWorld
     {
         PauseHelper.Revert();
         TimeScaleHelper.ResetTimeScale();
-        XUI_Manager.Clear();
         Sound.ClearAll();
         AtlasLoader.ClearCache();
     }
@@ -42,7 +40,6 @@ public static class GameWorld
 
     public static void Update()
     {
-        XUI_Manager.OnUpdate();
     }
 
     public static void OnApplicationFocus(bool statusParam)
@@ -57,7 +54,6 @@ public static class GameWorld
 
     public static void OnApplicationQuit()
     {
-        XUI_Manager.OnApplicationQuit();
     }
 
     public static void Quit()
