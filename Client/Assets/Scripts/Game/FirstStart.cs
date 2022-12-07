@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using FairyGUI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Scripting;
@@ -42,7 +43,6 @@ public class FirstStart : MonoBehaviour
 		yield return XAssetBundle.Initialize(SetLoadingProgress);
 		
 		XResource.Init();
-		AtlasLoader.Init();
 		
 		//加载配置表
 		yield return XResource.CacheTableZip(SetLoadingProgress);
@@ -50,6 +50,13 @@ public class FirstStart : MonoBehaviour
 		//cache
 		if (XPlatform.Platform != XPlatform.EPlatform.UnityEditor)
 		{
+			//预先加载FairyUI
+			yield return XAssetBundle.LoadAssetBundle(XPath.FAIRY_BUNDLE_NAME, SetLoadingProgress);
+			if (XAssetBundle.TryGetCacheBundle(XPath.FAIRY_BUNDLE_NAME, out var fairyBundle)) 
+			{
+				UIPackage.AddPackage(fairyBundle);
+			}
+			
 			/*
 				yield return XAssetBundle.LoadAssetBundle("common.ab", SetLoadingProgress);
 				yield return XAssetBundle.LoadAssetBundle("atlas.ab", SetLoadingProgress);

@@ -26,7 +26,6 @@ public class GameInit : MonoBehaviour
         
         //初始化全局协程
         GameWorld.StartCoroutine = StartCoroutine;
-        FairyGUIHelper.OnGameStart();
         
         //camera
         CameraHelper.Init(MainCamera);

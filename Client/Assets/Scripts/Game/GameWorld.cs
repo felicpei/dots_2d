@@ -27,7 +27,6 @@ public static class GameWorld
         PauseHelper.Revert();
         TimeScaleHelper.ResetTimeScale();
         Sound.ClearAll();
-        AtlasLoader.ClearCache();
     }
     
     public static void LateUpdate()

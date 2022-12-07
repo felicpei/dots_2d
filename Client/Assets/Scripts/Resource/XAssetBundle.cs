@@ -30,6 +30,18 @@ public class XAssetBundle
     private static readonly Dictionary<string, float> LoadingAssetBundlesTime = new();
     private static readonly Dictionary<string, string[]> Dependencies = new();
 
+    public static bool TryGetCacheBundle(string bundleName, out AssetBundle outBundle)
+    {
+        if (LoadedAssetBundles.TryGetValue(bundleName, out var bundle))
+        {
+            outBundle = bundle.AssetBundle;
+            return true;
+        }
+
+        outBundle = null;
+        return false;
+    }
+    
     //初始化assetbundle
     public static IEnumerator Initialize(Action<string, float> onProgress)
     {

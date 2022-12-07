@@ -54,7 +54,7 @@ MonoBehaviour:
   componentName: DebugBattle
   fitScreen: 0
   sortingOrder: 0
-  packagePath: Assets/Content/UI/Common/Debug
+  packagePath: Assets/Content/UI/Fairy/Debug
   renderMode: 0
   renderCamera: {fileID: 0}
   position: {x: 0, y: 0, z: 0}

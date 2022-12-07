@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1120759480908774602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   packageName: Debug
   componentName: DebugMain
-  fitScreen: 2
+  fitScreen: 3
   sortingOrder: 0
-  packagePath: Assets/Content/UI/Common/Debug
+  packagePath: Assets/Content/UI/Fairy/Debug
   renderMode: 0
   renderCamera: {fileID: 0}
   position: {x: 0, y: 0, z: 0}

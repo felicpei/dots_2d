@@ -68,9 +68,10 @@ public static class ResourceBuildTool
         //强制忽略的文件夹
         IgnorePaths.Clear();
         
-        //强制打包的文件夹
-        RetainPaths.Clear();
+        //强制打包的文件夹(里面要是子文件夹)
+        RetainPaths.Clear(); 
         RetainPaths.Add("Entities");
+        RetainPaths.Add("UI");
         
         //场景文件夹
         ScenePaths.Clear();
@@ -82,6 +83,8 @@ public static class ResourceBuildTool
     //pathname => Asset/xxxx相对路径
     private static void GetBuildResources(List<string> resourceList, string pathname, params ResourceType[] filter)
     {
+        pathname = pathname.FormatPath();
+        
         if (!Directory.Exists(XPath.ProjectPathToFullPath(pathname)))
         {
             if (CollectionUtility.Contains(filter, XResourcesUtility.GetResourceTypeByPath(pathname)))
@@ -149,9 +152,9 @@ public static class ResourceBuildTool
             }
 
             var dictList = Directory.GetDirectories(pathname);
-            foreach (var dictname in dictList)
+            foreach (var dictName in dictList)
             {
-                GetBuildResources(resourceList, dictname, filter);
+                GetBuildResources(resourceList, dictName, filter);
             }
         }
     }

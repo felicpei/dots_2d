@@ -71,6 +71,7 @@ public static class XPath
         return Combine(ProjectPath, path);
     }
 
+    public const string FAIRY_BUNDLE_NAME = "ui_fairy";
     private static readonly Dictionary<string, string> _assetbundlePath = new();
     private static readonly List<string> _singleFilePath = new();
     public static void InitAssetBundlePath()
@@ -82,7 +83,8 @@ public static class XPath
         _assetbundlePath["CubeScene"] = "scenes_cube";
         _assetbundlePath["Common"] = "common";
         _assetbundlePath["Shaders"] = "shaders";
-        _assetbundlePath["UI"] = "ui";
+        _assetbundlePath["UI/Fairy"] = FAIRY_BUNDLE_NAME;
+        _assetbundlePath["UI/Prefabs"] = "ui_prefabs";
     }
     
     
