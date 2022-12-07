@@ -25,14 +25,16 @@ public static class FUIHelper
 
     private static void AddPackage(string packageName, Action onFinished)
     {
-#if UNITY_EDITOR 
-        var packagePath = XPath.FUI_ROOT + packageName;
-        UIPackage.AddPackage(packagePath);
-        
-        onFinished.Invoke();
-#else
-        GameWorld.StartCoroutine(DoAddPackage(packageName, onFinished));
-#endif
+        if (XPlatform.Platform == XPlatform.EPlatform.UnityEditor)
+        {
+            var packagePath = XPath.FUI_ROOT + packageName;
+            UIPackage.AddPackage(packagePath);
+            onFinished.Invoke();
+        }
+        else
+        {
+            GameWorld.StartCoroutine(DoAddPackage(packageName, onFinished));
+        }
     }
 
     private static IEnumerator DoAddPackage(string packageName, Action onFinished)
@@ -40,16 +42,19 @@ public static class FUIHelper
         var atlasBundleName = packageName.ToLower() + XPath.FUI_ATLAS_SUFFIX;
         var uiBundleName = packageName.ToLower() + XPath.FUI_UI_SUFFIX;
 
-        if (!XAssetBundle.TryGetCacheBundle(atlasBundleName, out var atlasBundle))
+        Debug.LogWarning("try get bundle:"+atlasBundleName);
+        var atlasBundle = XAssetBundle.GetLoadedAssetBundle(atlasBundleName);
+        if (atlasBundle == null)
         {
             yield return XAssetBundle.LoadAssetBundle(atlasBundleName, (_, _) => { });
-            XAssetBundle.TryGetCacheBundle(atlasBundleName, out atlasBundle);
+            atlasBundle = XAssetBundle.GetLoadedAssetBundle(atlasBundleName);
         }
-
-        if (!XAssetBundle.TryGetCacheBundle(uiBundleName, out var uiBundle))
+     
+        var uiBundle = XAssetBundle.GetLoadedAssetBundle(uiBundleName);
+        if (uiBundle == null)
         {
             yield return XAssetBundle.LoadAssetBundle(uiBundleName, (_, _) => { });
-            XAssetBundle.TryGetCacheBundle(uiBundleName, out uiBundle);
+            uiBundle = XAssetBundle.GetLoadedAssetBundle(uiBundleName);
         }
 
         if (atlasBundle == null)
@@ -63,7 +68,7 @@ public static class FUIHelper
             Dbg.LogError("加载FUI UI Bundle Error, bundleName:" + uiBundleName);
             yield break;
         }
-        UIPackage.AddPackage(uiBundle, atlasBundle);
+        UIPackage.AddPackage(uiBundle.AssetBundle, atlasBundle.AssetBundle);
         onFinished?.Invoke();
     }
 
@@ -95,6 +100,6 @@ public static class FUIHelper
             UIList[i].Dispose();
         }
         UIList.Clear();
-        UIPackage.RemoveAllPackages();
+        //UIPackage.RemoveAllPackages();
     }
 }

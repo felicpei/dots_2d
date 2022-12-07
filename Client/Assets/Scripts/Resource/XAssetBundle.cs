@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 public class XAssetBundle
 {
     // Loaded assetBundle contains the references count which can be used to unload dependent assetBundles automatically.
-    private class LoadedAssetBundle
+    public class LoadedAssetBundle
     {
         public readonly AssetBundle AssetBundle;
         public int ReferencedCount;
@@ -30,18 +30,6 @@ public class XAssetBundle
     private static readonly Dictionary<string, float> LoadingAssetBundlesTime = new();
     private static readonly Dictionary<string, string[]> Dependencies = new();
 
-    public static bool TryGetCacheBundle(string bundleName, out AssetBundle outBundle)
-    {
-        if (LoadedAssetBundles.TryGetValue(bundleName, out var bundle))
-        {
-            outBundle = bundle.AssetBundle;
-            return true;
-        }
-
-        outBundle = null;
-        return false;
-    }
-    
     //初始化assetbundle
     public static IEnumerator Initialize(Action<string, float> onProgress)
     {
@@ -83,9 +71,16 @@ public class XAssetBundle
     }
     
     // Get loaded AssetBundle, only return vaild object when all the dependencies are downloaded successfully.
-    private static LoadedAssetBundle GetLoadedAssetBundle(string assetBundleName)
+    public static LoadedAssetBundle GetLoadedAssetBundle(string assetBundleName)
     {
-        LoadedAssetBundles.TryGetValue(assetBundleName, out var bundle);
+        if (LoadedAssetBundles.TryGetValue(assetBundleName, out var bundle))
+        {
+            if (bundle.AssetBundle == null)
+            {
+                LoadedAssetBundles.Remove(assetBundleName);
+                return null;
+            }
+        }
         if (bundle == null)
         {
             return null;
