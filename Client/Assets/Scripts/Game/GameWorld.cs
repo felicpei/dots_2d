@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Puerts;
 using UnityEngine;
 
 public static class GameWorld
@@ -20,14 +21,14 @@ public static class GameWorld
         });
         
         //on GameStart 添加ts脚本
-        var ts = gameObj.AddComponentIfNotExists<TSBehaviour>();
-        ts.ModuleName = "GameStart.mjs";
+        JsManager.StartGame();
     }
     
     
     //切换场景清理资源
     public static void OnSceneLeave()
     {
+        JsManager.Update();
         PauseHelper.Revert();
         TimeScaleHelper.ResetTimeScale();
         Sound.ClearAll();
@@ -40,6 +41,7 @@ public static class GameWorld
 
     public static void OnDestroy()
     {
+        JsManager.Dispose();
     }
 
     public static void Update()
@@ -58,6 +60,7 @@ public static class GameWorld
 
     public static void OnApplicationQuit()
     {
+        JsManager.OnApplicationQuit();
     }
 
     public static void Quit()
