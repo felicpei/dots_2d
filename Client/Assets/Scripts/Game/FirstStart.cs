@@ -37,7 +37,7 @@ public class FirstStart : MonoBehaviour
 
 		Inited = true;
 		
-		yield return XPlatform.Init(true);
+		yield return XPlatform.Init(false);
 		
 		//初始化AB
 		yield return XAssetBundle.Initialize(SetLoadingProgress);
