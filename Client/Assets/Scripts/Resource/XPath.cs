@@ -23,7 +23,7 @@ public static class XPath
     public static readonly string AssetBundlePath;
     public static readonly string RootPath;
     public static readonly string ProjectPath;
-    public static readonly string ConfigPath;
+    public static readonly string TSScriptPath;
     
     static XPath()
     {
@@ -39,7 +39,7 @@ public static class XPath
         ProjectPath = AssetsPath.GetParentPath().FormatPath();
         RootPath = ProjectPath.GetParentPath().FormatPath();
 #endif
-        ConfigPath = RootPath + "config/";
+        TSScriptPath = RootPath + "TSScripts";
         
         Debug.Log("------------- Init Path --------------");
         Debug.Log("AssetsPath:" + AssetsPath);
@@ -47,7 +47,7 @@ public static class XPath
         Debug.Log("ContentPath:" + ContentPath);
         Debug.Log("ProjectPath:" + ProjectPath);
         Debug.Log("RootPath:" + RootPath);
-        Debug.Log("ConfigPath:" + ConfigPath);
+        Debug.Log("TSScriptPath:" + TSScriptPath);
         Debug.Log("------------- Init Path End --------------");
 
         InitAssetBundlePath();

@@ -36,7 +36,7 @@ public class GameInit : MonoBehaviour
         Random.InitState(DateTime.Now.Second);
         
         //start game
-        GameWorld.OnGameStart();
+        GameWorld.OnGameStart(gameObject);
     }
 
     private void Update()

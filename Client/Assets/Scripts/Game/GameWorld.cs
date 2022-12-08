@@ -11,13 +11,17 @@ public static class GameWorld
 
 
 
-    public static void OnGameStart()
+    public static void OnGameStart(GameObject gameObj)
     {
         //启动游戏
         //进入MainCity
         SceneLoader.LoadMainCity(() =>
         {
         });
+        
+        //on GameStart 添加ts脚本
+        var ts = gameObj.AddComponentIfNotExists<TSBehaviour>();
+        ts.ModuleName = "gamestart.mjs";
     }
     
     
