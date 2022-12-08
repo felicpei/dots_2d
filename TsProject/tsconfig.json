@@ -10,13 +10,12 @@
 		"experimentalDecorators": true,
 		"baseUrl": "./src/",
 		"typeRoots": [
-			"../Client/Assets/Puerts/Typing",
+			"../Client/Assets/PuerTS/Typing",
 			"../Client/Assets/Gen/Typing",
 			"./node_modules/@types"
 		],
-		
+		 
 	},
-	"include": ["src","test","puerts"],
+	"include": ["src","test"],
 	"exclude": ["node_modules", "dist"]
-	
 }
