@@ -2,6 +2,7 @@ using UnityEngine;
 using Puerts;
 using System;
 using System.Collections;
+using TS;
 
 public delegate void ModuleInit(TSBehaviour monoBehaviour);
 
@@ -19,11 +20,11 @@ public class TSBehaviour : MonoBehaviour
     {
         if (jsEnv == null)
         {
-            jsEnv = new JsEnv(new DefaultLoader(XPath.TSScriptPath), 9229);
+            jsEnv = new JsEnv(new TSLoader(XPath.TSScriptPath), 9229);
         }
-        
+
         //var varname = "m_" + Time.frameCount;
-        var init = jsEnv.ExecuteModule<ModuleInit>("gamestart.mjs", "init");
+        var init = jsEnv.ExecuteModule<ModuleInit>(ModuleName, "init");
         init?.Invoke(this);
     }
 

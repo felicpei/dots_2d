@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "ES2018",
+		"module": "ESNext",
+		"jsx": "preserve",
+		"lib": [ "ES2018" ],
+		"sourceMap": true,
+		"inlineSources": true,
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+		"baseUrl": "./src/",
+		"typeRoots": [
+			"../Client/Assets/Puerts/Typing",
+			"../Client/Assets/Gen/Typing",
+			"./node_modules/@types"
+		],
+		
+	},
+	"include": ["src","test","puerts"],
+	"exclude": ["node_modules", "dist"]
+	
+}

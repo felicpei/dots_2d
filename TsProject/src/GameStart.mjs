@@ -3,6 +3,9 @@ class JSGameStart {
         this.bindTo = bindTo;
         this.bindTo.JsUpdate = () => this.onUpdate();
         this.bindTo.JsOnDestroy = () => this.onDestroy();
+
+
+        //game start
     }
     onUpdate() {
        

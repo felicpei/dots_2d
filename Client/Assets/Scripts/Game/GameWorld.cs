@@ -21,7 +21,7 @@ public static class GameWorld
         
         //on GameStart 添加ts脚本
         var ts = gameObj.AddComponentIfNotExists<TSBehaviour>();
-        ts.ModuleName = "gamestart.mjs";
+        ts.ModuleName = "GameStart.mjs";
     }
     
     

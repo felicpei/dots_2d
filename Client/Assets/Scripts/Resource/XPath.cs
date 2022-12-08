@@ -39,7 +39,7 @@ public static class XPath
         ProjectPath = AssetsPath.GetParentPath().FormatPath();
         RootPath = ProjectPath.GetParentPath().FormatPath();
 #endif
-        TSScriptPath = RootPath + "TSScripts";
+        TSScriptPath = RootPath + "TsProject/src";
         
         Debug.Log("------------- Init Path --------------");
         Debug.Log("AssetsPath:" + AssetsPath);
