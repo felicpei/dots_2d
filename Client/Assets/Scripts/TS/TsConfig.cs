@@ -54,6 +54,8 @@ public class TsConfig
                 typeof(AsyncOperation),
                 typeof(JsManager),
                 typeof(Dbg),
+                typeof(FUIHelper),
+                typeof(XGameSetting)
             };
 
             List<string> namespaces = new List<string>()

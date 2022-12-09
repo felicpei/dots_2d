@@ -8,7 +8,7 @@ public class Mission : SceneBase
     {
         yield return base.Init();
         
-        FUIHelper.ShowFUI<UIDebugMission>("Debug", "DebugBattle");
+       // FUIHelper.ShowFUI<UIDebugMission>("Debug", "DebugBattle");
         
         CameraHelper.OnEnterMission();
         //CameraHelper.SetCameraPosition(new Vector3(-50, 100, -300));

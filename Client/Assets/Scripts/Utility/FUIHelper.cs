@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FairyGUI;
 using UnityEngine;
 
 public static class FUIHelper
 {
-    private static readonly List<GObject> UIList = new();
-    
+    /*private static readonly List<GObject> UIList = new();
     public static void ShowFUI<T>(string packageName, string componentName) where T: MonoBehaviour
     {
         //add package
@@ -21,9 +21,9 @@ public static class FUIHelper
             var gObject = GRoot.inst.AddChild(view);
             UIList.Add(gObject);
         });
-    }
+    }*/
 
-    private static void AddPackage(string packageName, Action onFinished)
+    public static void AddPackage(string packageName, Action onFinished)
     {
         if (XPlatform.Platform == XPlatform.EPlatform.UnityEditor)
         {
@@ -37,12 +37,16 @@ public static class FUIHelper
         }
     }
 
+    public static void ReleasePackage(string packageName)
+    {
+        UIPackage.RemovePackage(packageName);
+    }
+
     private static IEnumerator DoAddPackage(string packageName, Action onFinished)
     {
         var atlasBundleName = packageName.ToLower() + XPath.FUI_ATLAS_SUFFIX;
         var uiBundleName = packageName.ToLower() + XPath.FUI_UI_SUFFIX;
 
-        Debug.LogWarning("try get bundle:"+atlasBundleName);
         var atlasBundle = XAssetBundle.GetLoadedAssetBundle(atlasBundleName);
         if (atlasBundle == null)
         {
@@ -70,36 +74,5 @@ public static class FUIHelper
         }
         UIPackage.AddPackage(uiBundle.AssetBundle, atlasBundle.AssetBundle);
         onFinished?.Invoke();
-    }
-
-    public static void ApplyContentScaleFactor()
-    {
-        for (int i = 0; i < UIList.Count; i++)
-        {
-            UIList[i].SetSize(GRoot.inst.size.x, GRoot.inst.size.y);
-        }
-    }
-
-    public static void CloseFUI(GObject uiObj)
-    {
-        uiObj.Dispose();
-        for (int i = UIList.Count - 1; i >= 0; i--)
-        {
-            if (UIList[i] == uiObj)
-            {
-                UIList.RemoveAt(i);
-                return;
-            }
-        }
-    }
-
-    public static void ClearAll()
-    {
-        for (int i = 0; i < UIList.Count; i++)
-        {
-            UIList[i].Dispose();
-        }
-        UIList.Clear();
-        //UIPackage.RemoveAllPackages();
     }
 }

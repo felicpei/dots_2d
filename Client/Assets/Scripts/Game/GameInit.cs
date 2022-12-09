@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using DG.Tweening;
 using FairyGUI;
 using Script;
 using UnityEngine;
@@ -35,37 +36,37 @@ public class GameInit : MonoBehaviour
         Sound.Init();
         Random.InitState(DateTime.Now.Second);
         
-        //start game
-        GameWorld.OnGameStart(gameObject);
+        //StartGame
+        JsManager.StartGame();    
     }
 
     private void Update()
     {
-        GameWorld.Update();
+        JsManager.Update();
     }
 
     private void LateUpdate()
     {
-        GameWorld.LateUpdate();
+        JsManager.LateUpdate();
     }
     
     private void OnDestroy()
     {
-        GameWorld.OnDestroy();
+        JsManager.Dispose();
     }
 
     private void OnApplicationPause(bool pauseStatus)
     {
-        GameWorld.OnApplicationPause(pauseStatus);
+        JsManager.OnApplicationPause(pauseStatus);
     }
 
     private void OnApplicationQuit()
     {
-        GameWorld.OnApplicationQuit();
+        JsManager.OnApplicationQuit();
     }
 
     private void OnApplicationFocus(bool focusStatus)
     {
-        GameWorld.OnApplicationFocus(focusStatus);
+        JsManager.OnApplicationFocus(focusStatus);
     }
 }

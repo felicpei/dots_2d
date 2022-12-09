@@ -1,12 +1,14 @@
+import { UIManager } from "./base/ui/UIManager";
 
-export  class GameConfig{
+export class GameConfig {
 
-    public static debug:boolean = true;
-    public static realmServerIP:string = "127.0.0.1"; 
-    public static realmServerPort:number = 9001;
+    public static debug: boolean = true;
+    public static realmServerIP: string = "127.0.0.1";
+    public static realmServerPort: number = 9001;
 
 }
 
-export class S{
-    
+//单例工具类
+export class G {
+    public static UIManager = UIManager.Instance(UIManager);
 }

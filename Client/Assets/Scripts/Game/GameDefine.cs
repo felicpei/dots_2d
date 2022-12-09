@@ -1,16 +1,6 @@
 ﻿
 using UnityEngine;
 
-public enum SoringLayer
-{
-    Splash = 0,
-    Main = 1,
-    View = 2,
-    Tips = 4,
-    Loading = 5,
-    Default = 6,
-}
-
 public static class Layers
 {
     public const int Default  = 0;

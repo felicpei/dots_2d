@@ -21,48 +21,18 @@ public static class GameWorld
         });
         
         //on GameStart 添加ts脚本
-        JsManager.StartGame();
     }
     
     
     //切换场景清理资源
     public static void OnSceneLeave()
     {
-        JsManager.Update();
         PauseHelper.Revert();
         TimeScaleHelper.ResetTimeScale();
         Sound.ClearAll();
-        FUIHelper.ClearAll();
+        //FUIHelper.ClearAll();
     }
-    
-    public static void LateUpdate()
-    {
-    }
-
-    public static void OnDestroy()
-    {
-        JsManager.Dispose();
-    }
-
-    public static void Update()
-    {
-    }
-
-    public static void OnApplicationFocus(bool statusParam)
-    {
-        FocusStatus = statusParam;
-    }
-    
-    public static void OnApplicationPause(bool statusParam)
-    {
-        PauseStatus = statusParam;
-    }
-
-    public static void OnApplicationQuit()
-    {
-        JsManager.OnApplicationQuit();
-    }
-
+ 
     public static void Quit()
     {
         Application.Quit();

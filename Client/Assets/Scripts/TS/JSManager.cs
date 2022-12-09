@@ -8,10 +8,18 @@ public static class JsManager
     private static JsEnv _jsEnv;
     public static Action JsOnApplicationQuit;
     public static Action JsOnDispose;
+    public static Action<bool> JsOnApplicationFocus;
+    public static Action<bool> JsOnApplicationPause;
+    public static Action<string, object> JSDoEvent;
     
     public static void Update()
     {
         _jsEnv?.Tick();
+    }
+
+    public static void LateUpdate()
+    {
+        
     }
 
     private static void InitJsEnv()
@@ -26,6 +34,7 @@ public static class JsManager
         
         //声明Action： 值类型才需要这样添加
         _jsEnv.UsingAction<float>();
+        _jsEnv.UsingAction<bool>();
         _jsEnv.UsingAction<float, float>();
         _jsEnv.UsingAction<string, byte[]>();
         _jsEnv.UsingAction<int, GObject>();
@@ -58,6 +67,30 @@ public static class JsManager
         StartGame();
     }
 
+    public static void DispatchJSEvent(string eventName, object eventParam = null)
+    {
+        if (_jsEnv != null)
+        {
+            JSDoEvent.Invoke(eventName, eventParam);
+        }
+    }
+    
+    public static void OnApplicationFocus(bool statusParam)
+    {
+        if (_jsEnv != null)
+        {
+            JsOnApplicationFocus.Invoke(statusParam);
+        }
+    }
+    
+    public static void OnApplicationPause(bool statusParam)
+    {
+        if (_jsEnv != null)
+        {
+            JsOnApplicationPause.Invoke(statusParam);
+        }
+    }
+    
     public static void OnApplicationQuit()
     {
         if (_jsEnv != null)

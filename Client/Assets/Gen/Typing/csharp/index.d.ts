@@ -376,14 +376,14 @@
         {
             protected [__keep_incompatibility]: never;
         }
-        class Nullable$1<T> extends System.ValueType
-        {
-            protected [__keep_incompatibility]: never;
-        }
         interface Action$2<T1, T2>
         { 
         (arg1: T1, arg2: T2) : void; 
         Invoke?: (arg1: T1, arg2: T2) => void;
+        }
+        class Nullable$1<T> extends System.ValueType
+        {
+            protected [__keep_incompatibility]: never;
         }
         class Int16 extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>
         {
@@ -3667,9 +3667,16 @@
             protected [__keep_incompatibility]: never;
             public static JsOnApplicationQuit : System.Action
             public static JsOnDispose : System.Action
+            public static JsOnApplicationFocus : System.Action$1<boolean>
+            public static JsOnApplicationPause : System.Action$1<boolean>
+            public static JSDoEvent : System.Action$2<string, any>
             public static Update () : void
+            public static LateUpdate () : void
             public static StartGame () : void
             public static Restart () : void
+            public static DispatchJSEvent ($eventName: string, $eventParam?: any) : void
+            public static OnApplicationFocus ($statusParam: boolean) : void
+            public static OnApplicationPause ($statusParam: boolean) : void
             public static OnApplicationQuit () : void
             public static Dispose () : void
         }
@@ -3685,7 +3692,33 @@
             public static LogWarning ($message: any) : void
             public static LogMemoryLog ($str: string) : void
         }
-        namespace FairyGUI {
+        class FUIHelper extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+            public static AddPackage ($packageName: string, $onFinished: System.Action) : void
+            public static ReleasePackage ($packageName: string) : void
+        }
+        class XGameSetting extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+            public static get XResolution(): XGameSetting.EnumResolution;
+            public static set XResolution(value: XGameSetting.EnumResolution);
+            public static get XShake(): boolean;
+            public static set XShake(value: boolean);
+            public static get MusicVolume(): number;
+            public static set MusicVolume(value: number);
+            public static get AudioVolume(): number;
+            public static set AudioVolume(value: number);
+            public static Init () : void
+            public static GetXResolution ($xResolution: XGameSetting.EnumResolution) : number
+            public static RefreshGameResolutions ($xResolution: XGameSetting.EnumResolution) : void
+            public constructor ()
+        }
+        namespace XGameSetting {
+        enum EnumResolution
+        { Low = 0, Mid = 1, High = 2 }
+    }
+    namespace FairyGUI {
         class BlendModeUtils extends System.Object
         {
             protected [__keep_incompatibility]: never;

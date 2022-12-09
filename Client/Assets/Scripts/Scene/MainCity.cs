@@ -6,6 +6,6 @@ public class MainCity : SceneBase
     {
         yield return base.Init();
         
-        FUIHelper.ShowFUI<UIDebugMain>("Debug", "DebugMain");
+        //FUIHelper.ShowFUI<UIDebugMain>("Debug", "DebugMain");
     }
 }

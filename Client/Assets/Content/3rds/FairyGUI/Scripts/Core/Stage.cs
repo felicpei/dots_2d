@@ -864,7 +864,9 @@ namespace FairyGUI
                 UIContentScaler scaler = this.gameObject.GetComponent<UIContentScaler>();
                 scaler.ApplyChange();
                 GRoot.inst.ApplyContentScaleFactor();
-                FUIHelper.ApplyContentScaleFactor();
+                
+                //给JS发个事件
+                JsManager.DispatchJSEvent("onStageResized");
             }
         }
 
