@@ -57,6 +57,9 @@ class GameMain {
 
 
     public onDispose(): void {
+
+        //卸载当前场景
+        G.SceneLoader.unloadCurrentScene()
         Dbg.Log("Game onDispose in JS....");
     }
 

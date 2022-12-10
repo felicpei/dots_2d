@@ -1,4 +1,4 @@
-import { Dbg, XResource,MissionCache } from "csharp";
+import { Dbg, XResource, MissionCache } from "csharp";
 import { Singleton } from "../common/Singleton";
 import { BaseScene } from "./BaseScene";
 import { G } from "../../GameConfig";
@@ -15,7 +15,7 @@ export class SceneLoader extends Singleton<SceneLoader>{
     //加载场景（Single模式）
     private async loadScene(sceneNmae: string, mode: CS.UnityEngine.SceneManagement.LoadSceneMode, onProgress?: (loadName: string, loadProgress: number) => void) {
 
-        Dbg.Log("<TS> start loadScene over：" + sceneNmae+" mode:"+mode);
+        Dbg.Log("<TS> start loadScene over：" + sceneNmae + " mode:" + mode);
         let promise = new Promise<boolean>(resove => {
             XResource.LoadScene(sceneNmae, mode, () => {
                 resove(true)
@@ -37,15 +37,9 @@ export class SceneLoader extends Singleton<SceneLoader>{
         try {
 
             //清理旧场景
-            if (this.currentScene) {
-                this.currentScene.onLeave();
-                this.currentScene.onDestroy();
-            }
+            this.unloadCurrentScene();
 
-            //全局清理
-            G.OnSceneLeave();
-
-            if(this.bCachedMaterial == false){
+            if (this.bCachedMaterial == false) {
                 this.bCachedMaterial = true
                 await this.preloadMaterials();
             }
@@ -53,10 +47,10 @@ export class SceneLoader extends Singleton<SceneLoader>{
             //开始加载场景
             await this.loadScene(scene, CS.UnityEngine.SceneManagement.LoadSceneMode.Single);
 
-         
 
             //场景类型
             this.currentScene = new cls();
+            this.currentScene.sceneName = scene;
             this.currentScene.onEnter();
 
             //Init
@@ -67,6 +61,19 @@ export class SceneLoader extends Singleton<SceneLoader>{
         } catch (ex) {
             Dbg.LogError("load scene excep:" + ex);
         }
+    }
+
+    public unloadCurrentScene() {
+
+        if (this.currentScene) {
+
+            this.currentScene.onLeave();
+            this.currentScene.onDestroy();
+            this.currentScene = null;
+        }
+
+        //全局清理
+        G.OnSceneLeave();
     }
 
 

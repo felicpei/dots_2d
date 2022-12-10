@@ -134,9 +134,6 @@ public static class ShellBuild
 	    SetBuildSettings(bDebug);
 		XSwitchPlatform(targetGroup, target);
 		
-		//临时禁用除了gameStart的其他场景，减少体积
-		//DisableScene();
-		
 		//refresh asset
 		AssetDatabase.Refresh();
 
@@ -158,7 +155,6 @@ public static class ShellBuild
 			EditorUtility.ClearProgressBar();
 		}
         
-        //EnableScene();
     }
     
     

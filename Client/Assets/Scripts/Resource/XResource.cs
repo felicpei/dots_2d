@@ -70,6 +70,11 @@ public class XResource : MonoBehaviour
     {
         _inst.StartCoroutine(LoadSceneWait(levelName, mode, onFinished, onProgress));
     }
+
+    public static void UnloadScene(string levelName)
+    {
+        SceneManager.UnloadSceneAsync(levelName);
+    }
     
     
     public static IEnumerator LoadSceneWait(string levelName, LoadSceneMode mode, Action<string> onFinished = null, Action<string, float> onProgress = null)

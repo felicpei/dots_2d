@@ -64,6 +64,11 @@ namespace Script
             GUIHelper.GUIString(m_strMonsterCount, x, y, w, h, EGUIStyle.Red);
             y = y + split;
             
+            GUIHelper.GUIButton("重载JS", x, y, 150, 40, () =>
+            {
+                JsManager.Restart();
+            });
+            
         }
     }
     

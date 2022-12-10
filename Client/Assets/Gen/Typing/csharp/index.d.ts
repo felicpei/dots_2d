@@ -2872,6 +2872,7 @@
             public static LoadGameObject ($resource: string, $callback: System.Action$1<UnityEngine.GameObject>) : void
             public static LoadObjectAsync ($resource: string, $callBack: System.Action$1<UnityEngine.Object>) : System.Collections.IEnumerator
             public static LoadScene ($levelName: string, $mode: UnityEngine.SceneManagement.LoadSceneMode, $onFinished?: System.Action$1<string>, $onProgress?: System.Action$2<string, number>) : void
+            public static UnloadScene ($levelName: string) : void
             public static LoadSceneWait ($levelName: string, $mode: UnityEngine.SceneManagement.LoadSceneMode, $onFinished?: System.Action$1<string>, $onProgress?: System.Action$2<string, number>) : System.Collections.IEnumerator
             public static CacheTableZip ($onProgress: System.Action$2<string, number>) : System.Collections.IEnumerator
             public static LoadTableText ($path: string) : string
@@ -2968,7 +2969,6 @@
             protected [__keep_incompatibility]: never;
             public static MonsterMaterials : System.Collections.Generic.List$1<MissionCache.MonsterMaterialInfo>
             public static PreloadMission ($onFinished: System.Action) : void
-            public static DoPreload ($onFinished: System.Action) : System.Collections.IEnumerator
             public static ClearCache () : void
         }
         namespace XGameSetting {
@@ -4793,7 +4793,7 @@
             public Cancel () : void
             public constructor ()
         }
-        class GLoader extends FairyGUI.GObject implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear, FairyGUI.IAnimationGear
+        class GLoader extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IEventDispatcher, FairyGUI.IColorGear
         {
             protected [__keep_incompatibility]: never;
             public showErrorSign : boolean
@@ -5450,7 +5450,7 @@
         }
         enum FillType
         { None = 0, Scale = 1, ScaleMatchHeight = 2, ScaleMatchWidth = 3, ScaleFree = 4, ScaleNoBorder = 5 }
-        class GLoader3D extends FairyGUI.GObject implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear, FairyGUI.IAnimationGear
+        class GLoader3D extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IEventDispatcher, FairyGUI.IColorGear
         {
             protected [__keep_incompatibility]: never;
             public get url(): string;
@@ -5496,7 +5496,7 @@
             public SetWrapTarget ($gameObject: UnityEngine.GameObject, $cloneMaterial: boolean, $width: number, $height: number) : void
             public constructor ()
         }
-        class GMovieClip extends FairyGUI.GObject implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear, FairyGUI.IAnimationGear
+        class GMovieClip extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IEventDispatcher, FairyGUI.IColorGear
         {
             protected [__keep_incompatibility]: never;
             public get onPlayEnd(): FairyGUI.EventListener;

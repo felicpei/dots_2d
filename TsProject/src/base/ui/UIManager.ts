@@ -141,6 +141,7 @@ export class UIManager extends Singleton<UIManager>{
 
     //删除所有UIPanel
     public clearAll(): void {
+        Dbg.Log("clear all ui")
         this.distroyAllLoadedPanel();
         this.m_listLoadedPanel.length = 0;
     }
