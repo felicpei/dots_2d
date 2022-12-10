@@ -127,7 +127,6 @@ public static class ShellBuild
 
     private static void Build(string buildPath, BuildTarget target, BuildTargetGroup targetGroup, bool bDebug, bool bBuildPlayer = true)
     {
-
 	    //使用更小的IL2CPP压缩方式
 	    //PlayerSettings.il2CppCodeGeneration = Il2CppCodeGeneration.OptimizeSize;
 	    
@@ -137,48 +136,23 @@ public static class ShellBuild
 		//refresh asset
 		AssetDatabase.Refresh();
 
+		//拷贝JS到bundle目录
+		if (!Directory.Exists(XPath.JSRunTimePath))
+		{
+			Directory.CreateDirectory(XPath.JSRunTimePath);
+		}
+		DeleteDirectory(XPath.JSRunTimePath);
+		CopyDirectory(XPath.TSScriptPath, XPath.JSRunTimePath, true);
+		
 		//build assets
 		ResourcesBuilder.BuildAsset(XPath.AssetBundlePath, target);
-
-		/*//copy config
-		if (target == BuildTarget.WebGL)
-		{
-			var webglConfigPath = _buildOutWebGL + "/config";
-			DeleteDirectory(webglConfigPath);
-			CopyDirectory(XPath.ConfigPath, webglConfigPath, true);
-		}
-		*/
-
+		
 		if (bBuildPlayer)
 		{
 			BuildPipeline.BuildPlayer(EditorBuildSettings.scenes, buildPath, target, _buildOption);
 			EditorUtility.ClearProgressBar();
 		}
-        
     }
-    
-    
-    /*private static readonly List<EditorBuildSettingsScene> _sceneAssets = new();
-    public static void DisableScene()
-    {
-	    _sceneAssets.Clear();
-	    for (int i = 0; i < EditorBuildSettings.scenes.Length; i++)
-	    {
-		    _sceneAssets.Add(EditorBuildSettings.scenes[i]);
-	    }
-
-	    var clearList = new List<EditorBuildSettingsScene>();
-	    clearList.Add(EditorBuildSettings.scenes[0]);
-	    EditorBuildSettings.scenes = clearList.ToArray();
-	    
-	    AssetDatabase.Refresh();
-    }
-    
-    public static void EnableScene()
-    {
-	    EditorBuildSettings.scenes = _sceneAssets.ToArray();
-	    AssetDatabase.Refresh();
-    }*/
 
     private static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
     {

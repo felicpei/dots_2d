@@ -55,17 +55,15 @@ public static class ResourcesBuilder
     [MenuItem("XEngine/Build/BuildText", false, 100)]
     public static void BuildText()
     {
+        //配置文件
         var list = new List<string>();
-        
-        //所有的lua和配置打包
-        //list.AddRange(Directory.GetFiles(XPath.RootPath + "lua", "*.*", SearchOption.AllDirectories));
         list.AddRange(Directory.GetFiles(XPath.ProjectPath + "Assets/", "*.tab", SearchOption.AllDirectories));
         list.AddRange(Directory.GetFiles(XPath.ProjectPath + "Assets/", "*.cfg", SearchOption.AllDirectories));
 
         //全部配置表打包进zip
         var zipFilePath = XPath.Combine(XPath.AssetBundlePath, XPath.TextZipName);
         FilesToZip(list, zipFilePath);
-
+            
         Debug.Log("build text ok. " + list.Count + " items.");
     }
 

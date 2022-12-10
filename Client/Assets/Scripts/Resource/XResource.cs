@@ -8,15 +8,6 @@ using ICSharpCode.SharpZipLib.Zip;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-public class AsyncResource
-{
-    public Object Object;
-    public AssetBundle AssetBundle;
-    public string Text;
-    public byte[] bytes;
-    public Texture2D Texture;
-}
-
 public class XResource : MonoBehaviour
 {
     public const int EDITOR_DOWNLOAD_SPEED = 10000 * 1000; //10k/fps
@@ -54,21 +45,19 @@ public class XResource : MonoBehaviour
         });
     }
 
-    private static void LoadObject(string resource, Action<Object> callBack)
+    public static void LoadObject(string resource, Action<Object> callBack)
     {
-        _inst.StartCoroutine(LoadObjectAsync(resource, callBack));
+        _inst.StartCoroutine(XAssetBundle.LoadAssetBundleObject(resource, callBack));
     }
-
+    
     public static IEnumerator LoadObjectAsync(string resource, Action<Object> callBack)
     {
-        var async = new AsyncResource();
-        yield return XAssetBundle.LoadAssetBundleObject(resource, async);
-        callBack(async.Object);
+        yield return XAssetBundle.LoadAssetBundleObject(resource, callBack);
     }
 
     public static void LoadScene(string levelName, LoadSceneMode mode, Action<string> onFinished = null, Action<string, float> onProgress = null)
     {
-        _inst.StartCoroutine(LoadSceneWait(levelName, mode, onFinished, onProgress));
+        _inst.StartCoroutine(LoadSceneAsync(levelName, mode, onFinished, onProgress));
     }
 
     public static void UnloadScene(string levelName)
@@ -77,7 +66,7 @@ public class XResource : MonoBehaviour
     }
     
     
-    public static IEnumerator LoadSceneWait(string levelName, LoadSceneMode mode, Action<string> onFinished = null, Action<string, float> onProgress = null)
+    public static IEnumerator LoadSceneAsync(string levelName, LoadSceneMode mode, Action<string> onFinished = null, Action<string, float> onProgress = null)
     {
         Debug.Log("LoadScene:" + levelName);
 
@@ -101,7 +90,7 @@ public class XResource : MonoBehaviour
         Debug.Log("LoadScene Finished:" + levelName);
     }
 
-    private static readonly Dictionary<string, byte[]> _zipTextCache = new();
+    private static readonly Dictionary<string, byte[]> ZipTextCache = new();
 
     public static IEnumerator CacheTableZip(Action<string, float> onProgress)
     {
@@ -110,9 +99,6 @@ public class XResource : MonoBehaviour
             yield break;
         }
 
-        //Dbg.Log("Cache Text Start:" + Time.time);
-
-        var bFinished = false;
         yield return RequestZipFile(XPath.TextZipName, zip =>
         {
             //一次性解压并把所有内容放在内存
@@ -120,17 +106,9 @@ public class XResource : MonoBehaviour
             {
                 var name = zip[i].Name;
                 var zipEntry = zip[i];
-                _zipTextCache[name] = ZipEntityToMemoryStream(zip, zipEntry);
-                //Dbg.Log("Cache Text:" + name + " size:" + _zipTextCache[name].Length);
+                ZipTextCache[name] = ZipEntityToMemoryStream(zip, zipEntry);
             }
-
-            Debug.Log("Cache Text  Finished zipCount:" + zip.Count);
-            bFinished = true;
         }, progress => { onProgress?.Invoke("配置文件", progress); });
-
-        yield return new WaitUntil(() => bFinished);
-
-        //Dbg.Log("Cache Text  Finished:" + Time.time);
     }
 
     //读取配置表
@@ -144,7 +122,7 @@ public class XResource : MonoBehaviour
         }
 
         var fileName = path.GetUniqueNameByFullpath();
-        if (_zipTextCache.TryGetValue(fileName, out var bytes))
+        if (ZipTextCache.TryGetValue(fileName, out var bytes))
         {
             return FileHelper.DecodeTable(bytes);
         }
@@ -152,7 +130,7 @@ public class XResource : MonoBehaviour
         Debug.LogError("读取配置表缓存失败:" + path + " filename:" + fileName);
         return "";
     }
-
+    
     public static Object LoadEditorAsset(string resourcePath)
     {
         //Editor下直接去读AssetDatabase
@@ -177,37 +155,16 @@ public class XResource : MonoBehaviour
         return null;
     }
 
-    //-------------------- GC START --------------------//
-    public static IEnumerator DoGc(float sec = 0)
-    {
-#if !UNITY_WEBGL
-        yield return new WaitForSeconds(sec);
-        yield return Resources.UnloadUnusedAssets();
-        GC.Collect();
-#else
-        yield break;
-#endif
-    }
-
-    //-------------------- GC END --------------------//
-
 
     //-------------------- 外部资源加载Start --------------------//
 
     //加载二进制文件
-    public static void LoadBytes(string fullPath, Action<byte[]> callBack, Action onError)
+    public static void LoadBytes(string fullPath, Action<byte[]> callBack, Action onError, Action<float> onProgress = null)
     {
-        _inst.StartCoroutine(LoadBytesAsync(fullPath, callBack, onError));
+        _inst.StartCoroutine(RequestBytes(fullPath, callBack, onError, onProgress));
     }
 
-    private static IEnumerator LoadBytesAsync(string fullPath, Action<byte[]> callBack, Action onError)
-    {
-        var async = new AsyncResource();
-        yield return RequestBytes(fullPath, async, onError, _ => { });
-        callBack(async.bytes);
-    }
-
-    public static IEnumerator RequestBytes(string fullPath, AsyncResource async, Action onError, Action<float> onProgress)
+    private static IEnumerator RequestBytes(string fullPath, Action<byte[]> onSuccess, Action onError, Action<float> onProgress)
     {
         var request = UnityWebRequest.Get(fullPath);
         request.downloadHandler = new DownloadHandlerBuffer();
@@ -233,45 +190,18 @@ public class XResource : MonoBehaviour
         else
         {
             var data = request.downloadHandler.data;
-            async.bytes = data;
+            onSuccess.Invoke(data);
         }
         request.Dispose();
-    }
-
-    //一次性加载多个文本文件，并按顺序返回
-    public static void LoadTextList(List<string> fullPaths, Action<List<string>> callBack)
-    {
-        _inst.StartCoroutine(LoadTextListAsync(fullPaths, callBack));
-    }
-
-    public static IEnumerator LoadTextListAsync(List<string> fullPaths, Action<List<string>> callBack)
-    {
-        var result = new List<string>();
-        for (var i = 0; i < fullPaths.Count; i++)
-        {
-            var async = new AsyncResource();
-            yield return RequestText(fullPaths[i], async);
-            result.Add(async.Text);
-        }
-
-        callBack(result);
     }
 
     //加载文本文件
     public static void LoadText(string fullPath, Action<string> callBack)
     {
-        _inst.StartCoroutine(LoadTextAsync(fullPath, callBack));
+        _inst.StartCoroutine(RequestText(fullPath, callBack));
     }
 
-
-    private static IEnumerator LoadTextAsync(string fullPath, Action<string> callBack)
-    {
-        var async = new AsyncResource();
-        yield return RequestText(fullPath, async);
-        callBack(async.Text);
-    }
-
-    public static IEnumerator RequestText(string fullPath, AsyncResource async)
+    private static IEnumerator RequestText(string fullPath, Action<string> callBack)
     {
         var request = UnityWebRequest.Get(fullPath);
         request.downloadHandler = new DownloadHandlerBuffer();
@@ -287,35 +217,35 @@ public class XResource : MonoBehaviour
             if (buffer == null)
             {
                 Debug.LogError("GetResourceText Error, text = null" + fullPath);
-                async.Text = "";
+                callBack.Invoke("");
             }
             else
             {
                 var text = FileHelper.DecodeUTF8(buffer);
-                async.Text = text;
+                callBack.Invoke(text);
             }
         }
     }
 
 
-    private static Stream _zipStream;
-
     //下载zip文件
-    public static IEnumerator RequestZipFile(string zipName, Action<ZipFile> callback, Action<float> onProgress)
+    private static IEnumerator RequestZipFile(string zipName, Action<ZipFile> callback, Action<float> onProgress = null)
     {
         var path = XPath.Combine(XPath.AssetBundlePath, zipName);
-        var async = new AsyncResource();
-        yield return RequestBytes(path, async, () => { callback.Invoke(null); }, onProgress);
-
-        var bytes = async.bytes;
-        using (var ms = new MemoryStream(bytes))
+        yield return RequestBytes(path, bytes =>
         {
-            using (var reader = new BinaryReader(ms))
+            using (var ms = new MemoryStream(bytes))
             {
-                reader.ReadBytes(bytes.Length);
-                callback(new ZipFile(ms));
+                using (var reader = new BinaryReader(ms))
+                {
+                    reader.ReadBytes(bytes.Length);
+                    callback(new ZipFile(ms));
+                }
             }
-        }
+        }, () =>
+        {
+            callback.Invoke(null);
+        }, onProgress);
     }
 
     //ZIP中读取文本
@@ -395,4 +325,20 @@ public class XResource : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
+    
+    
+    //-------------------- GC START --------------------//
+    public static IEnumerator DoGc(float sec = 0)
+    {
+#if !UNITY_WEBGL
+        yield return new WaitForSeconds(sec);
+        yield return Resources.UnloadUnusedAssets();
+        GC.Collect();
+#else
+        yield break;
+#endif
+    }
+
+    //-------------------- GC END --------------------//
+
 }

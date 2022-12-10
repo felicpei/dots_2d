@@ -49,11 +49,11 @@ public class XAssetBundle
             LoadedAssetBundles.Clear();
 
             //load Manifest
-            var maniAsync = new AsyncResource();
-            yield return RequestAssetBundle("StreamingAssets", maniAsync, onProgress);
-
-            _manifest = maniAsync.AssetBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
-            _inited = true;
+            yield return RequestAssetBundle("StreamingAssets", assetBundle =>
+            {
+                _manifest = assetBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+                _inited = true;
+            }, onProgress);
         }
     }
 
@@ -135,10 +135,11 @@ public class XAssetBundle
         }
       
         //加载bundle，放入缓存
-        var async = new AsyncResource();
-        yield return RequestAssetBundle(assetBundleName, async, onProgress);
-        LoadedAssetBundles[assetBundleName] = new LoadedAssetBundle(async.AssetBundle);
-        LoadingAssetBundles[assetBundleName] = false;
+        yield return RequestAssetBundle(assetBundleName, assetBundle =>
+        {
+            LoadedAssetBundles[assetBundleName] = new LoadedAssetBundle(assetBundle);
+            LoadingAssetBundles[assetBundleName] = false;
+        }, onProgress);
     }
 
     private static bool CheckAssetLoaded(string assetBundleName)
@@ -165,7 +166,7 @@ public class XAssetBundle
     }
     
 
-    public static IEnumerator RequestAssetBundle(string assetBundleName, AsyncResource async, Action<string, float> onProgress)
+    public static IEnumerator RequestAssetBundle(string assetBundleName, Action<AssetBundle> onSuccess, Action<string, float> onProgress)
     {
         var url = XPath.GetAbPath(assetBundleName);
 
@@ -210,16 +211,15 @@ public class XAssetBundle
                 Debug.LogError("LoadAsset Error:" + request.error + " url:" + url);
                 yield break;
             }
-            async.AssetBundle = DownloadHandlerAssetBundle.GetContent(request);
+            onSuccess.Invoke(DownloadHandlerAssetBundle.GetContent(request));
         }
         //从本地加载
         else
         {
             var request = AssetBundle.LoadFromFileAsync(url);
             yield return request;
-            async.AssetBundle = request.assetBundle;
+            onSuccess.Invoke(request.assetBundle);
         }
-        
     }
 
     //Where we get all the dependencies and load them all.
@@ -253,7 +253,7 @@ public class XAssetBundle
     }
 
     // Load asset from the given assetBundle.
-    private static IEnumerator LoadAsset(string assetBundleName, string assetName, AsyncResource async, Action<string, float> onProgress = null)
+    private static IEnumerator LoadAsset(string assetBundleName, string assetName, Action<Object> onSuccess, Action<string, float> onProgress = null)
     {
         //Debug.Log("Loading " + assetName + " from " + assetBundleName + " bundle");
         yield return LoadAssetBundle(assetBundleName, onProgress);
@@ -273,11 +273,11 @@ public class XAssetBundle
             yield break;
         }
 
-        async.Object = obj;
+        onSuccess.Invoke(obj);
     }
 
 
-    public static IEnumerator LoadAssetBundleObject(string resourcePath, AsyncResource async)
+    public static IEnumerator LoadAssetBundleObject(string resourcePath, Action<Object> onSuccess)
     {
         //Editor下直接去读AssetDatabase
         if (XPlatform.Platform == XPlatform.EPlatform.UnityEditor)
@@ -291,7 +291,7 @@ public class XAssetBundle
                 {
                     Debug.LogError($"load : {resourcePath} failed");
                 }
-                async.Object = assetObject;
+                onSuccess.Invoke(assetObject);
             }
 #endif
         }
@@ -299,10 +299,8 @@ public class XAssetBundle
         //LoadAssetBundle
         else
         {
-            //shader特殊处理
             var assetBundleName = XPath.GetAbName(resourcePath);
-            yield return LoadAsset(assetBundleName, resourcePath, async);
-            //UnloadAssetBundle(assetBundleName);
+            yield return LoadAsset(assetBundleName, resourcePath, onSuccess);
         }
     }
 

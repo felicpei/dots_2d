@@ -50,7 +50,7 @@ public class FirstStart : MonoBehaviour
 		//loadScene
 		if (!bFromLauncher)
 		{
-			yield return XResource.LoadSceneWait(ScenePath, LoadSceneMode.Single, onProgress:SetLoadingProgress);
+			yield return XResource.LoadSceneAsync(ScenePath, LoadSceneMode.Single, onProgress:SetLoadingProgress);
 		}
 	}
 	

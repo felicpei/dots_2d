@@ -11,6 +11,7 @@ public static class XPath
     public const string CONTENT_NAME = "Content";
     
     public const string TextZipName = "textzip";
+        
     public const string TablesPath = "Tables/";
     public const string TableExtension=  ".tab";
 
@@ -24,6 +25,7 @@ public static class XPath
     public static readonly string RootPath;
     public static readonly string ProjectPath;
     public static readonly string TSScriptPath;
+    public static readonly string JSRunTimePath;
     
     static XPath()
     {
@@ -39,7 +41,8 @@ public static class XPath
         ProjectPath = AssetsPath.GetParentPath().FormatPath();
         RootPath = ProjectPath.GetParentPath().FormatPath();
 #endif
-        TSScriptPath = RootPath + "TsProject/";
+        TSScriptPath = RootPath + "TsProject/output/";
+        JSRunTimePath = AssetBundlePath + "output/";
         
         Debug.Log("------------- Init Path --------------");
         Debug.Log("AssetsPath:" + AssetsPath);
@@ -48,6 +51,7 @@ public static class XPath
         Debug.Log("ProjectPath:" + ProjectPath);
         Debug.Log("RootPath:" + RootPath);
         Debug.Log("TSScriptPath:" + TSScriptPath);
+        Debug.Log("JSRunTimePath:" + JSRunTimePath);
         Debug.Log("------------- Init Path End --------------");
 
         InitAssetBundlePath();

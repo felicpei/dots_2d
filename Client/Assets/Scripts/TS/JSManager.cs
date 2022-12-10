@@ -47,7 +47,10 @@ public static class JsManager
 
         if (_jsEnv != null)
         {
-            XResource.LoadText(XPath.TSScriptPath +"output/bundle.js", str =>
+            //mobile平台从bundle里加载
+            var path = XPlatform.InMobile ? XPath.JSRunTimePath : XPath.TSScriptPath;
+            var fullPath = path+ "bundle.js";
+            XResource.LoadText(fullPath, str =>
             {
                 try
                 {
