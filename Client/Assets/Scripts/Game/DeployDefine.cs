@@ -5,14 +5,6 @@
     public float volume;
 }
 
-public class SceneDeploy : BaseDeploy
-{
-    public int id;
-    public string name;
-    public string path;
-    public string sceneClass;
-}
-
 public class MonsterDeploy : BaseDeploy
 {
     public int id;

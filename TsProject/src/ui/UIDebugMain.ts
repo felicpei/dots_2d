@@ -1,6 +1,8 @@
 import { Dbg, FairyGUI, XGameSetting } from "csharp";
 import { UIWindow } from "../base/ui/UIWindow";
 import { binder } from "../base/common/NiceDecorator";
+import { G, SceneID } from "../GameConfig";
+import { SceneTest } from "../scene/SceneTest";
 
 export class UIDebugMain extends UIWindow {
 
@@ -21,7 +23,7 @@ export class UIDebugMain extends UIWindow {
         super.onAwake();
 
         this.m_btnFight.onClick.Add(() => {
-            Dbg.Log("onClickFight");
+            G.SceneLoader.openScene<SceneTest>(SceneID.Test, SceneTest)
         });
 
    
@@ -32,7 +34,7 @@ export class UIDebugMain extends UIWindow {
         this.m_btnResolution2.onClick.Add(() => {
             XGameSetting.XResolution = XGameSetting.EnumResolution.Mid;
         });
-        
+
         this.m_btnResolution3.onClick.Add(() => {
             XGameSetting.XResolution = XGameSetting.EnumResolution.High;
         });
@@ -40,10 +42,7 @@ export class UIDebugMain extends UIWindow {
 
     public onShow(vo: any): void {
         super.onShow(vo);
-
-
     }
-
 
     public onClose(arg: any): void {
         super.onClose(arg);

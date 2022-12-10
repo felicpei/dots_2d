@@ -39,7 +39,7 @@ public class SoundListenter : MonoBehaviour
 
     protected void LateUpdate()
     {
-        var mainCamera = CameraHelper.Camera;
+        var mainCamera = CameraHelper.MainCamera;
         if (mainCamera != null)
         {
             var trans = mainCamera.transform;

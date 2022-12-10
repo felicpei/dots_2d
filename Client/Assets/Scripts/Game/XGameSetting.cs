@@ -17,6 +17,7 @@ public class XGameSetting
 
     public static void Init()
     {
+        Dbg.Log("XGameSetting Init");
         _data = SystemDataMgr.Data.SettingData;
         _defaultScreenHeight = Screen.height;
         RefreshGameResolutions(XResolution);

@@ -119,11 +119,6 @@ export class UIManager extends Singleton<UIManager>{
         }
     }
 
-    //删除所有UIPanel
-    public closeAllPanels() {
-        this.distroyAllLoadedPanel();
-    }
-
     private distroyPanel(panel: UIPanel) {
 
         if (panel.isOpen) {
@@ -144,15 +139,16 @@ export class UIManager extends Singleton<UIManager>{
         }
     }
 
+    //删除所有UIPanel
     public clearAll(): void {
         this.distroyAllLoadedPanel();
         this.m_listLoadedPanel.length = 0;
     }
 
+    //当分辨率改变时
     public onStageResized():void{
 
         for(let i = 0; i < this.m_listLoadedPanel.length; i++){
-
             var rootSize = CS.FairyGUI.GRoot.inst.size;
             this.m_listLoadedPanel[i].fui.SetSize(rootSize.x, rootSize.y);
         }

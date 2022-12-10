@@ -1,10 +1,10 @@
-import { Dbg, JsManager } from 'csharp';
-import { G } from './GameConfig';
-import { UIDebugMain } from './ui/UIDebugMain';
+import { Dbg, JsManager, XGameSetting, Sound } from 'csharp';
+import { SceneMainCity } from './scene/SceneMainCity';
+import { G, SceneID } from './GameConfig';
+
 
 //类似以前的GameWorld.cs
 class GameMain {
-
 
     constructor() {
         JsManager.JsOnApplicationQuit = () => this.onApplicationQuit();
@@ -19,10 +19,12 @@ class GameMain {
         try {
             Dbg.Log("###### 初始化TS: Game start in JS....");
 
+            //一些模组初始化
+            XGameSetting.Init();
+            Sound.Init();
 
-            //加载主城场景
-            G.UIManager.openWindow<UIDebugMain>("Debug", "DebugMain", UIDebugMain);
-
+            //加载主城场景,
+            G.SceneLoader.openScene<SceneMainCity>(SceneID.MainCity, SceneMainCity);
 
         } catch (ex) {
             Dbg.LogError(ex);

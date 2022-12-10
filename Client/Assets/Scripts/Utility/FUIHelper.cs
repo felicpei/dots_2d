@@ -33,7 +33,7 @@ public static class FUIHelper
         }
         else
         {
-            GameWorld.StartCoroutine(DoAddPackage(packageName, onFinished));
+            GlobalCoroutine.StartCoroutine(DoAddPackage(packageName, onFinished));
         }
     }
 

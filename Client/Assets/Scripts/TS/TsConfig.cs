@@ -21,7 +21,6 @@ public class TsConfig
                 typeof(Vector3),
                 typeof(Vector2),
                 typeof(List<int>),
-                //typeof(Dictionary<string, int>),
                 typeof(Time),
                 typeof(Transform),
                 typeof(Component),
@@ -32,30 +31,21 @@ public class TsConfig
                 typeof(Type),
                 typeof(ParticleSystem),
                 typeof(Canvas),
-                typeof(RenderMode),
                 typeof(Behaviour),
                 typeof(MonoBehaviour),
-
-                typeof(UnityEngine.EventSystems.UIBehaviour),
-                typeof(UnityEngine.UI.Selectable),
-                typeof(UnityEngine.UI.Button),
-                typeof(UnityEngine.UI.Button.ButtonClickedEvent),
-                typeof(UnityEngine.Events.UnityEvent),
-                typeof(UnityEngine.UI.InputField),
-                typeof(UnityEngine.UI.Toggle),
-                typeof(UnityEngine.UI.Toggle.ToggleEvent),
-                typeof(UnityEngine.Events.UnityEvent<bool>),
-                typeof(Application),
-                typeof(TextAsset),
-
-                typeof(UnityEngine.SceneManagement.SceneManager),
-                typeof(UnityEngine.SceneManagement.Scene),
                 typeof(UnityEngine.SceneManagement.LoadSceneMode),
                 typeof(AsyncOperation),
+                
                 typeof(JsManager),
                 typeof(Dbg),
                 typeof(FUIHelper),
-                typeof(XGameSetting)
+                typeof(XGameSetting),
+                typeof(XResource),
+                typeof(XPlatform),
+                typeof(PauseHelper),
+                typeof(TimeScaleHelper),
+                typeof(Sound),
+                typeof(MissionCache)
             };
 
             List<string> namespaces = new List<string>()

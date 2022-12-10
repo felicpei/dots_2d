@@ -8,8 +8,6 @@ using Random = UnityEngine.Random;
 
 public class GameInit : MonoBehaviour
 {
-    public Camera MainCamera;
-    
     private void Awake()
     {
         //ecs editor静态变量不清空，特殊处理
@@ -26,15 +24,7 @@ public class GameInit : MonoBehaviour
         yield return FirstStart.Init(true);
         
         //初始化全局协程
-        GameWorld.StartCoroutine = StartCoroutine;
-        
-        //camera
-        CameraHelper.Init(MainCamera);
-        
-        //一些必要的初始化过程
-        XGameSetting.Init();
-        Sound.Init();
-        Random.InitState(DateTime.Now.Second);
+        GlobalCoroutine.StartCoroutine = StartCoroutine;
         
         //StartGame
         JsManager.StartGame();    

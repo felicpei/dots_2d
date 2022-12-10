@@ -66,7 +66,13 @@ public class XResource : MonoBehaviour
         callBack(async.Object);
     }
 
-    public static IEnumerator LoadScene(string levelName, LoadSceneMode mode, Action<string> onFinished = null, Action<string, float> onProgress = null)
+    public static void LoadScene(string levelName, LoadSceneMode mode, Action<string> onFinished = null, Action<string, float> onProgress = null)
+    {
+        _inst.StartCoroutine(LoadSceneWait(levelName, mode, onFinished, onProgress));
+    }
+    
+    
+    public static IEnumerator LoadSceneWait(string levelName, LoadSceneMode mode, Action<string> onFinished = null, Action<string, float> onProgress = null)
     {
         Debug.Log("LoadScene:" + levelName);
 

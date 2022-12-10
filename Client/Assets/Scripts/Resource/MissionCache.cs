@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,19 +17,25 @@ public static class MissionCache
     }
 
     public static List<MonsterMaterialInfo> MonsterMaterials = new();
+
+    //预加载材质动作
+    public static void PreloadMission(Action onFinished)
+    {
+        GlobalCoroutine.StartCoroutine(DoPreload(onFinished));
+    }
     
-    public static IEnumerator DoPreload(SceneDeploy sceneDeploy)
+    private static IEnumerator DoPreload(Action onFinished)
     {
         //缓存材质
         var monsterTab = TableMgr.GetTable<MonsterDeploy>();
         foreach (var deploy in monsterTab)
         {
+            
             var info = new MonsterMaterialInfo
             {
                 MonsterId = deploy.id
             };
             MonsterMaterials.Add(info);
-            
             
             yield return XResource.LoadObjectAsync(deploy.Ani_Idle, obj =>
             {
@@ -54,7 +61,11 @@ public static class MissionCache
             {
                 info.Hit = obj as Material;
             });
+
+            Dbg.Log("緩存怪物材質完成, id：" + deploy.id);
         }
+        
+        onFinished.Invoke();
     }
 
     public static void ClearCache()

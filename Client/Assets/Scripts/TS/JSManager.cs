@@ -38,6 +38,7 @@ public static class JsManager
         _jsEnv.UsingAction<float, float>();
         _jsEnv.UsingAction<string, byte[]>();
         _jsEnv.UsingAction<int, GObject>();
+        _jsEnv.UsingAction<string, float>();
     }
 
     public static void StartGame()

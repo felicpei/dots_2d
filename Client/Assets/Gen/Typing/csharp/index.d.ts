@@ -357,29 +357,20 @@
         {
             protected [__keep_incompatibility]: never;
         }
-        interface Func$1<TResult>
-        { 
-        () : TResult; 
-        Invoke?: () => TResult;
-        }
         interface Action
         { 
         () : void; 
         Invoke?: () => void;
         }
         var Action: { new (func: () => void): Action; }
-        class Byte extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class Int64 extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<bigint>, System.IConvertible, System.IEquatable$1<bigint>
-        {
-            protected [__keep_incompatibility]: never;
-        }
         interface Action$2<T1, T2>
         { 
         (arg1: T1, arg2: T2) : void; 
         Invoke?: (arg1: T1, arg2: T2) => void;
+        }
+        class Byte extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>
+        {
+            protected [__keep_incompatibility]: never;
         }
         class Nullable$1<T> extends System.ValueType
         {
@@ -390,6 +381,10 @@
             protected [__keep_incompatibility]: never;
         }
         class UInt16 extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>
+        {
+            protected [__keep_incompatibility]: never;
+        }
+        class Int64 extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<bigint>, System.IConvertible, System.IEquatable$1<bigint>
         {
             protected [__keep_incompatibility]: never;
         }
@@ -2237,209 +2232,6 @@
         {
             protected [__keep_incompatibility]: never;
         }
-        interface ICanvasRaycastFilter
-        {
-        }
-        interface ISerializationCallbackReceiver
-        {
-        }
-        /** Interface to control the Mecanim animation system.
-        */
-        class Animator extends UnityEngine.Behaviour
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        /** Interface for on-screen keyboards. Only native iPhone, Android, and Windows Store Apps are supported.
-        */
-        class TouchScreenKeyboard extends System.Object
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        /** Enumeration of the different types of supported touchscreen keyboards.
-        */
-        enum TouchScreenKeyboardType
-        { Default = 0, ASCIICapable = 1, NumbersAndPunctuation = 2, URL = 3, NumberPad = 4, PhonePad = 5, NamePhonePad = 6, EmailAddress = 7, NintendoNetworkAccount = 8, Social = 9, Search = 10, DecimalPad = 11, OneTimeCode = 12 }
-        /** A UnityGUI event.
-        */
-        class Event extends System.Object
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        /** Access to application run-time data.
-        */
-        class Application extends System.Object
-        {
-            protected [__keep_incompatibility]: never;
-            /** Returns true when called in any kind of built Player, or when called in the Editor in Play Mode (Read Only).
-            */
-            public static get isPlaying(): boolean;
-            /** Whether the player currently has focus. Read-only.
-            */
-            public static get isFocused(): boolean;
-            /** Returns a GUID for this build (Read Only).
-            */
-            public static get buildGUID(): string;
-            /** Should the player be running when the application is in the background?
-            */
-            public static get runInBackground(): boolean;
-            public static set runInBackground(value: boolean);
-            /** Returns true when Unity is launched with the -batchmode flag from the command line (Read Only).
-            */
-            public static get isBatchMode(): boolean;
-            /** Contains the path to the game data folder on the target device (Read Only).
-            */
-            public static get dataPath(): string;
-            /** The path to the StreamingAssets folder (Read Only).
-            */
-            public static get streamingAssetsPath(): string;
-            /** (Read Only) Contains the path to a persistent data directory.
-            */
-            public static get persistentDataPath(): string;
-            /** Contains the path to a temporary data / cache directory (Read Only).
-            */
-            public static get temporaryCachePath(): string;
-            /** The URL of the document. For WebGL, this is a web URL. For Android, iOS, or Universal Windows Platform (UWP) this is a deep link URL. (Read Only).
-            */
-            public static get absoluteURL(): string;
-            /** The version of the Unity runtime used to play the content.
-            */
-            public static get unityVersion(): string;
-            /** Returns application version number  (Read Only).
-            */
-            public static get version(): string;
-            /** Returns the name of the store or package that installed the application (Read Only).
-            */
-            public static get installerName(): string;
-            /** Returns the application identifier at runtime. On Apple platforms this is the 'bundleIdentifier' saved in the info.plist file. On Android it's the 'package' from the AndroidManifest.xml. On Universal Windows platform it's the 'Identity Name' specified in the application manifest.
-            */
-            public static get identifier(): string;
-            /** Returns application install mode (Read Only).
-            */
-            public static get installMode(): UnityEngine.ApplicationInstallMode;
-            /** Returns application running in sandbox (Read Only).
-            */
-            public static get sandboxType(): UnityEngine.ApplicationSandboxType;
-            /** Returns application product name (Read Only).
-            */
-            public static get productName(): string;
-            /** Return application company name (Read Only).
-            */
-            public static get companyName(): string;
-            /** A unique cloud project identifier. It is unique for every project (Read Only).
-            */
-            public static get cloudProjectId(): string;
-            /** Specifies the frame rate at which Unity tries to render your game.
-            */
-            public static get targetFrameRate(): number;
-            public static set targetFrameRate(value: number);
-            /** Returns the path to the console log file, or an empty string if the current platform does not support log files.
-            */
-            public static get consoleLogPath(): string;
-            /** Priority of background loading thread.
-            */
-            public static get backgroundLoadingPriority(): UnityEngine.ThreadPriority;
-            public static set backgroundLoadingPriority(value: UnityEngine.ThreadPriority);
-            /** Returns false if application is altered in any way after it was built.
-            */
-            public static get genuine(): boolean;
-            /** Returns true if application integrity can be confirmed.
-            */
-            public static get genuineCheckAvailable(): boolean;
-            /** Returns the platform the game is running on (Read Only).
-            */
-            public static get platform(): UnityEngine.RuntimePlatform;
-            /** Is the current Runtime platform a known mobile platform.
-            */
-            public static get isMobilePlatform(): boolean;
-            /** Is the current Runtime platform a known console platform.
-            */
-            public static get isConsolePlatform(): boolean;
-            /** The language the user's operating system is running in.
-            */
-            public static get systemLanguage(): UnityEngine.SystemLanguage;
-            /** Returns the type of Internet reachability currently possible on the device.
-            */
-            public static get internetReachability(): UnityEngine.NetworkReachability;
-            /** Cancellation token raised on exiting play mode (editor) or on quitting the application (Read Only).
-            */
-            public static get exitCancellationToken(): System.Threading.CancellationToken;
-            /** Are we running inside the Unity editor? (Read Only)
-            */
-            public static get isEditor(): boolean;
-            public static Quit ($exitCode: number) : void
-            public static Quit () : void
-            public static Unload () : void
-            /** Can the streamed level be loaded?
-            */
-            public static CanStreamedLevelBeLoaded ($levelIndex: number) : boolean
-            /** Can the streamed level be loaded?
-            */
-            public static CanStreamedLevelBeLoaded ($levelName: string) : boolean
-            /** Returns true if the given object is part of the playing world either in any kind of built Player or in Play Mode.
-            * @param obj The object to test.
-            * @returns True if the object is part of the playing world. 
-            */
-            public static IsPlaying ($obj: UnityEngine.Object) : boolean
-            public static GetBuildTags () : System.Array$1<string>
-            /** Set an array of feature tags for this build.
-            */
-            public static SetBuildTags ($buildTags: System.Array$1<string>) : void
-            public static HasProLicense () : boolean
-            public static RequestAdvertisingIdentifierAsync ($delegateMethod: UnityEngine.Application.AdvertisingIdentifierCallback) : boolean
-            /** Opens the URL specified, subject to the permissions and limitations of your app’s current platform and environment. This is handled in different ways depending on the nature of the URL, and with different security restrictions, depending on the runtime platform.
-            * @param url The URL to open.
-            */
-            public static OpenURL ($url: string) : void
-            /** Get stack trace logging options. The default value is StackTraceLogType.ScriptOnly.
-            */
-            public static GetStackTraceLogType ($logType: UnityEngine.LogType) : UnityEngine.StackTraceLogType
-            /** Set stack trace logging options. The default value is StackTraceLogType.ScriptOnly.
-            */
-            public static SetStackTraceLogType ($logType: UnityEngine.LogType, $stackTraceType: UnityEngine.StackTraceLogType) : void
-            /** Request authorization to use the webcam or microphone on iOS and WebGL.
-            */
-            public static RequestUserAuthorization ($mode: UnityEngine.UserAuthorization) : UnityEngine.AsyncOperation
-            /** Check if the user has authorized use of the webcam or microphone in the Web Player.
-            */
-            public static HasUserAuthorization ($mode: UnityEngine.UserAuthorization) : boolean
-            public static add_lowMemory ($value: UnityEngine.Application.LowMemoryCallback) : void
-            public static remove_lowMemory ($value: UnityEngine.Application.LowMemoryCallback) : void
-            public static add_memoryUsageChanged ($value: UnityEngine.Application.MemoryUsageChangedCallback) : void
-            public static remove_memoryUsageChanged ($value: UnityEngine.Application.MemoryUsageChangedCallback) : void
-            public static add_logMessageReceived ($value: UnityEngine.Application.LogCallback) : void
-            public static remove_logMessageReceived ($value: UnityEngine.Application.LogCallback) : void
-            public static add_logMessageReceivedThreaded ($value: UnityEngine.Application.LogCallback) : void
-            public static remove_logMessageReceivedThreaded ($value: UnityEngine.Application.LogCallback) : void
-            public static add_onBeforeRender ($value: UnityEngine.Events.UnityAction) : void
-            public static remove_onBeforeRender ($value: UnityEngine.Events.UnityAction) : void
-            public static add_focusChanged ($value: System.Action$1<boolean>) : void
-            public static remove_focusChanged ($value: System.Action$1<boolean>) : void
-            public static add_deepLinkActivated ($value: System.Action$1<string>) : void
-            public static remove_deepLinkActivated ($value: System.Action$1<string>) : void
-            public static add_wantsToQuit ($value: System.Func$1<boolean>) : void
-            public static remove_wantsToQuit ($value: System.Func$1<boolean>) : void
-            public static add_quitting ($value: System.Action) : void
-            public static remove_quitting ($value: System.Action) : void
-            public static add_unloading ($value: System.Action) : void
-            public static remove_unloading ($value: System.Action) : void
-            public constructor ()
-        }
-        /** Application installation mode (Read Only).
-        */
-        enum ApplicationInstallMode
-        { Unknown = 0, Store = 1, DeveloperBuild = 2, Adhoc = 3, Enterprise = 4, Editor = 5 }
-        /** Application sandbox type.
-        */
-        enum ApplicationSandboxType
-        { Unknown = 0, NotSandboxed = 1, Sandboxed = 2, SandboxBroken = 3 }
-        /** Stack trace logging options.
-        */
-        enum StackTraceLogType
-        { None = 0, ScriptOnly = 1, Full = 2 }
-        /** Priority of a thread.
-        */
-        enum ThreadPriority
-        { Low = 0, BelowNormal = 1, Normal = 2, High = 4 }
         /** Asynchronous operation coroutine.
         */
         class AsyncOperation extends UnityEngine.YieldInstruction
@@ -2463,44 +2255,15 @@
             public remove_completed ($value: System.Action$1<UnityEngine.AsyncOperation>) : void
             public constructor ()
         }
-        /** Constants to pass to Application.RequestUserAuthorization.
-        */
-        enum UserAuthorization
-        { WebCam = 1, Microphone = 2 }
-        /** The platform application is running. Returned by Application.platform.
-        */
-        enum RuntimePlatform
-        { OSXEditor = 0, OSXPlayer = 1, WindowsPlayer = 2, OSXWebPlayer = 3, OSXDashboardPlayer = 4, WindowsWebPlayer = 5, WindowsEditor = 7, IPhonePlayer = 8, XBOX360 = 10, PS3 = 9, Android = 11, NaCl = 12, FlashPlayer = 15, LinuxPlayer = 13, LinuxEditor = 16, WebGLPlayer = 17, MetroPlayerX86 = 18, WSAPlayerX86 = 18, MetroPlayerX64 = 19, WSAPlayerX64 = 19, MetroPlayerARM = 20, WSAPlayerARM = 20, WP8Player = 21, BB10Player = 22, BlackBerryPlayer = 22, TizenPlayer = 23, PSP2 = 24, PS4 = 25, PSM = 26, XboxOne = 27, SamsungTVPlayer = 28, WiiU = 30, tvOS = 31, Switch = 32, Lumin = 33, Stadia = 34, CloudRendering = 35, GameCoreScarlett = -1, GameCoreXboxSeries = 36, GameCoreXboxOne = 37, PS5 = 38, EmbeddedLinuxArm64 = 39, EmbeddedLinuxArm32 = 40, EmbeddedLinuxX64 = 41, EmbeddedLinuxX86 = 42, LinuxServer = 43, WindowsServer = 44, OSXServer = 45, QNXArm32 = 46, QNXArm64 = 47, QNXX64 = 48, QNXX86 = 49 }
-        /** The language the user's operating system is running in. Returned by Application.systemLanguage.
-        */
-        enum SystemLanguage
-        { Afrikaans = 0, Arabic = 1, Basque = 2, Belarusian = 3, Bulgarian = 4, Catalan = 5, Chinese = 6, Czech = 7, Danish = 8, Dutch = 9, English = 10, Estonian = 11, Faroese = 12, Finnish = 13, French = 14, German = 15, Greek = 16, Hebrew = 17, Hugarian = 18, Icelandic = 19, Indonesian = 20, Italian = 21, Japanese = 22, Korean = 23, Latvian = 24, Lithuanian = 25, Norwegian = 26, Polish = 27, Portuguese = 28, Romanian = 29, Russian = 30, SerboCroatian = 31, Slovak = 32, Slovenian = 33, Spanish = 34, Swedish = 35, Thai = 36, Turkish = 37, Ukrainian = 38, Vietnamese = 39, ChineseSimplified = 40, ChineseTraditional = 41, Hindi = 42, Unknown = 43, Hungarian = 18 }
-        /** Describes network reachability options.
-        */
-        enum NetworkReachability
-        { NotReachable = 0, ReachableViaCarrierDataNetwork = 1, ReachableViaLocalAreaNetwork = 2 }
-        /** Contains information about a change in the application's memory usage.
-        */
-        class ApplicationMemoryUsageChange extends System.ValueType
+        class AudioBehaviour extends UnityEngine.Behaviour
         {
             protected [__keep_incompatibility]: never;
         }
-        /** Represents a raw text or binary file asset.
+        /** A representation of audio sources in 3D.
         */
-        class TextAsset extends UnityEngine.Object
+        class AudioSource extends UnityEngine.AudioBehaviour
         {
             protected [__keep_incompatibility]: never;
-            /** The raw bytes of the text asset. (Read Only)
-            */
-            public get bytes(): System.Array$1<number>;
-            /** The text contents of the file as a string. (Read Only)
-            */
-            public get text(): string;
-            /** The size of the text asset data in bytes. (Read Only)
-            */
-            public get dataSize(): bigint;
-            public constructor ()
-            public constructor ($text: string)
         }
         /** Base class for Texture handling.
         */
@@ -2901,234 +2664,11 @@
         class Scene extends System.ValueType
         {
             protected [__keep_incompatibility]: never;
-            public get handle(): number;
-            /** Returns the relative path of the Scene. For example: "AssetsMyScenesMyScene.unity".
-            */
-            public get path(): string;
-            /** Returns the name of the Scene that is currently active in the game or app.
-            */
-            public get name(): string;
-            public set name(value: string);
-            /** IsLoaded is set to true after loading has completed and objects have been enabled.
-            */
-            public get isLoaded(): boolean;
-            /** Return the index of the Scene in the Build Settings.
-            */
-            public get buildIndex(): number;
-            /** Returns true if the Scene is modified.
-            */
-            public get isDirty(): boolean;
-            /** The number of root transforms of this Scene.
-            */
-            public get rootCount(): number;
-            public get isSubScene(): boolean;
-            public set isSubScene(value: boolean);
-            public IsValid () : boolean
-            public GetRootGameObjects () : System.Array$1<UnityEngine.GameObject>
-            public GetRootGameObjects ($rootGameObjects: System.Collections.Generic.List$1<UnityEngine.GameObject>) : void
-            public static op_Equality ($lhs: UnityEngine.SceneManagement.Scene, $rhs: UnityEngine.SceneManagement.Scene) : boolean
-            public static op_Inequality ($lhs: UnityEngine.SceneManagement.Scene, $rhs: UnityEngine.SceneManagement.Scene) : boolean
-        }
-        /** Scene management at run-time.
-        */
-        class SceneManager extends System.Object
-        {
-            protected [__keep_incompatibility]: never;
-            /** The current number of Scenes.
-            */
-            public static get sceneCount(): number;
-            /** The number of loaded Scenes.
-            */
-            public static get loadedSceneCount(): number;
-            /** Number of Scenes in Build Settings.
-            */
-            public static get sceneCountInBuildSettings(): number;
-            public static GetActiveScene () : UnityEngine.SceneManagement.Scene
-            /** Set the Scene to be active.
-            * @param scene The Scene to be set.
-            * @returns Returns false if the Scene is not loaded yet. 
-            */
-            public static SetActiveScene ($scene: UnityEngine.SceneManagement.Scene) : boolean
-            /** Searches all Scenes loaded for a Scene that has the given asset path.
-            * @param scenePath Path of the Scene. Should be relative to the project folder. Like: "AssetsMyScenesMyScene.unity".
-            * @returns A reference to the Scene, if valid. If not, an invalid Scene is returned. 
-            */
-            public static GetSceneByPath ($scenePath: string) : UnityEngine.SceneManagement.Scene
-            /** Searches through the Scenes loaded for a Scene with the given name.
-            * @param name Name of Scene to find.
-            * @returns A reference to the Scene, if valid. If not, an invalid Scene is returned. 
-            */
-            public static GetSceneByName ($name: string) : UnityEngine.SceneManagement.Scene
-            /** Get a Scene struct from a build index.
-            * @param buildIndex Build index as shown in the Build Settings window.
-            * @returns A reference to the Scene, if valid. If not, an invalid Scene is returned. 
-            */
-            public static GetSceneByBuildIndex ($buildIndex: number) : UnityEngine.SceneManagement.Scene
-            /** Get the Scene at index in the SceneManager's list of loaded Scenes.
-            * @param index Index of the Scene to get. Index must be greater than or equal to 0 and less than SceneManager.sceneCount.
-            * @returns A reference to the Scene at the index specified. 
-            */
-            public static GetSceneAt ($index: number) : UnityEngine.SceneManagement.Scene
-            /** Create an empty new Scene at runtime with the given name.
-            * @param sceneName The name of the new Scene. It cannot be empty or null, or same as the name of the existing Scenes.
-            * @param parameters Various parameters used to create the Scene.
-            * @returns A reference to the new Scene that was created, or an invalid Scene if creation failed. 
-            */
-            public static CreateScene ($sceneName: string, $parameters: UnityEngine.SceneManagement.CreateSceneParameters) : UnityEngine.SceneManagement.Scene
-            /** This will merge the source Scene into the destinationScene.
-            * @param sourceScene The Scene that will be merged into the destination Scene.
-            * @param destinationScene Existing Scene to merge the source Scene into.
-            */
-            public static MergeScenes ($sourceScene: UnityEngine.SceneManagement.Scene, $destinationScene: UnityEngine.SceneManagement.Scene) : void
-            /** Move a GameObject from its current Scene to a new Scene.
-            * @param go GameObject to move.
-            * @param scene Scene to move into.
-            */
-            public static MoveGameObjectToScene ($go: UnityEngine.GameObject, $scene: UnityEngine.SceneManagement.Scene) : void
-            public static add_sceneLoaded ($value: UnityEngine.Events.UnityAction$2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>) : void
-            public static remove_sceneLoaded ($value: UnityEngine.Events.UnityAction$2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>) : void
-            public static add_sceneUnloaded ($value: UnityEngine.Events.UnityAction$1<UnityEngine.SceneManagement.Scene>) : void
-            public static remove_sceneUnloaded ($value: UnityEngine.Events.UnityAction$1<UnityEngine.SceneManagement.Scene>) : void
-            public static add_activeSceneChanged ($value: UnityEngine.Events.UnityAction$2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>) : void
-            public static remove_activeSceneChanged ($value: UnityEngine.Events.UnityAction$2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>) : void
-            /** Create an empty new Scene at runtime with the given name.
-            * @param sceneName The name of the new Scene. It cannot be empty or null, or same as the name of the existing Scenes.
-            * @param parameters Various parameters used to create the Scene.
-            * @returns A reference to the new Scene that was created, or an invalid Scene if creation failed. 
-            */
-            public static CreateScene ($sceneName: string) : UnityEngine.SceneManagement.Scene
-            /** Loads the Scene by its name or index in Build Settings.
-            * @param sceneName Name or path of the Scene to load.
-            * @param sceneBuildIndex Index of the Scene in the Build Settings to load.
-            * @param mode Allows you to specify whether or not to load the Scene additively. See SceneManagement.LoadSceneMode for more information about the options.
-            */
-            public static LoadScene ($sceneName: string, $mode: UnityEngine.SceneManagement.LoadSceneMode) : void
-            public static LoadScene ($sceneName: string) : void
-            /** Loads the Scene by its name or index in Build Settings.
-            * @param sceneName Name or path of the Scene to load.
-            * @param sceneBuildIndex Index of the Scene in the Build Settings to load.
-            * @param parameters Various parameters used to load the Scene.
-            * @returns A handle to the Scene being loaded. 
-            */
-            public static LoadScene ($sceneName: string, $parameters: UnityEngine.SceneManagement.LoadSceneParameters) : UnityEngine.SceneManagement.Scene
-            /** Loads the Scene by its name or index in Build Settings.
-            * @param sceneName Name or path of the Scene to load.
-            * @param sceneBuildIndex Index of the Scene in the Build Settings to load.
-            * @param mode Allows you to specify whether or not to load the Scene additively. See SceneManagement.LoadSceneMode for more information about the options.
-            */
-            public static LoadScene ($sceneBuildIndex: number, $mode: UnityEngine.SceneManagement.LoadSceneMode) : void
-            public static LoadScene ($sceneBuildIndex: number) : void
-            /** Loads the Scene by its name or index in Build Settings.
-            * @param sceneName Name or path of the Scene to load.
-            * @param sceneBuildIndex Index of the Scene in the Build Settings to load.
-            * @param parameters Various parameters used to load the Scene.
-            * @returns A handle to the Scene being loaded. 
-            */
-            public static LoadScene ($sceneBuildIndex: number, $parameters: UnityEngine.SceneManagement.LoadSceneParameters) : UnityEngine.SceneManagement.Scene
-            /** Loads the Scene asynchronously in the background.
-            * @param sceneName Name or path of the Scene to load.
-            * @param sceneBuildIndex Index of the Scene in the Build Settings to load.
-            * @param mode If LoadSceneMode.Single then all current Scenes will be unloaded before loading.
-            * @param parameters Struct that collects the various parameters into a single place except for the name and index.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static LoadSceneAsync ($sceneBuildIndex: number, $mode: UnityEngine.SceneManagement.LoadSceneMode) : UnityEngine.AsyncOperation
-            public static LoadSceneAsync ($sceneBuildIndex: number) : UnityEngine.AsyncOperation
-            /** Loads the Scene asynchronously in the background.
-            * @param sceneName Name or path of the Scene to load.
-            * @param sceneBuildIndex Index of the Scene in the Build Settings to load.
-            * @param mode If LoadSceneMode.Single then all current Scenes will be unloaded before loading.
-            * @param parameters Struct that collects the various parameters into a single place except for the name and index.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static LoadSceneAsync ($sceneBuildIndex: number, $parameters: UnityEngine.SceneManagement.LoadSceneParameters) : UnityEngine.AsyncOperation
-            /** Loads the Scene asynchronously in the background.
-            * @param sceneName Name or path of the Scene to load.
-            * @param sceneBuildIndex Index of the Scene in the Build Settings to load.
-            * @param mode If LoadSceneMode.Single then all current Scenes will be unloaded before loading.
-            * @param parameters Struct that collects the various parameters into a single place except for the name and index.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static LoadSceneAsync ($sceneName: string, $mode: UnityEngine.SceneManagement.LoadSceneMode) : UnityEngine.AsyncOperation
-            public static LoadSceneAsync ($sceneName: string) : UnityEngine.AsyncOperation
-            /** Loads the Scene asynchronously in the background.
-            * @param sceneName Name or path of the Scene to load.
-            * @param sceneBuildIndex Index of the Scene in the Build Settings to load.
-            * @param mode If LoadSceneMode.Single then all current Scenes will be unloaded before loading.
-            * @param parameters Struct that collects the various parameters into a single place except for the name and index.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static LoadSceneAsync ($sceneName: string, $parameters: UnityEngine.SceneManagement.LoadSceneParameters) : UnityEngine.AsyncOperation
-            /** Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.
-            * @param sceneBuildIndex Index of the Scene in BuildSettings.
-            * @param sceneName Name or path of the Scene to unload.
-            * @param scene Scene to unload.
-            * @param options Scene unloading options.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static UnloadSceneAsync ($sceneBuildIndex: number) : UnityEngine.AsyncOperation
-            /** Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.
-            * @param sceneBuildIndex Index of the Scene in BuildSettings.
-            * @param sceneName Name or path of the Scene to unload.
-            * @param scene Scene to unload.
-            * @param options Scene unloading options.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static UnloadSceneAsync ($sceneName: string) : UnityEngine.AsyncOperation
-            /** Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.
-            * @param sceneBuildIndex Index of the Scene in BuildSettings.
-            * @param sceneName Name or path of the Scene to unload.
-            * @param scene Scene to unload.
-            * @param options Scene unloading options.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static UnloadSceneAsync ($scene: UnityEngine.SceneManagement.Scene) : UnityEngine.AsyncOperation
-            /** Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.
-            * @param sceneBuildIndex Index of the Scene in BuildSettings.
-            * @param sceneName Name or path of the Scene to unload.
-            * @param scene Scene to unload.
-            * @param options Scene unloading options.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static UnloadSceneAsync ($sceneBuildIndex: number, $options: UnityEngine.SceneManagement.UnloadSceneOptions) : UnityEngine.AsyncOperation
-            /** Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.
-            * @param sceneBuildIndex Index of the Scene in BuildSettings.
-            * @param sceneName Name or path of the Scene to unload.
-            * @param scene Scene to unload.
-            * @param options Scene unloading options.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static UnloadSceneAsync ($sceneName: string, $options: UnityEngine.SceneManagement.UnloadSceneOptions) : UnityEngine.AsyncOperation
-            /** Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.
-            * @param sceneBuildIndex Index of the Scene in BuildSettings.
-            * @param sceneName Name or path of the Scene to unload.
-            * @param scene Scene to unload.
-            * @param options Scene unloading options.
-            * @returns Use the AsyncOperation to determine if the operation has completed. 
-            */
-            public static UnloadSceneAsync ($scene: UnityEngine.SceneManagement.Scene, $options: UnityEngine.SceneManagement.UnloadSceneOptions) : UnityEngine.AsyncOperation
-            public constructor ()
-        }
-        /** This struct collects all the CreateScene parameters in to a single place.
-        */
-        class CreateSceneParameters extends System.ValueType
-        {
-            protected [__keep_incompatibility]: never;
         }
         /** Used when loading a Scene in a player.
         */
         enum LoadSceneMode
         { Single = 0, Additive = 1 }
-        /** This struct collects all the LoadScene parameters in to a single place.
-        */
-        class LoadSceneParameters extends System.ValueType
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        /** Scene unloading options passed to SceneManager.UnloadScene.
-        */
-        enum UnloadSceneOptions
-        { None = 0, UnloadAllEmbeddedSceneObjects = 1 }
     }
     namespace System.Security {
         interface IEvidenceFactory
@@ -3271,397 +2811,6 @@
             protected [__keep_incompatibility]: never;
         }
     }
-    namespace UnityEngine.EventSystems {
-        class UIBehaviour extends UnityEngine.MonoBehaviour
-        {
-            protected [__keep_incompatibility]: never;
-            public IsActive () : boolean
-            public IsDestroyed () : boolean
-        }
-        interface IEventSystemHandler
-        {
-        }
-        interface IPointerEnterHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface ISelectHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IPointerExitHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IDeselectHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IPointerDownHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IPointerUpHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IMoveHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        class AbstractEventData extends System.Object
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class BaseEventData extends UnityEngine.EventSystems.AbstractEventData
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class AxisEventData extends UnityEngine.EventSystems.BaseEventData
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class PointerEventData extends UnityEngine.EventSystems.BaseEventData
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        interface ISubmitHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IPointerClickHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IBeginDragHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IDragHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IEndDragHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-        interface IUpdateSelectedHandler extends UnityEngine.EventSystems.IEventSystemHandler
-        {
-        }
-    }
-    namespace UnityEngine.UI {
-        class Selectable extends UnityEngine.EventSystems.UIBehaviour implements UnityEngine.EventSystems.IEventSystemHandler, UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.IMoveHandler
-        {
-            protected [__keep_incompatibility]: never;
-            public static get allSelectablesArray(): System.Array$1<UnityEngine.UI.Selectable>;
-            public static get allSelectableCount(): number;
-            public get navigation(): UnityEngine.UI.Navigation;
-            public set navigation(value: UnityEngine.UI.Navigation);
-            public get transition(): UnityEngine.UI.Selectable.Transition;
-            public set transition(value: UnityEngine.UI.Selectable.Transition);
-            public get colors(): UnityEngine.UI.ColorBlock;
-            public set colors(value: UnityEngine.UI.ColorBlock);
-            public get spriteState(): UnityEngine.UI.SpriteState;
-            public set spriteState(value: UnityEngine.UI.SpriteState);
-            public get animationTriggers(): UnityEngine.UI.AnimationTriggers;
-            public set animationTriggers(value: UnityEngine.UI.AnimationTriggers);
-            public get targetGraphic(): UnityEngine.UI.Graphic;
-            public set targetGraphic(value: UnityEngine.UI.Graphic);
-            public get interactable(): boolean;
-            public set interactable(value: boolean);
-            public get image(): UnityEngine.UI.Image;
-            public set image(value: UnityEngine.UI.Image);
-            public get animator(): UnityEngine.Animator;
-            public static AllSelectablesNoAlloc ($selectables: System.Array$1<UnityEngine.UI.Selectable>) : number
-            public IsInteractable () : boolean
-            public FindSelectable ($dir: UnityEngine.Vector3) : UnityEngine.UI.Selectable
-            public FindSelectableOnLeft () : UnityEngine.UI.Selectable
-            public FindSelectableOnRight () : UnityEngine.UI.Selectable
-            public FindSelectableOnUp () : UnityEngine.UI.Selectable
-            public FindSelectableOnDown () : UnityEngine.UI.Selectable
-            public OnMove ($eventData: UnityEngine.EventSystems.AxisEventData) : void
-            public OnPointerDown ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public OnPointerUp ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public OnPointerEnter ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public OnPointerExit ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public OnSelect ($eventData: UnityEngine.EventSystems.BaseEventData) : void
-            public OnDeselect ($eventData: UnityEngine.EventSystems.BaseEventData) : void
-            public Select () : void
-        }
-        class Navigation extends System.ValueType implements System.IEquatable$1<UnityEngine.UI.Navigation>
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class ColorBlock extends System.ValueType implements System.IEquatable$1<UnityEngine.UI.ColorBlock>
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class SpriteState extends System.ValueType implements System.IEquatable$1<UnityEngine.UI.SpriteState>
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class AnimationTriggers extends System.Object
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class Graphic extends UnityEngine.EventSystems.UIBehaviour implements UnityEngine.UI.ICanvasElement
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        interface ICanvasElement
-        {
-        }
-        class MaskableGraphic extends UnityEngine.UI.Graphic implements UnityEngine.UI.IClippable, UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        interface IClippable
-        {
-        }
-        interface IMaterialModifier
-        {
-        }
-        interface IMaskable
-        {
-        }
-        class Image extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IClippable, UnityEngine.UI.IMaterialModifier, UnityEngine.ICanvasRaycastFilter, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.ISerializationCallbackReceiver, UnityEngine.UI.ILayoutElement
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        interface ILayoutElement
-        {
-        }
-        class Button extends UnityEngine.UI.Selectable implements UnityEngine.EventSystems.ISubmitHandler, UnityEngine.EventSystems.IPointerClickHandler, UnityEngine.EventSystems.IEventSystemHandler, UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.IMoveHandler
-        {
-            protected [__keep_incompatibility]: never;
-            public get onClick(): UnityEngine.UI.Button.ButtonClickedEvent;
-            public set onClick(value: UnityEngine.UI.Button.ButtonClickedEvent);
-            public OnPointerClick ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public OnSubmit ($eventData: UnityEngine.EventSystems.BaseEventData) : void
-        }
-        class InputField extends UnityEngine.UI.Selectable implements UnityEngine.EventSystems.ISubmitHandler, UnityEngine.EventSystems.IPointerClickHandler, UnityEngine.EventSystems.IBeginDragHandler, UnityEngine.EventSystems.IDragHandler, UnityEngine.EventSystems.IEndDragHandler, UnityEngine.UI.ICanvasElement, UnityEngine.EventSystems.IEventSystemHandler, UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.IUpdateSelectedHandler, UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.IMoveHandler, UnityEngine.UI.ILayoutElement
-        {
-            protected [__keep_incompatibility]: never;
-            public get shouldHideMobileInput(): boolean;
-            public set shouldHideMobileInput(value: boolean);
-            public get shouldActivateOnSelect(): boolean;
-            public set shouldActivateOnSelect(value: boolean);
-            public get text(): string;
-            public set text(value: string);
-            public get isFocused(): boolean;
-            public get caretBlinkRate(): number;
-            public set caretBlinkRate(value: number);
-            public get caretWidth(): number;
-            public set caretWidth(value: number);
-            public get textComponent(): UnityEngine.UI.Text;
-            public set textComponent(value: UnityEngine.UI.Text);
-            public get placeholder(): UnityEngine.UI.Graphic;
-            public set placeholder(value: UnityEngine.UI.Graphic);
-            public get caretColor(): UnityEngine.Color;
-            public set caretColor(value: UnityEngine.Color);
-            public get customCaretColor(): boolean;
-            public set customCaretColor(value: boolean);
-            public get selectionColor(): UnityEngine.Color;
-            public set selectionColor(value: UnityEngine.Color);
-            public get onEndEdit(): UnityEngine.UI.InputField.EndEditEvent;
-            public set onEndEdit(value: UnityEngine.UI.InputField.EndEditEvent);
-            public get onSubmit(): UnityEngine.UI.InputField.SubmitEvent;
-            public set onSubmit(value: UnityEngine.UI.InputField.SubmitEvent);
-            public get onValueChanged(): UnityEngine.UI.InputField.OnChangeEvent;
-            public set onValueChanged(value: UnityEngine.UI.InputField.OnChangeEvent);
-            public get onValidateInput(): UnityEngine.UI.InputField.OnValidateInput;
-            public set onValidateInput(value: UnityEngine.UI.InputField.OnValidateInput);
-            public get characterLimit(): number;
-            public set characterLimit(value: number);
-            public get contentType(): UnityEngine.UI.InputField.ContentType;
-            public set contentType(value: UnityEngine.UI.InputField.ContentType);
-            public get lineType(): UnityEngine.UI.InputField.LineType;
-            public set lineType(value: UnityEngine.UI.InputField.LineType);
-            public get inputType(): UnityEngine.UI.InputField.InputType;
-            public set inputType(value: UnityEngine.UI.InputField.InputType);
-            public get touchScreenKeyboard(): UnityEngine.TouchScreenKeyboard;
-            public get keyboardType(): UnityEngine.TouchScreenKeyboardType;
-            public set keyboardType(value: UnityEngine.TouchScreenKeyboardType);
-            public get characterValidation(): UnityEngine.UI.InputField.CharacterValidation;
-            public set characterValidation(value: UnityEngine.UI.InputField.CharacterValidation);
-            public get readOnly(): boolean;
-            public set readOnly(value: boolean);
-            public get multiLine(): boolean;
-            public get asteriskChar(): number;
-            public set asteriskChar(value: number);
-            public get wasCanceled(): boolean;
-            public get caretPosition(): number;
-            public set caretPosition(value: number);
-            public get selectionAnchorPosition(): number;
-            public set selectionAnchorPosition(value: number);
-            public get selectionFocusPosition(): number;
-            public set selectionFocusPosition(value: number);
-            public get minWidth(): number;
-            public get preferredWidth(): number;
-            public get flexibleWidth(): number;
-            public get minHeight(): number;
-            public get preferredHeight(): number;
-            public get flexibleHeight(): number;
-            public get layoutPriority(): number;
-            public SetTextWithoutNotify ($input: string) : void
-            public MoveTextEnd ($shift: boolean) : void
-            public MoveTextStart ($shift: boolean) : void
-            public OnBeginDrag ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public OnDrag ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public OnEndDrag ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public ProcessEvent ($e: UnityEngine.Event) : void
-            public OnUpdateSelected ($eventData: UnityEngine.EventSystems.BaseEventData) : void
-            public ForceLabelUpdate () : void
-            public Rebuild ($update: UnityEngine.UI.CanvasUpdate) : void
-            public LayoutComplete () : void
-            public GraphicUpdateComplete () : void
-            public ActivateInputField () : void
-            public OnPointerClick ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public DeactivateInputField () : void
-            public OnSubmit ($eventData: UnityEngine.EventSystems.BaseEventData) : void
-            public CalculateLayoutInputHorizontal () : void
-            public CalculateLayoutInputVertical () : void
-        }
-        class Text extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IClippable, UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.ILayoutElement
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        enum CanvasUpdate
-        { Prelayout = 0, Layout = 1, PostLayout = 2, PreRender = 3, LatePreRender = 4, MaxUpdateValue = 5 }
-        class Toggle extends UnityEngine.UI.Selectable implements UnityEngine.EventSystems.ISubmitHandler, UnityEngine.EventSystems.IPointerClickHandler, UnityEngine.UI.ICanvasElement, UnityEngine.EventSystems.IEventSystemHandler, UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.IMoveHandler
-        {
-            protected [__keep_incompatibility]: never;
-            public toggleTransition : UnityEngine.UI.Toggle.ToggleTransition
-            public graphic : UnityEngine.UI.Graphic
-            public onValueChanged : UnityEngine.UI.Toggle.ToggleEvent
-            public get group(): UnityEngine.UI.ToggleGroup;
-            public set group(value: UnityEngine.UI.ToggleGroup);
-            public get isOn(): boolean;
-            public set isOn(value: boolean);
-            public Rebuild ($executing: UnityEngine.UI.CanvasUpdate) : void
-            public LayoutComplete () : void
-            public GraphicUpdateComplete () : void
-            public SetIsOnWithoutNotify ($value: boolean) : void
-            public OnPointerClick ($eventData: UnityEngine.EventSystems.PointerEventData) : void
-            public OnSubmit ($eventData: UnityEngine.EventSystems.BaseEventData) : void
-        }
-        class ToggleGroup extends UnityEngine.EventSystems.UIBehaviour
-        {
-            protected [__keep_incompatibility]: never;
-        }
-    }
-    namespace UnityEngine.UI.Selectable {
-        enum Transition
-        { None = 0, ColorTint = 1, SpriteSwap = 2, Animation = 3 }
-    }
-    namespace UnityEngine.Events {
-        /** Abstract base class for UnityEvents.
-        */
-        class UnityEventBase extends System.Object implements UnityEngine.ISerializationCallbackReceiver
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        /** A zero argument persistent callback that can be saved with the Scene.
-        */
-        class UnityEvent extends UnityEngine.Events.UnityEventBase implements UnityEngine.ISerializationCallbackReceiver
-        {
-            protected [__keep_incompatibility]: never;
-            /** Add a non persistent listener to the UnityEvent.
-            * @param call Callback function.
-            */
-            public AddListener ($call: UnityEngine.Events.UnityAction) : void
-            /** Remove a non persistent listener from the UnityEvent. If you have added the same listener multiple times, this method will remove all occurrences of it.
-            * @param call Callback function.
-            */
-            public RemoveListener ($call: UnityEngine.Events.UnityAction) : void
-            public Invoke () : void
-            public constructor ()
-        }
-        /** Zero argument delegate used by UnityEvents.
-        */
-        interface UnityAction
-        { 
-        () : void; 
-        Invoke?: () => void;
-        }
-        var UnityAction: { new (func: () => void): UnityAction; }
-        class UnityEvent$1<T0> extends UnityEngine.Events.UnityEventBase implements UnityEngine.ISerializationCallbackReceiver
-        {
-            protected [__keep_incompatibility]: never;
-            public AddListener ($call: UnityEngine.Events.UnityAction$1<T0>) : void
-            public RemoveListener ($call: UnityEngine.Events.UnityAction$1<T0>) : void
-            public Invoke ($arg0: T0) : void
-            public constructor ()
-        }
-        interface UnityAction$1<T0>
-        { 
-        (arg0: T0) : void; 
-        Invoke?: (arg0: T0) => void;
-        }
-        interface UnityAction$2<T0, T1>
-        { 
-        (arg0: T0, arg1: T1) : void; 
-        Invoke?: (arg0: T0, arg1: T1) => void;
-        }
-    }
-    namespace UnityEngine.UI.Button {
-        class ButtonClickedEvent extends UnityEngine.Events.UnityEvent implements UnityEngine.ISerializationCallbackReceiver
-        {
-            protected [__keep_incompatibility]: never;
-            public constructor ()
-        }
-    }
-    namespace UnityEngine.UI.InputField {
-        class EndEditEvent extends UnityEngine.Events.UnityEvent$1<string> implements UnityEngine.ISerializationCallbackReceiver
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class SubmitEvent extends UnityEngine.Events.UnityEvent$1<string> implements UnityEngine.ISerializationCallbackReceiver
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        class OnChangeEvent extends UnityEngine.Events.UnityEvent$1<string> implements UnityEngine.ISerializationCallbackReceiver
-        {
-            protected [__keep_incompatibility]: never;
-        }
-        interface OnValidateInput
-        { 
-        (text: string, charIndex: number, addedChar: number) : number; 
-        Invoke?: (text: string, charIndex: number, addedChar: number) => number;
-        }
-        var OnValidateInput: { new (func: (text: string, charIndex: number, addedChar: number) => number): OnValidateInput; }
-        enum ContentType
-        { Standard = 0, Autocorrected = 1, IntegerNumber = 2, DecimalNumber = 3, Alphanumeric = 4, Name = 5, EmailAddress = 6, Password = 7, Pin = 8, Custom = 9 }
-        enum LineType
-        { SingleLine = 0, MultiLineSubmit = 1, MultiLineNewline = 2 }
-        enum InputType
-        { Standard = 0, AutoCorrect = 1, Password = 2 }
-        enum CharacterValidation
-        { None = 0, Integer = 1, Decimal = 2, Alphanumeric = 3, Name = 4, EmailAddress = 5 }
-    }
-    namespace UnityEngine.UI.Toggle {
-        enum ToggleTransition
-        { None = 0, Fade = 1 }
-        class ToggleEvent extends UnityEngine.Events.UnityEvent$1<boolean> implements UnityEngine.ISerializationCallbackReceiver
-        {
-            protected [__keep_incompatibility]: never;
-            public constructor ()
-        }
-    }
-    namespace UnityEngine.Application {
-        interface AdvertisingIdentifierCallback
-        { 
-        (advertisingId: string, trackingEnabled: boolean, errorMsg: string) : void; 
-        Invoke?: (advertisingId: string, trackingEnabled: boolean, errorMsg: string) => void;
-        }
-        var AdvertisingIdentifierCallback: { new (func: (advertisingId: string, trackingEnabled: boolean, errorMsg: string) => void): AdvertisingIdentifierCallback; }
-        interface LowMemoryCallback
-        { 
-        () : void; 
-        Invoke?: () => void;
-        }
-        var LowMemoryCallback: { new (func: () => void): LowMemoryCallback; }
-        interface MemoryUsageChangedCallback
-        { 
-        (usage: $Ref<UnityEngine.ApplicationMemoryUsageChange>) : void; 
-        Invoke?: (usage: $Ref<UnityEngine.ApplicationMemoryUsageChange>) => void;
-        }
-        var MemoryUsageChangedCallback: { new (func: (usage: $Ref<UnityEngine.ApplicationMemoryUsageChange>) => void): MemoryUsageChangedCallback; }
-        interface LogCallback
-        { 
-        (condition: string, stackTrace: string, type: UnityEngine.LogType) : void; 
-        Invoke?: (condition: string, stackTrace: string, type: UnityEngine.LogType) => void;
-        }
-        var LogCallback: { new (func: (condition: string, stackTrace: string, type: UnityEngine.LogType) => void): LogCallback; }
-    }
         class JsManager extends System.Object
         {
             protected [__keep_incompatibility]: never;
@@ -3714,9 +2863,141 @@
             public static RefreshGameResolutions ($xResolution: XGameSetting.EnumResolution) : void
             public constructor ()
         }
+        class XResource extends UnityEngine.MonoBehaviour
+        {
+            protected [__keep_incompatibility]: never;
+            public static EDITOR_DOWNLOAD_SPEED : number
+            public static Init () : void
+            public static Load ($resource: string, $notify: System.Action$1<UnityEngine.Object>) : void
+            public static LoadGameObject ($resource: string, $callback: System.Action$1<UnityEngine.GameObject>) : void
+            public static LoadObjectAsync ($resource: string, $callBack: System.Action$1<UnityEngine.Object>) : System.Collections.IEnumerator
+            public static LoadScene ($levelName: string, $mode: UnityEngine.SceneManagement.LoadSceneMode, $onFinished?: System.Action$1<string>, $onProgress?: System.Action$2<string, number>) : void
+            public static LoadSceneWait ($levelName: string, $mode: UnityEngine.SceneManagement.LoadSceneMode, $onFinished?: System.Action$1<string>, $onProgress?: System.Action$2<string, number>) : System.Collections.IEnumerator
+            public static CacheTableZip ($onProgress: System.Action$2<string, number>) : System.Collections.IEnumerator
+            public static LoadTableText ($path: string) : string
+            public static LoadEditorAsset ($resourcePath: string) : UnityEngine.Object
+            public static DoGc ($sec?: number) : System.Collections.IEnumerator
+            public static LoadBytes ($fullPath: string, $callBack: System.Action$1<System.Array$1<number>>, $onError: System.Action) : void
+            public static RequestBytes ($fullPath: string, $async: AsyncResource, $onError: System.Action, $onProgress: System.Action$1<number>) : System.Collections.IEnumerator
+            public static LoadTextList ($fullPaths: System.Collections.Generic.List$1<string>, $callBack: System.Action$1<System.Collections.Generic.List$1<string>>) : void
+            public static LoadTextListAsync ($fullPaths: System.Collections.Generic.List$1<string>, $callBack: System.Action$1<System.Collections.Generic.List$1<string>>) : System.Collections.IEnumerator
+            public static LoadText ($fullPath: string, $callBack: System.Action$1<string>) : void
+            public static RequestText ($fullPath: string, $async: AsyncResource) : System.Collections.IEnumerator
+            public static RequestZipFile ($zipName: string, $callback: System.Action$1<ICSharpCode.SharpZipLib.Zip.ZipFile>, $onProgress: System.Action$1<number>) : System.Collections.IEnumerator
+            public static GetTextFromZip ($zip: ICSharpCode.SharpZipLib.Zip.ZipFile, $resourcePath: string) : string
+            public static SimulateDownload ($request: UnityEngine.Networking.UnityWebRequest, $onProgress: System.Action$1<number>) : System.Collections.IEnumerator
+            public constructor ()
+        }
+        class AsyncResource extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+        }
+        class XPlatform extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+            public static Platform : XPlatform.EPlatform
+            public static get InEditor(): boolean;
+            public static get InMobile(): boolean;
+            public static Init ($useEditorAssetBundle: boolean) : System.Collections.IEnumerator
+            public static GetPlatform () : string
+            public constructor ()
+        }
+        class PauseHelper extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+            public static get InPause(): boolean;
+            public static SetPauseState ($state: EPauseFrom, $bPause: boolean) : void
+            public static Revert () : void
+            public static PauseGame ($from: EPauseFrom) : void
+            public static DoContinueGame ($from: EPauseFrom) : void
+        }
+        enum EPauseFrom
+        { None = 0 }
+        class TimeScaleHelper extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+            public static SetTimeScale ($from: ETimeScaleFrom, $value: number) : void
+            public static ClearTimeScale ($from: ETimeScaleFrom) : void
+            public static GetTimeScale () : number
+            public static ResetTimeScale () : void
+        }
+        enum ETimeScaleFrom
+        { Pause = 0, BulletTime = 1, Test1 = 2, Test2 = 3 }
+        class Sound extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+            public static get GlobalMusicVolume(): number;
+            public static set GlobalMusicVolume(value: number);
+            public static get GlobalAudioVolume(): number;
+            public static set GlobalAudioVolume(value: number);
+            public static get CurrentMusicId(): number;
+            public static Init () : void
+            public static CloseSound () : void
+            public static OpenSound () : void
+            public static Create3DAudioSource ($parent: UnityEngine.GameObject, $maxDistance?: number, $useLinear?: boolean) : UnityEngine.AudioSource
+            public static Create2DAudioSource ($parent: UnityEngine.GameObject) : UnityEngine.AudioSource
+            public static Load ($id: number, $notify: System.Action$1<SoundClip>) : void
+            public static StopEnvironmentMusic ($fade?: number) : void
+            public static PlayEnvironmentMusic ($id: number, $loop?: boolean, $fade?: number) : void
+            public static PlayEnvironmentMusic ($resource: string, $loop?: boolean, $volume?: number, $fade?: number) : void
+            public static PauseMusic ($b: boolean) : void
+            public static PlayMusic ($id: number, $loop?: boolean, $tag?: string) : void
+            public static PlayMusic ($resource: string, $name?: string, $loop?: boolean, $volume?: number) : void
+            public static StopMusic () : void
+            public static PlayMusic2 ($id: number, $loop?: boolean) : void
+            public static PlayMusic2 ($resource: string, $loop?: boolean, $volume?: number) : void
+            public static StopMusic2 () : void
+            public static PauseMusic2 ($b: boolean) : void
+            public static UnloadSoundAsset ($audioSource: UnityEngine.AudioSource, $soundId: number) : void
+            public static PlayAudioOneShot ($audioSource: UnityEngine.AudioSource, $soundId: number, $volume?: number) : void
+            public static PlayAudio ($audioSource: UnityEngine.AudioSource, $soundId: number, $bLoop?: boolean, $playCallBack?: System.Action) : void
+            public static StopAudio ($audioSource: UnityEngine.AudioSource) : void
+            public static PlayUIAudioOneShot ($id: UISoundId) : void
+            public static PlayUiAudioOneShot ($soundId: number) : void
+            public static ClearSoundCache () : void
+            public static ClearAll () : void
+        }
+        class SoundClip extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+        }
+        enum UISoundId
+        {  }
+        class MissionCache extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+            public static MonsterMaterials : System.Collections.Generic.List$1<MissionCache.MonsterMaterialInfo>
+            public static PreloadMission ($onFinished: System.Action) : void
+            public static DoPreload ($onFinished: System.Action) : System.Collections.IEnumerator
+            public static ClearCache () : void
+        }
         namespace XGameSetting {
         enum EnumResolution
         { Low = 0, Mid = 1, High = 2 }
+    }
+    namespace ICSharpCode.SharpZipLib.Zip {
+        class ZipFile extends System.Object implements System.Collections.IEnumerable, System.IDisposable
+        {
+            protected [__keep_incompatibility]: never;
+        }
+    }
+    namespace UnityEngine.Networking {
+        /** Provides methods to communicate with web servers.
+        */
+        class UnityWebRequest extends System.Object implements System.IDisposable
+        {
+            protected [__keep_incompatibility]: never;
+        }
+    }
+    namespace XPlatform {
+        enum EPlatform
+        { UnityEditor = 1, UnityEditor_AB = 2, Standalone = 3, Android = 4, Ios = 5, WebGL = 6 }
+    }
+    namespace MissionCache {
+        class MonsterMaterialInfo extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+        }
     }
     namespace FairyGUI {
         class BlendModeUtils extends System.Object
@@ -4412,7 +3693,7 @@
             public constructor ($obj: FairyGUI.DisplayObject)
             public constructor ()
         }
-        class Image extends FairyGUI.DisplayObject implements FairyGUI.IMeshFactory, FairyGUI.IEventDispatcher
+        class Image extends FairyGUI.DisplayObject implements FairyGUI.IEventDispatcher, FairyGUI.IMeshFactory
         {
             protected [__keep_incompatibility]: never;
             public get texture(): FairyGUI.NTexture;
@@ -4678,7 +3959,7 @@
             public constructor ()
             public constructor ($lineWidth: number, $color: UnityEngine.Color, $repeatFill: boolean)
         }
-        class MovieClip extends FairyGUI.Image implements FairyGUI.IMeshFactory, FairyGUI.IEventDispatcher
+        class MovieClip extends FairyGUI.Image implements FairyGUI.IEventDispatcher, FairyGUI.IMeshFactory
         {
             protected [__keep_incompatibility]: never;
             public interval : number
@@ -4992,7 +4273,7 @@
             public constructor ()
             public constructor ($resourceURL: string)
         }
-        class TextField extends FairyGUI.DisplayObject implements FairyGUI.IMeshFactory, FairyGUI.IEventDispatcher
+        class TextField extends FairyGUI.DisplayObject implements FairyGUI.IEventDispatcher, FairyGUI.IMeshFactory
         {
             protected [__keep_incompatibility]: never;
             public get textFormat(): FairyGUI.TextFormat;
@@ -5047,7 +4328,7 @@
             public static ConvertLineR ($source: string) : string
             public constructor ()
         }
-        class SelectionShape extends FairyGUI.DisplayObject implements FairyGUI.IMeshFactory, FairyGUI.IEventDispatcher
+        class SelectionShape extends FairyGUI.DisplayObject implements FairyGUI.IEventDispatcher, FairyGUI.IMeshFactory
         {
             protected [__keep_incompatibility]: never;
             public rects : System.Collections.Generic.List$1<UnityEngine.Rect>
@@ -5512,7 +4793,7 @@
             public Cancel () : void
             public constructor ()
         }
-        class GLoader extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IEventDispatcher, FairyGUI.IColorGear
+        class GLoader extends FairyGUI.GObject implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear, FairyGUI.IAnimationGear
         {
             protected [__keep_incompatibility]: never;
             public showErrorSign : boolean
@@ -6169,7 +5450,7 @@
         }
         enum FillType
         { None = 0, Scale = 1, ScaleMatchHeight = 2, ScaleMatchWidth = 3, ScaleFree = 4, ScaleNoBorder = 5 }
-        class GLoader3D extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IEventDispatcher, FairyGUI.IColorGear
+        class GLoader3D extends FairyGUI.GObject implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear, FairyGUI.IAnimationGear
         {
             protected [__keep_incompatibility]: never;
             public get url(): string;
@@ -6215,7 +5496,7 @@
             public SetWrapTarget ($gameObject: UnityEngine.GameObject, $cloneMaterial: boolean, $width: number, $height: number) : void
             public constructor ()
         }
-        class GMovieClip extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IEventDispatcher, FairyGUI.IColorGear
+        class GMovieClip extends FairyGUI.GObject implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear, FairyGUI.IAnimationGear
         {
             protected [__keep_incompatibility]: never;
             public get onPlayEnd(): FairyGUI.EventListener;

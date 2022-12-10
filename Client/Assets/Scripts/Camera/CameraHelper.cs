@@ -3,27 +3,7 @@ using UnityEngine.Rendering.Universal;
 
 public static class CameraHelper
 {
-    public static Camera Camera { private set; get; }
-
-    public static void Init(Camera camera)
-    {
-        Camera = camera;
-    }
-
-    public static void SetCameraPosition(Vector2 pos)
-    {
-        Camera.transform.position = pos;
-    }
-
-    public static void OnEnterMission()
-    {
-        
-    }
-
-    public static void OnExitMission()
-    {
-        
-    }
+    public static Camera MainCamera => Camera.main != null ? Camera.main : Camera.current;
     
     public static void ClearShake()
     {
@@ -32,20 +12,20 @@ public static class CameraHelper
 
     public static Vector3 GetMouseWorldPos(Vector3 touchPos)
     {
-        var transform = Camera.transform;
-        var targetPos = transform.position;
-        targetPos += transform.forward * Camera.orthographicSize;
+        var camera = MainCamera;
+        if (camera == null)
+        {
+            Dbg.LogError("GetMouseWorldPos Error, camera is null");
+            return Vector3.zero;
+        }
         
-        var screenPoint = Camera.WorldToScreenPoint(targetPos);
+        var transform = camera.transform;
+        var targetPos = transform.position;
+        targetPos += transform.forward * camera.orthographicSize;
+        
+        var screenPoint = camera.WorldToScreenPoint(targetPos);
         var mousePos = touchPos;
         mousePos.z = screenPoint.z;
-
-        return Camera.ScreenToWorldPoint(mousePos);
-    }
-
-    public static void SetRenderType(this Camera camera, CameraRenderType type)
-    {
-        var cameraData = camera.GetUniversalAdditionalCameraData();
-        cameraData.renderType = type;
+        return camera.ScreenToWorldPoint(mousePos);
     }
 }

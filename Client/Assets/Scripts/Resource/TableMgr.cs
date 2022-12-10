@@ -16,7 +16,6 @@ public static class TableMgr
     private static void InitTableUrl()
     {
         _(typeof(SoundDeploy), "Sound");
-        _(typeof(SceneDeploy), "Scene");
         _(typeof(MonsterDeploy), "Monster");
     }
     
