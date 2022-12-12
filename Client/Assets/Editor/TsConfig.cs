@@ -45,7 +45,8 @@ public class TsConfig
                 typeof(PauseHelper),
                 typeof(TimeScaleHelper),
                 typeof(Sound),
-                typeof(MissionCache)
+                typeof(MissionCache),
+                typeof(TouchMgr),
             };
 
             List<string> namespaces = new List<string>()

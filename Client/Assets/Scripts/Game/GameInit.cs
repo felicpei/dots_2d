@@ -26,6 +26,7 @@ public class GameInit : MonoBehaviour
         //初始化全局协程
         GlobalCoroutine.StartCoroutine = StartCoroutine;
         
+        
         //StartGame
         JsManager.StartGame();    
     }
@@ -42,7 +43,7 @@ public class GameInit : MonoBehaviour
     
     private void OnDestroy()
     {
-        JsManager.Dispose();
+        //JsManager.Dispose();
     }
 
     private void OnApplicationPause(bool pauseStatus)

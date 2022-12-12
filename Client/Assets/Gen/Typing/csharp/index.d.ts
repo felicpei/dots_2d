@@ -2852,6 +2852,8 @@
             protected [__keep_incompatibility]: never;
             public static get XResolution(): XGameSetting.EnumResolution;
             public static set XResolution(value: XGameSetting.EnumResolution);
+            public static get FreeMoveJoystick(): boolean;
+            public static set FreeMoveJoystick(value: boolean);
             public static get XShake(): boolean;
             public static set XShake(value: boolean);
             public static get MusicVolume(): number;
@@ -2870,28 +2872,20 @@
             public static Init () : void
             public static Load ($resource: string, $notify: System.Action$1<UnityEngine.Object>) : void
             public static LoadGameObject ($resource: string, $callback: System.Action$1<UnityEngine.GameObject>) : void
+            public static LoadObject ($resource: string, $callBack: System.Action$1<UnityEngine.Object>) : void
             public static LoadObjectAsync ($resource: string, $callBack: System.Action$1<UnityEngine.Object>) : System.Collections.IEnumerator
             public static LoadScene ($levelName: string, $mode: UnityEngine.SceneManagement.LoadSceneMode, $onFinished?: System.Action$1<string>, $onProgress?: System.Action$2<string, number>) : void
             public static UnloadScene ($levelName: string) : void
-            public static LoadSceneWait ($levelName: string, $mode: UnityEngine.SceneManagement.LoadSceneMode, $onFinished?: System.Action$1<string>, $onProgress?: System.Action$2<string, number>) : System.Collections.IEnumerator
+            public static LoadSceneAsync ($levelName: string, $mode: UnityEngine.SceneManagement.LoadSceneMode, $onFinished?: System.Action$1<string>, $onProgress?: System.Action$2<string, number>) : System.Collections.IEnumerator
             public static CacheTableZip ($onProgress: System.Action$2<string, number>) : System.Collections.IEnumerator
             public static LoadTableText ($path: string) : string
             public static LoadEditorAsset ($resourcePath: string) : UnityEngine.Object
-            public static DoGc ($sec?: number) : System.Collections.IEnumerator
-            public static LoadBytes ($fullPath: string, $callBack: System.Action$1<System.Array$1<number>>, $onError: System.Action) : void
-            public static RequestBytes ($fullPath: string, $async: AsyncResource, $onError: System.Action, $onProgress: System.Action$1<number>) : System.Collections.IEnumerator
-            public static LoadTextList ($fullPaths: System.Collections.Generic.List$1<string>, $callBack: System.Action$1<System.Collections.Generic.List$1<string>>) : void
-            public static LoadTextListAsync ($fullPaths: System.Collections.Generic.List$1<string>, $callBack: System.Action$1<System.Collections.Generic.List$1<string>>) : System.Collections.IEnumerator
+            public static LoadBytes ($fullPath: string, $callBack: System.Action$1<System.Array$1<number>>, $onError: System.Action, $onProgress?: System.Action$1<number>) : void
             public static LoadText ($fullPath: string, $callBack: System.Action$1<string>) : void
-            public static RequestText ($fullPath: string, $async: AsyncResource) : System.Collections.IEnumerator
-            public static RequestZipFile ($zipName: string, $callback: System.Action$1<ICSharpCode.SharpZipLib.Zip.ZipFile>, $onProgress: System.Action$1<number>) : System.Collections.IEnumerator
             public static GetTextFromZip ($zip: ICSharpCode.SharpZipLib.Zip.ZipFile, $resourcePath: string) : string
             public static SimulateDownload ($request: UnityEngine.Networking.UnityWebRequest, $onProgress: System.Action$1<number>) : System.Collections.IEnumerator
+            public static DoGc ($sec?: number) : System.Collections.IEnumerator
             public constructor ()
-        }
-        class AsyncResource extends System.Object
-        {
-            protected [__keep_incompatibility]: never;
         }
         class XPlatform extends System.Object
         {
@@ -2970,6 +2964,21 @@
             public static MonsterMaterials : System.Collections.Generic.List$1<MissionCache.MonsterMaterialInfo>
             public static PreloadMission ($onFinished: System.Action) : void
             public static ClearCache () : void
+        }
+        class TouchMgr extends UnityEngine.MonoBehaviour
+        {
+            protected [__keep_incompatibility]: never;
+            public static Init () : void
+            public static LoadJoystickPrefab () : void
+            public static RegController ($iTouch: ITouchX) : void
+            public static RemoveController ($iTouch: ITouchX) : void
+            public static GetTouchPos ($fingerId: number) : UnityEngine.Vector3 | null
+            public static ForceTouchEndAll () : void
+            public static ClearAll () : void
+            public constructor ()
+        }
+        interface ITouchX
+        {
         }
         namespace XGameSetting {
         enum EnumResolution
@@ -3693,7 +3702,7 @@
             public constructor ($obj: FairyGUI.DisplayObject)
             public constructor ()
         }
-        class Image extends FairyGUI.DisplayObject implements FairyGUI.IEventDispatcher, FairyGUI.IMeshFactory
+        class Image extends FairyGUI.DisplayObject implements FairyGUI.IMeshFactory, FairyGUI.IEventDispatcher
         {
             protected [__keep_incompatibility]: never;
             public get texture(): FairyGUI.NTexture;
@@ -3812,7 +3821,7 @@
             public DestroyMaterials () : void
             public RefreshMaterials () : void
         }
-        class CompositeMesh extends System.Object implements FairyGUI.IHitTest, FairyGUI.IMeshFactory
+        class CompositeMesh extends System.Object implements FairyGUI.IMeshFactory, FairyGUI.IHitTest
         {
             protected [__keep_incompatibility]: never;
             public elements : System.Collections.Generic.List$1<FairyGUI.IMeshFactory>
@@ -3822,7 +3831,7 @@
             public constructor ()
             public HitTest ($contentRect: UnityEngine.Rect, $localPoint: UnityEngine.Vector2) : boolean
         }
-        class EllipseMesh extends System.Object implements FairyGUI.IHitTest, FairyGUI.IMeshFactory
+        class EllipseMesh extends System.Object implements FairyGUI.IMeshFactory, FairyGUI.IHitTest
         {
             protected [__keep_incompatibility]: never;
             public drawRect : UnityEngine.Rect | null
@@ -3885,7 +3894,7 @@
             public OnPopulateMesh ($vb: FairyGUI.VertexBuffer) : void
             public constructor ()
         }
-        class PolygonMesh extends System.Object implements FairyGUI.IHitTest, FairyGUI.IMeshFactory
+        class PolygonMesh extends System.Object implements FairyGUI.IMeshFactory, FairyGUI.IHitTest
         {
             protected [__keep_incompatibility]: never;
             public points : System.Collections.Generic.List$1<UnityEngine.Vector2>
@@ -3902,7 +3911,7 @@
             public constructor ()
             public HitTest ($contentRect: UnityEngine.Rect, $localPoint: UnityEngine.Vector2) : boolean
         }
-        class RectMesh extends System.Object implements FairyGUI.IHitTest, FairyGUI.IMeshFactory
+        class RectMesh extends System.Object implements FairyGUI.IMeshFactory, FairyGUI.IHitTest
         {
             protected [__keep_incompatibility]: never;
             public drawRect : UnityEngine.Rect | null
@@ -3915,7 +3924,7 @@
             public constructor ()
             public HitTest ($contentRect: UnityEngine.Rect, $localPoint: UnityEngine.Vector2) : boolean
         }
-        class RegularPolygonMesh extends System.Object implements FairyGUI.IHitTest, FairyGUI.IMeshFactory
+        class RegularPolygonMesh extends System.Object implements FairyGUI.IMeshFactory, FairyGUI.IHitTest
         {
             protected [__keep_incompatibility]: never;
             public drawRect : UnityEngine.Rect | null
@@ -3931,7 +3940,7 @@
             public constructor ()
             public HitTest ($contentRect: UnityEngine.Rect, $localPoint: UnityEngine.Vector2) : boolean
         }
-        class RoundedRectMesh extends System.Object implements FairyGUI.IHitTest, FairyGUI.IMeshFactory
+        class RoundedRectMesh extends System.Object implements FairyGUI.IMeshFactory, FairyGUI.IHitTest
         {
             protected [__keep_incompatibility]: never;
             public drawRect : UnityEngine.Rect | null
@@ -3959,7 +3968,7 @@
             public constructor ()
             public constructor ($lineWidth: number, $color: UnityEngine.Color, $repeatFill: boolean)
         }
-        class MovieClip extends FairyGUI.Image implements FairyGUI.IEventDispatcher, FairyGUI.IMeshFactory
+        class MovieClip extends FairyGUI.Image implements FairyGUI.IMeshFactory, FairyGUI.IEventDispatcher
         {
             protected [__keep_incompatibility]: never;
             public interval : number
@@ -4273,7 +4282,7 @@
             public constructor ()
             public constructor ($resourceURL: string)
         }
-        class TextField extends FairyGUI.DisplayObject implements FairyGUI.IEventDispatcher, FairyGUI.IMeshFactory
+        class TextField extends FairyGUI.DisplayObject implements FairyGUI.IMeshFactory, FairyGUI.IEventDispatcher
         {
             protected [__keep_incompatibility]: never;
             public get textFormat(): FairyGUI.TextFormat;
@@ -4328,7 +4337,7 @@
             public static ConvertLineR ($source: string) : string
             public constructor ()
         }
-        class SelectionShape extends FairyGUI.DisplayObject implements FairyGUI.IEventDispatcher, FairyGUI.IMeshFactory
+        class SelectionShape extends FairyGUI.DisplayObject implements FairyGUI.IMeshFactory, FairyGUI.IEventDispatcher
         {
             protected [__keep_incompatibility]: never;
             public rects : System.Collections.Generic.List$1<UnityEngine.Rect>

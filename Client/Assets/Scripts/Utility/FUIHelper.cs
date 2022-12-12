@@ -7,22 +7,6 @@ using UnityEngine;
 
 public static class FUIHelper
 {
-    /*private static readonly List<GObject> UIList = new();
-    public static void ShowFUI<T>(string packageName, string componentName) where T: MonoBehaviour
-    {
-        //add package
-        AddPackage(packageName, () =>
-        {
-            var view = UIPackage.CreateObject(packageName, componentName).asCom;
-            view.container.gameObject.AddComponent<T>();
-            view.container.gameObject.AddComponent<UIContentScaler>();
-            view.SetSize(GRoot.inst.size.x, GRoot.inst.size.y);
-            
-            var gObject = GRoot.inst.AddChild(view);
-            UIList.Add(gObject);
-        });
-    }*/
-
     public static void AddPackage(string packageName, Action onFinished)
     {
         if (XPlatform.Platform == XPlatform.EPlatform.UnityEditor)

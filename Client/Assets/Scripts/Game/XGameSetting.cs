@@ -38,6 +38,20 @@ public class XGameSetting
         }
     }
 
+    public static bool FreeMoveJoystick
+    {
+        get => _data.FreeMoveJoystick;
+        set
+        {
+            if (_data.FreeMoveJoystick != value)
+            {
+                _data.FreeMoveJoystick = value;
+                _data.Save();
+            }
+        }
+    }
+    
+    
     //振动
     public static bool XShake
     {

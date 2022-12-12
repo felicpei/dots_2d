@@ -1,4 +1,4 @@
-import { Dbg, JsManager, XGameSetting, Sound } from 'csharp';
+import { Dbg, JsManager} from 'csharp';
 import { SceneMainCity } from './scene/SceneMainCity';
 import { G, SceneID } from './GameConfig';
 
@@ -19,11 +19,10 @@ class GameMain {
         try {
             Dbg.Log("###### 初始化TS: Game start in JS....");
 
-            //一些模组初始化
-            XGameSetting.Init();
-            Sound.Init();
-
-            //加载主城场景,
+            //初始化
+            G.InitGame();
+           
+            //加载主城场景
             G.SceneLoader.openScene<SceneMainCity>(SceneID.MainCity, SceneMainCity);
 
         } catch (ex) {
