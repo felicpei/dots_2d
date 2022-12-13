@@ -318,6 +318,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 791296846856600794, guid: e46db925dfd3a984994752af15f8a737, type: 3}
+      propertyPath: numOfCircleToShow
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 791296846856600795, guid: e46db925dfd3a984994752af15f8a737, type: 3}
       propertyPath: m_RootOrder
       value: 3
